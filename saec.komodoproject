@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="8e9421be-d367-4a06-b1a7-fc59073f8761" kpf_version="5" name="saec.komodoproject">
+<livefolder id="05535e73-e7b9-4da5-97ef-db23535cbc76" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="css" url="css">
+</livefolder>
+<file id="05aca7a2-380f-4784-893d-0f28fa3ff136" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="loginExecute.php" url="loginExecute.php">
+</file>
+<file id="08fa2430-5449-42d1-8f36-be6baf45aed8" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="index.php" url="index.php">
+</file>
+<file id="3c3478c9-e237-45e3-9828-f60cb4c617a1" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="facturacion.php" url="facturacion.php">
+</file>
+<file id="4a5022cd-161e-41fe-8f92-2b442dc103c1" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menu.html" url="menu.html">
+</file>
+<livefolder id="67e3984e-b092-44da-8576-16b2af2d917c" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="images" url="images">
+</livefolder>
+<file id="6e1f82e7-ccd2-4faa-a96d-1d1ba3cecf41" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="head.html" url="head.html">
+</file>
+<file id="76ee8c4a-ece2-444c-ba3e-247ba1a96e00" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="foot.html" url="foot.html">
+</file>
+<file id="7a518f5b-21d9-4749-a6e2-326d4cfd3a93" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuInventario.html" url="menuInventario.html">
+</file>
+<file id="7ca97e24-3521-479b-bbf5-30b9b2dfa04a" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="plantilla.php" url="plantilla.php">
+</file>
+<file id="8be92148-cfb5-47f4-8c2b-c781b4abdca9" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuFacturacion.html" url="menuFacturacion.html">
+</file>
+<file id="aa5e28cd-92af-4a85-bb35-fc02967f4d58" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuAdministracion.html" url="menuAdministracion.html">
+</file>
+<file id="b4753e97-25d4-48c4-b4e3-a2edc23c9bb8" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="README" url="README">
+</file>
+<file id="dcb603f6-573b-4368-a4ec-cfbad3d90726" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="index2.php" url="index2.php">
+</file>
+<file id="ec778f05-5d16-444c-b80e-6875f357b665" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="inventario.php" url="inventario.php">
+</file>
+<file id="f1d459e3-6382-4387-9bd2-23194927c042" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="login.html" url="login.html">
+</file>
+<file id="fe1e91c5-215d-48bb-990f-8985e0908e07" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="cerrarSesion.php" url="cerrarSesion.php">
+</file>
+</project>
