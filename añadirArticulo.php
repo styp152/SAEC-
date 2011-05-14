@@ -16,10 +16,11 @@ include("menu.html");
       <label for="descripcion">Descripcion: </label><br /><textarea id="descripcion" name="descripcion" cols="60" rows="5" onfocus="limpiar(this); limpiarT(this);">
       Aqui Agregar una Pequeña Descripcion del Articulo
       </textarea>
+      <br /><br />
+      <input type="submit" value="Ingresar" />
+      <input type="button" value="Cancelar" onclick="ir('inventario.php');" />
       <br />
     </fieldset>
-    <input type="submit" value="Ingresar" />
-    <input type="reset" value="Borrar" /><br /> <!-- Cambiar por el Boton Cancelar TODO -->
   </form>
 </div>
 </div>

@@ -85,7 +85,7 @@ a:hover { text-decoration: underline; color : #000; }
 .right h2 {
     color: #FF4800;
     font-size: 20px;
-    letter-spacing: -3px;
+    letter-spacing: -2px;
     font-weight: 100;
     padding : 10px 0 15px 0;
     text-align:center;
@@ -170,4 +170,8 @@ padding:5px;
 
 #cantidad{
     size:5px;
+}
+
+fieldset{
+    text-align:center;
 }

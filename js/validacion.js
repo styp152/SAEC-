@@ -56,3 +56,6 @@ function limpiar(campo){
 function limpiarT(campo){
   campo.value="";  
 }
+function ir(direccion){
+  window.location=direccion;
+}
