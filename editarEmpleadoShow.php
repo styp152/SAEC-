@@ -14,8 +14,9 @@ include("menu.html");
       <br />
       <label for="contrasena_actual">Contraseña Actual:</label><input type="password" id="contrasena_actual" name="contrasena_actual" onfocus="limpiar(this);" size="9" />
       <br />
-      <label for="contrasena_nueva">Contraseña Nueva:</label><input type="password" id="contrasena_nueva" name="contrasena_nueva" onfocus="limpiar(this);" size="9" />
-      <label for="confirmar_contrasena"> Confirmar Contraseña:</label><input type="password" id="confirmar_contrasena" name="confirmar_contrasena" onfocus="limpiar(this);" size="9" />
+      <?php //El id tiene un _ al empezar para indicar que no es campo oblicagorio ?>
+      <label for="contrasena_nueva">Contraseña Nueva:</label><input type="password" id="_contrasena_nueva" name="contrasena_nueva" onfocus="limpiar(this);" size="9" />
+      <label for="confirmar_contrasena"> Confirmar Contraseña:</label><input type="password" id="_confirmar_contrasena" name="confirmar_contrasena" onfocus="limpiar(this);" size="9" />
       <br />
       <label for="cargo">Cargo que desempeña: </label><input type="text" id="cargo" name="cargo" value="Vendedor" size="20" onfocus="limpiar(this);"/>
       <br /><br />
