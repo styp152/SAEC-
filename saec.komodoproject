@@ -11,7 +11,7 @@
 </file>
 <file id="4a5022cd-161e-41fe-8f92-2b442dc103c1" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menu.html" url="menu.html">
 </file>
-<file id="4de07dbe-d4d9-4d89-9739-2eb32ddb59ed" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="saec.komodoproject" url="saec.komodoproject">
+<file id="4edee834-048d-4ba5-8ea6-3c601a601164" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="listarArticulos.php" url="listarArticulos.php">
 </file>
 <livefolder id="67e3984e-b092-44da-8576-16b2af2d917c" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="images" url="images">
 </livefolder>
@@ -27,6 +27,8 @@
 </file>
 <file id="8be92148-cfb5-47f4-8c2b-c781b4abdca9" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuFacturacion.html" url="menuFacturacion.html">
 </file>
+<file id="8c5335a0-fc5a-42e3-bba7-8aec8425d61a" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="actualizarListaArticulos.php" url="actualizarListaArticulos.php">
+</file>
 <livefolder id="9c114aca-cc77-48d8-b99f-b324a6ae51e2" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="js" url="js">
 </livefolder>
 <file id="aa5e28cd-92af-4a85-bb35-fc02967f4d58" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuAdministracion.html" url="menuAdministracion.html">
@@ -34,6 +36,8 @@
 <file id="ac0193fa-ef8b-481b-832b-06ed8ed0ba7f" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="añadirArticuloExecute.php" url="añadirArticuloExecute.php">
 </file>
 <file id="b4753e97-25d4-48c4-b4e3-a2edc23c9bb8" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="README" url="README">
+</file>
+<file id="c76b22e0-0c36-41ae-b6e7-15c3e06e3c5a" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="añadirEmpleado.php" url="añadirEmpleado.php">
 </file>
 <file id="cca7ea01-2d5e-4f7b-ac2a-af4cefebdfad" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="administracion.php" url="administracion.php">
 </file>
