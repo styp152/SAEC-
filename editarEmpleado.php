@@ -9,7 +9,7 @@ include("menu.html");
     <fieldset id="empleado" >
       <legend>Buscar Empleado a Editar</legend>
       <br />
-      <label for="cedula">Cedula: </label><input type="text" id="cedula" name="cedula" onfocus="limpiar(this);" />
+      <label for="cedula">Cedula: </label><input type="text" id="cedula" name="cedula" onfocus="limpiar(this);" onkeypress="return permite(event , 'num')" />
       <br />
       <br />
       <input type="submit" value="Buscar" />

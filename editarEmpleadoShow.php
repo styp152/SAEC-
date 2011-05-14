@@ -9,7 +9,7 @@ include("menu.html");
     <fieldset id="empleado" >
       <legend>Datos del Empleado</legend>
       <br />
-      <label for="cedula">Cedula: </label><input type="text" id="cedula" name="cedula" value="12345678" size="9" onfocus="limpiar(this);"/>
+      <label for="cedula">Cedula: </label><input type="text" id="cedula" name="cedula" value="12345678" size="9" onfocus="limpiar(this);" onkeypress="return permite(event , 'num')" />
       <label for="nombre">Nombre: </label><input type="text" id="nombre" name="nombre" value="Pedro Perez" size="27" onfocus="limpiar(this);"/>
       <br />
       <label for="contrasena_actual">Contraseña Actual:</label><input type="password" id="contrasena_actual" name="contrasena_actual" onfocus="limpiar(this);" size="9" />

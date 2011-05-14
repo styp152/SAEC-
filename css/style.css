@@ -175,3 +175,7 @@ padding:5px;
 fieldset{
     text-align:center;
 }
+
+.bold{
+    font-weight:bold;
+}

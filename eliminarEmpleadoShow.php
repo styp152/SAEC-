@@ -9,10 +9,11 @@ include("menu.html");
     <fieldset id="empleado" >
       <legend>Datos del Empleado</legend>
       <br />
-      <label for="cedula">Cedula: </label><input type="text" id="cedula" name="cedula" value="12345678" readonly="true" size="9" />
-      <label for="nombre">Nombre: </label><input type="text" id="nombre" name="nombre" value="Pedro Perez" readonly="true" size="27" />
+      <label for="cedula" class="bold">Cedula: </label><label for="cedula_texto">123456789</label>
       <br />
-      <label for="cargo">Cargo que desempeña: </label><input type="text" id="cargo" name="cargo" value="Vendedor" readonly="true" size="20"/>
+      <label for="nombre" class="bold">Nombre: </label><label for="nombre_texto">Pedro Perez</label>
+      <br />
+      <label for="cargo" class="bold">Cargo que desempeña: </label><label for="cargo_texto">Vendedor</label>
       <br /><br />
       <input type="submit" value="Eliminar" />
       <input type="button" value="Cancelar" onclick="ir('administracion.php');" />
