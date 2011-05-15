@@ -19,7 +19,7 @@ include("menu.html");
       <label for="direccion">Direccion: </label><input type="text" id="direccion" name="direccion" onfocus="limpiar(this);" size="57" value="Av 4 con calle 18. Casa # 100. Centro" />
       <br />
       <label for="correo">Correo Electronico: </label><input type="text" id="correo" name="correo" onfocus="limpiar(this);" size="27" value="pedroperezalfonso@hotmail.com" />
-      <label for="telefono">Telefono: </label><input type="text" id="tlf_codigo" name="tlf_codigo" onfocus="limpiar(this);" size="3" value="0274" /> - <input type="text" id="tlf_numero" name="tlf_numero" onfocus="limpiar(this);" size="9" value="2442424" />
+      <label for="telefono">Telefono: </label><input type="text" id="tlf_codigo" name="tlf_codigo" onfocus="limpiar(this);" size="3" value="0274" onkeypress="return permite(event , 'num')" /> - <input type="text" id="tlf_numero" name="tlf_numero" onfocus="limpiar(this);" size="9" value="2442424" onkeypress="return permite(event , 'num')" />
     </fieldset>
     <fieldset>
         <legend>Datos del Pedido</legend>
@@ -31,13 +31,6 @@ include("menu.html");
             Calendar.setup({inputField:"fecha_entrega", button:"Imgfecha_entrega"});
             Calendar.setup({inputField:"fecha_entrega", eventName: "click", button:"Imgfecha_entrega"});
         </script>
-<!--        <input id="fecha1" size= "9" name="fecha1" class="for_txtInputFecha" type="text" value="" tabindex="2" readonly="readonly" />
-        <img class="for_imgFecha" id="Imgfecha1" src="calendario/calendario.png" title="Seleccione fecha" alt="Imagen del Calendario" aling="top" />
-        <!-- definicion de los calendario en el formulario 
-        <script type="text/javascript">
-            Calendar.setup({inputField:"fecha1", button:"Imgfecha1"});
-            Calendar.setup({inputField:"fecha1", eventName: "click", button:"Imgfecha1"});
-        </script>-->
         <br />
         <label for="productos">Productos</label>
         <br />
