@@ -191,3 +191,11 @@ fieldset{
 .linklikebutton{
     text-decoration:none;
 }
+
+#buscar_cedula, #buscar_codigo, #buscar_fecha, #btn {display:none;}
+#botones {
+    text-align:center;
+}
+.btn{
+    width:100px;
+}

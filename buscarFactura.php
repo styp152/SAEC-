@@ -28,8 +28,19 @@ include("menu.html");
         <br /><br />
         <br />
     </fieldset>
-    <input type="submit" value="Buscar" />
-    <input type="button" value="Cancelar" onclick="ir('facturacion.php');" />
+    <div id="botones">
+      <br />
+      <input type="button" id="btnCodigo" class="btn" value="Por Codigo" title="Boton para Mostrar los datos para la busqueda por Codigo" onClick="document.getElementById('botones').style.display='none';document.getElementById('buscar_codigo').style.display='inline';document.getElementById('btn').style.display='inline';" />
+      <br /><br />
+      <input type="button" id="btnCedula" class="btn" value="Por Cedula" title="Boton para Mostrar los datos para la busqueda por Cedula" onClick="document.getElementById('botones').style.display='none';document.getElementById('buscar_cedula').style.display='inline';document.getElementById('btn').style.display='inline';" />
+      <br /><br />
+      <input type="button" id="btnFecha" class="btn" value="Por Fecha" title="Boton para Mostrar los datos para la busqueda por Fecha" onClick="document.getElementById('botones').style.display='none';document.getElementById('buscar_fecha').style.display='inline';document.getElementById('btn').style.display='inline';" />
+      <br />  
+    </div>
+    <div id="btn">
+      <input type="submit" value="Buscar" />
+      <input type="button" value="Cancelar" onclick="ir('buscarFactura.php');" />
+    </div>
   </form>
 </div>
 </div>
