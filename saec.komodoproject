@@ -7,15 +7,35 @@
 </file>
 <file id="08fa2430-5449-42d1-8f36-be6baf45aed8" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="index.php" url="index.php">
 </file>
+<file id="0a8b2406-7daa-4314-875c-247d1f272cfb" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="eliminarArticuloExecute.php" url="eliminarArticuloExecute.php">
+</file>
+<file id="0d4771b9-24de-4b55-bc79-24195eba88dd" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarArticulo.php" url="editarArticulo.php">
+</file>
+<livefolder id="0dd503b2-ce1b-45bf-b793-758ad8d40a59" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="calendario" url="calendario">
+</livefolder>
+<file id="1236054c-bad3-44ce-a9ca-59ea6ffb163e" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="añadirEmpleadoExecute.php" url="añadirEmpleadoExecute.php">
+</file>
+<file id="208dca07-899c-404c-918b-695e824007cb" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="buscarArticuloShow.php" url="buscarArticuloShow.php">
+</file>
+<file id="28750856-43e2-4fad-adfa-ec6eec401408" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarArticuloShowExecute.php" url="editarArticuloShowExecute.php">
+</file>
+<file id="2bde35d4-76ee-41cd-b50f-6c9777025ce8" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarEmpleadoShow.php" url="editarEmpleadoShow.php">
+</file>
 <file id="3c3478c9-e237-45e3-9828-f60cb4c617a1" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="facturacion.php" url="facturacion.php">
 </file>
 <file id="4a5022cd-161e-41fe-8f92-2b442dc103c1" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menu.html" url="menu.html">
 </file>
+<file id="4d1e848f-f795-4af4-be6c-7d270e544b8d" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearFacturaShow.php" url="crearFacturaShow.php">
+</file>
 <file id="4edee834-048d-4ba5-8ea6-3c601a601164" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="listarArticulos.php" url="listarArticulos.php">
+</file>
+<file id="5dc17aa0-2bc3-4f3a-a81d-20e31473f604" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearFacturaExecute.php" url="crearFacturaExecute.php">
 </file>
 <livefolder id="67e3984e-b092-44da-8576-16b2af2d917c" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="images" url="images">
 </livefolder>
 <file id="6e1f82e7-ccd2-4faa-a96d-1d1ba3cecf41" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="head.html" url="head.html">
+</file>
+<file id="73ae912f-b1be-4252-8ac0-067bd83dd14f" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="autocompletarArticulo.php" url="autocompletarArticulo.php">
 </file>
 <file id="74886997-faad-40af-8cd4-389f009a832c" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="añadirArticulo.php" url="añadirArticulo.php">
 </file>
@@ -23,7 +43,13 @@
 </file>
 <file id="7a518f5b-21d9-4749-a6e2-326d4cfd3a93" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuInventario.html" url="menuInventario.html">
 </file>
+<file id="7b701220-32c5-4055-b214-7daee7425a63" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarEmpleado.php" url="editarEmpleado.php">
+</file>
 <file id="7ca97e24-3521-479b-bbf5-30b9b2dfa04a" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="plantilla.php" url="plantilla.php">
+</file>
+<file id="7f7799b1-5813-48f8-8802-dbb2006934b0" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="buscarArticuloExecute.php" url="buscarArticuloExecute.php">
+</file>
+<file id="8b0797fe-6fa7-41e0-b5cb-b93c9a130757" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="eliminarArticuloShowExecute.php" url="eliminarArticuloShowExecute.php">
 </file>
 <file id="8be92148-cfb5-47f4-8c2b-c781b4abdca9" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuFacturacion.html" url="menuFacturacion.html">
 </file>
@@ -31,22 +57,52 @@
 </file>
 <livefolder id="9c114aca-cc77-48d8-b99f-b324a6ae51e2" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="js" url="js">
 </livefolder>
+<file id="a01487a1-a1b4-4270-a2f6-c25019d9bace" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarEmpleadoExecute.php" url="editarEmpleadoExecute.php">
+</file>
+<file id="a2da8bd5-860e-457c-a1b7-afcac9ccbab2" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="buscarArticulo.php" url="buscarArticulo.php">
+</file>
 <file id="aa5e28cd-92af-4a85-bb35-fc02967f4d58" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuAdministracion.html" url="menuAdministracion.html">
 </file>
 <file id="ac0193fa-ef8b-481b-832b-06ed8ed0ba7f" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="añadirArticuloExecute.php" url="añadirArticuloExecute.php">
 </file>
 <file id="b4753e97-25d4-48c4-b4e3-a2edc23c9bb8" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="README" url="README">
 </file>
+<file id="be13920b-565d-44a9-beb8-3e54bc16e793" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="eliminarEmpleadoExecute.php" url="eliminarEmpleadoExecute.php">
+</file>
+<file id="c0ba78bf-40ae-4a9c-8330-ab1cb77191b5" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="eliminarArticuloShow.php" url="eliminarArticuloShow.php">
+</file>
+<file id="c3a92c51-723a-469e-8965-df301f5fefbd" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="eliminarEmpleadoShow.php" url="eliminarEmpleadoShow.php">
+</file>
+<file id="c6e7cacf-6e0c-4f83-bbc7-1370c8e72083" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearFacturaForm.php" url="crearFacturaForm.php">
+</file>
+<file id="c747155e-24e2-46d3-b774-cb649aa22984" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarEmpleadoShowExecute.php" url="editarEmpleadoShowExecute.php">
+</file>
 <file id="c76b22e0-0c36-41ae-b6e7-15c3e06e3c5a" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="añadirEmpleado.php" url="añadirEmpleado.php">
+</file>
+<file id="c8d989ff-d630-42c0-9151-dc6388375198" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearFactura.php" url="crearFactura.php">
 </file>
 <file id="cca7ea01-2d5e-4f7b-ac2a-af4cefebdfad" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="administracion.php" url="administracion.php">
 </file>
+<file id="ceea79f2-3d45-48dd-88c0-be53989f274c" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="buscarFactura.php" url="buscarFactura.php">
+</file>
+<file id="cfbeae77-aeb1-44a3-b9c3-5ed05b1b0d26" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearFacturaFormExecute.php" url="crearFacturaFormExecute.php">
+</file>
 <file id="dcb603f6-573b-4368-a4ec-cfbad3d90726" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="index2.php" url="index2.php">
+</file>
+<file id="de12d561-a9d7-4c7d-b6fd-7f960e83c634" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="eliminarEmpleadoShowExecute.php" url="eliminarEmpleadoShowExecute.php">
+</file>
+<file id="eac8e050-151f-4615-9dd3-bf04b13385dd" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarArticuloShow.php" url="editarArticuloShow.php">
 </file>
 <file id="ec778f05-5d16-444c-b80e-6875f357b665" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="inventario.php" url="inventario.php">
 </file>
+<file id="f0a36951-9eaa-4cad-80fe-b890ea970d99" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="eliminarArticulo.php" url="eliminarArticulo.php">
+</file>
 <file id="f1d459e3-6382-4387-9bd2-23194927c042" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="login.html" url="login.html">
 </file>
+<file id="f89f30b4-4e28-471e-b687-c7166cf4b2b8" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="eliminarEmpleado.php" url="eliminarEmpleado.php">
+</file>
 <file id="fe1e91c5-215d-48bb-990f-8985e0908e07" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="cerrarSesion.php" url="cerrarSesion.php">
+</file>
+<file id="febc1511-4a34-463b-b94c-14e51b552d4f" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarArticuloExecute.php" url="editarArticuloExecute.php">
 </file>
 </project>

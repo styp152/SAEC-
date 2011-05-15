@@ -2,11 +2,10 @@
 include("head.html");
 include("menu.html");
 ?>
-<script type="text/javascript" defer="defer" src="js/validacion.js" ></script>
-<script type="text/javascript" defer="defer" src="js/calendar.js" ></script>
-<script type="text/javascript" defer="defer" src="js/calendar-es.js" ></script>
-<script type="text/javascript" defer="defer" src="js/calendar-setup.js" ></script>
-<link href="css/calendario.css" rel="stylesheet" type="text/css" media="screen" /> 
+<link href="css/calendario.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/calendar.js"></script>
+<script type="text/javascript" src="js/calendar-es.js"></script>
+<script type="text/javascript" src="js/calendar-setup.js"></script>
 <h2>Crear Factura</h2>
 <div id="crear">
   <form name="form" action="crearFacturaFormExecute.php" method="post" title="Permite Crear una Factura" onsubmit="return validarVacio(this);">
@@ -26,12 +25,19 @@ include("menu.html");
         <legend>Datos del Pedido</legend>
         <br />
         <label for="vendedor">Vendedor: </label><input type="text" id="vendedor" name="vendedor" onfocus="limpiar(this);" size="25" value="Gabriel Albornoz" readonly="true" />
-        <label for="fecha_entrega">Fecha de Entrega: </label><input type="text" id="fecha_entrega" name="fecha_entrega" class="for_txtInputFecha" onfocus="limpiar(this);" size="9" value="" tabindex="2"  /> <!-- Aqui debe ir readonly="readonly", se lo quite para poder probar algunas cosas TODO -->
-        <img class="for_imgFecha" id="Imgfecha" src="calendario/calendario.png" title="Seleccione fecha" alt="Imagen del Calendario" aling="top" />
+        <label for="fecha_entrega">Fecha de Entrega: </label><input type="text" id="fecha_entrega" name="fecha_entrega" class="for_txtInputFecha" onfocus="limpiar(this);" size="9" value="" tabindex="2"  /> <!--Aqui debe ir readonly="readonly", se lo quite para poder probar algunas cosas TODO -->
+        <img class="for_imgFecha" id="Imgfecha_entrega" src="calendario/calendario.png" title="Seleccione fecha" alt="Imagen del Calendario" aling="top" />
         <script type="text/javascript">
-            Calendar.setup({inputField:"fecha_entrega", button:"Imgfecha"});
-            Calendar.setup({inputField:"fecha_entrega", eventName: "click", button:"Imgfecha"});
+            Calendar.setup({inputField:"fecha_entrega", button:"Imgfecha_entrega"});
+            Calendar.setup({inputField:"fecha_entrega", eventName: "click", button:"Imgfecha_entrega"});
         </script>
+<!--        <input id="fecha1" size= "9" name="fecha1" class="for_txtInputFecha" type="text" value="" tabindex="2" readonly="readonly" />
+        <img class="for_imgFecha" id="Imgfecha1" src="calendario/calendario.png" title="Seleccione fecha" alt="Imagen del Calendario" aling="top" />
+        <!-- definicion de los calendario en el formulario 
+        <script type="text/javascript">
+            Calendar.setup({inputField:"fecha1", button:"Imgfecha1"});
+            Calendar.setup({inputField:"fecha1", eventName: "click", button:"Imgfecha1"});
+        </script>-->
         <br />
         <label for="productos">Productos</label>
         <br />
