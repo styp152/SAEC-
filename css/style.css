@@ -137,6 +137,7 @@ table {
   color: #363636;
   background: #f6f6f6;
   text-align:left;
+  width:100%;
   }
 caption {
   text-align: center;
@@ -198,4 +199,10 @@ fieldset{
 }
 .btn{
     width:100px;
+}
+.scantidad{
+    text-align:right;
+}
+.tlf_codigo{
+    width:30px;
 }
