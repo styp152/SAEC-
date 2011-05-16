@@ -27,7 +27,7 @@ include("menu.html");
       <br />
     </fieldset>
     <fieldset>
-        <legend>Datos del Pedido</legend>
+        <legend align="center">Datos del Pedido</legend>
         <label for="productos">Productos</label>
         <br />
         <table>
