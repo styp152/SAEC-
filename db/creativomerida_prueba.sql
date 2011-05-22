@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-05-2011 a las 02:02:08
+-- Tiempo de generación: 22-05-2011 a las 10:51:23
 -- Versión del servidor: 5.1.41
 -- Versión de PHP: 5.3.2-1ubuntu4.8
 
@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `Vendedor` (
   `Apellido` varchar(32) COLLATE utf8_spanish2_ci NOT NULL,
   `Cargo` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `Nivel` int(1) NOT NULL,
-  `Clave` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Clave` blob NOT NULL,
   PRIMARY KEY (`Cedula`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
