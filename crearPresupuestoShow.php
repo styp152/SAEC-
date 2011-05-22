@@ -1,0 +1,58 @@
+<?php
+include("head.html");
+include("menu.html");
+?>
+<h2>Factura</h2>
+<div id="factura">
+    <fieldset id="factura" >
+        <legend align="center">Datos del Cliente</legend>
+        <br />
+        <label for="fecha" class="bold">Fecha: </label><label for="fecha_texto"><?php echo @date("d-m-Y"); ?></label>
+        <label for="cedula" class="bold">Cedula: </label><label for="cedula_texto">123456789</label>
+        <label for="nombre" class="bold">Nombre: </label><label for="nombre_texto">Pedro Perez Alfonso</label>
+        <br />
+        <label for="direccion" class="bold">Direccion: </label><label for="direccion_texto">Av 4 con calle 18. Casa # 100. Centro</label>
+        <br />
+        <label for="correo" class="bold">Correo Electronico: </label><label for="correo_text">pedroperezalfonso@hotmail.com</label>
+        <label for="telefono" class="bold">Telefono: </label><label for="telefono_texto">0274-2442424</label>
+    </fieldset>
+    <fieldset>
+        <legend>Datos del Pedido</legend>
+        <br />
+        <label for="productos">Productos</label>
+        <br />
+        <table align="center">
+            <tr class="first">
+                <td>Cantidad </td>
+                <td>Nombre </td>
+                <td>Precio Unitario </td>
+                <td>Total </td>
+            </tr>
+            <tr>
+                <td>2 </td>
+                <td>Tazas </td>
+                <td>25 </td>
+                <td>50 </td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Chapas </td>
+                <td>10 </td>
+                <td>100 </td>
+            </tr>
+        </table>
+        <label for="detalles" class="bold">Detalles de Diseño y Produccion </label><br /><label for="detalles_texto">Aqui van los detalles del pedido.</label>
+        <br /><br />
+        <input type="button" value="Imprimir" /></a>
+        <input type="button" value="Editar" /></a>
+        <input type="button" value="Cancelar" onclick="ir('facturacion.php');" />
+    </fieldset>
+  </form>
+</div>
+</div>
+<?php
+include("menuFacturacion.html");
+include("foot.html");
+// debo poder incluir productos, con sus cantidades, y mostrar el precio unitario de ese producto, fecha de entrega, y un textarea, para Detalles de Diseño y Produccion
+?>
+

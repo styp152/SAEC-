@@ -8,18 +8,18 @@ include("menu.html");
 <script type="text/javascript" src="js/calendar-es.js"></script>
 <script type="text/javascript" src="js/calendar-setup.js"></script>
 
-<h2>Buscar Factura</h2>
+<h2>Buscar Presupuesto</h2>
 <div id="buscar">
-  <form name="form" action="buscarFacturaExecute.php" method="post" title="Permite Buscar una Factura" onsubmit="return validarVacio(this);">
+  <form name="form" action="buscarPresupuestoExecute.php" method="post" title="Permite Buscar un Presupuesto" onsubmit="return validarVacio(this);">
     <fieldset id="buscar_codigo" >
-        <legend align="center">Buscar por Codigo de Factura</legend>
+        <legend align="center">Buscar por Codigo de Presupuesto</legend>
         <br />
         <label for="codigo">Codigo: </label><input type="text" id="codigo" name="codigo" onfocus="limpiar(this);" size="9" onkeypress="return permite(event , 'num')" />
         <br /><br />
         <br />
     </fieldset>
     <fieldset id="buscar_cedula">
-        <legend align="center">Buscar por Cedula del Cliente</legend>
+        <legend align="center">Buscar por Cedula del Presupuesto</legend>
         <br />
         <label for="cedula">Cedula: </label><input type="text" id="cedula" name="cedula" onfocus="limpiar(this);" size="9" onkeypress="return permite(event , 'num')" />
         <br /><br />

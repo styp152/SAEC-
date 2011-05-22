@@ -7,9 +7,9 @@ include("menu.html");
 <script type="text/javascript" src="js/calendar-es.js"></script>
 <script type="text/javascript" src="js/calendar-setup.js"></script>
 <script type="text/javascript" src="js/validacion.js"></script>
-<h2>Crear Factura</h2>
+<h2>Crear Presupuesto</h2>
 <div id="crear">
-  <form name="form" action="crearFacturaFormExecute.php" method="post" title="Permite Crear una Factura" onsubmit="return validarVacio(this);">
+  <form name="form" action="crearPresupuestoFormExecute.php" method="post" title="Permite Crear un Presupuesto" onsubmit="return validarVacio(this);">
     <fieldset id="factura" >
       <legend align="center">Datos del Cliente</legend>
       <br />
@@ -58,14 +58,6 @@ include("menu.html");
         Aqui se agregan los detalles del pedido.
         </textarea>
         <br />
-        <label for="vendedor">Vendedor: </label><input type="text" id="vendedor" name="vendedor" onfocus="limpiar(this);" size="25" value="Gabriel Albornoz" readonly="true" />
-        <label for="fecha_entrega">Fecha de Entrega: </label><input type="text" id="fecha_entrega" name="fecha_entrega" class="for_txtInputFecha" onfocus="limpiar(this);" size="9" value="" tabindex="2"  /> <!--Aqui debe ir readonly="readonly", se lo quite para poder probar algunas cosas TODO -->
-        <img class="for_imgFecha" id="Imgfecha_entrega" src="calendario/calendario.png" title="Seleccione fecha" alt="Imagen del Calendario" aling="top" />
-        <script type="text/javascript">
-            Calendar.setup({inputField:"fecha_entrega", button:"Imgfecha_entrega"});
-            Calendar.setup({inputField:"fecha_entrega", eventName: "click", button:"Imgfecha_entrega"});
-        </script>
-        <br />
         <br />
         <input type="submit" value="Facturar" />
         <input type="button" value="Cancelar" onclick="ir('facturacion.php');" />
@@ -78,4 +70,3 @@ include("menuFacturacion.html");
 include("foot.html");
 // debo poder incluir productos, con sus cantidades, y mostrar el precio unitario de ese producto, fecha de entrega, y un textarea, para Detalles de Diseño y Produccion
 ?>
-
