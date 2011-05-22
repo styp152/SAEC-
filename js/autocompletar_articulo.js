@@ -77,7 +77,7 @@ function autocompleta() {
           }
         }
       };
-      peticion.open('POST', 'autocompletarArticulo.php', true);
+      peticion.open('POST', 'autocompletarArticulo.php?nocache='+Math.random(), true);
       peticion.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       peticion.send('nombre='+encodeURIComponent(texto));
     }

@@ -29,7 +29,7 @@ include("menu.html");
   </tr>
 </table>
 <br />
-<h3>Total Vendido del Dia: 1290 Bsf</h3>
+Total Vendido del Dia: 1290 Bsf
 </div>
 <?php
 include("menuFacturacion.html");
