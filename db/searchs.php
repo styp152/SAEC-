@@ -28,7 +28,16 @@ function buscarArticulo($nombre){
   return $articulo;
 }
 
-function buscarArticulos($nombre){
+function buscarCantidadArticuloPorId($id){
+  $sql="SELECT Cantidad FROM Articulo WHERE Id = $id";
+  $result = mysql_query($sql);
+  $row = mysql_fetch_assoc($result);
+  $articulo = new Articulo();
+  $articulo->updateDatos($row);
+  return $articulo;
+}
+
+function buscarArticulosPorNombre($nombre){
   $sql="SELECT Nombre FROM Articulo WHERE Nombre LIKE $nombre";
   $result = mysql_query($sql);
   while($row = mysql_fetch_assoc($result)){
@@ -39,4 +48,14 @@ function buscarArticulos($nombre){
   return $articulos;
 }
 
+function buscarArticulos(){
+  $sql="SELECT * FROM Articulo";
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $articulo = new Articulo();
+    $articulo->updateDatos($row);
+    $articulos[]=$articulo;
+  }
+  return $articulos;
+}
 ?>

@@ -3,7 +3,7 @@ include_once('clases/Articulo.php');
 include_once('db/searchs.php');
 $texto = $_REQUEST['nombre'];
 $sugerencias = array();
-$articulos=buscarArticulos($texto);
+$articulos=buscarArticulosPorNombre($texto);
 $size=count($articulos);
 for($i=0;$i<$size;$i++){
     $sugerencias[] = $articulos[$i]->getNombre();

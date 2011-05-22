@@ -42,4 +42,19 @@ function getM($correctHora){
   return($m);
 }
 
+function countPage($size){
+  $pages=1;
+  $size-=10;
+  if($size<=0){
+    return $pages;
+  }
+  for($i=11;$i<=$size;$i++){
+    if(($i-1)%10==0){
+      $pages++;
+    }
+  }
+  return $pages+1;
+}
+  
+
 ?>

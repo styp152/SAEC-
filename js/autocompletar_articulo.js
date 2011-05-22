@@ -121,3 +121,4 @@ function borraLista() {
 window.onload = function() {
   document.getElementById("nombre").onkeyup = autocompleta;
 }
+
