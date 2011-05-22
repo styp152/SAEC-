@@ -1,8 +1,9 @@
 <?php
-include_once('libreria.php');
+include('libreria.php');
+include('db/inserts.php');
+require_once('clases/Articulo.php');
 conectarDB();
-$nombre=$_REQUEST['nombre'];
-$cantidad=$_REQUEST['cantidad'];
-$precio=$_REQUEST['precio'];
-$descripcion=$_REQUEST['descripcion'];
+$articulo= new Articulo();
+$articulo->updateDatos($_REQUEST);
+insertarArticulo($articulo);
 ?>

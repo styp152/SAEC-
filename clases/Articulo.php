@@ -1,10 +1,10 @@
 <?php
 class Articulo{
-	private $idArticulo;
-	private $nombre;
-	private $precio;
-	private $descripcion;
-	private $cantidad;
+	var $idArticulo;
+	var $nombre;
+	var $precio;
+	var $descripcion;
+	var $cantidad;
 
   function __construct(){}
   
