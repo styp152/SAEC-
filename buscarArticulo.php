@@ -10,7 +10,7 @@ include("menu.html");
     <fieldset id="articulo" >
       <legend align="center">Buscar Articulo</legend>
       <br />
-      <label for="nombre">Nombre: </label><input type="text" id="nombre" name="nombre" onfocus="limpiar(this);" size="21" autocomplete="off" />
+      <label for="nombre">Nombre: </label><input type="text" id="nombre" name="nombre" autocomplete="off" onfocus="limpiar(this);" size="21" />
       <div id="sugerencias" class="autocomplete"></div>
       <br /><br />
       <input type="submit" value="Buscar" />

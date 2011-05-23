@@ -7,7 +7,7 @@ conectarDB();
 $size=$_REQUEST['size'];
 for($i=0;$i<$size;$i++){
   if(isset($_REQUEST['c'.$i])){
-    $cantidades[$i]=array($i+1,(int)$_REQUEST['c'.$i]);
+    $cantidades[$i]=array($_REQUEST['i'.$i],(int)$_REQUEST['c'.$i]);
   }
 }
 foreach($cantidades as $cantidad){

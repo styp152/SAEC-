@@ -27,6 +27,7 @@ $n_div = countPage($size);
     <?php for($j=($i*10);$j<($i+1)*10;$j++):?>
       <tr>
         <td><?php echo $articulos[$j]->getId(); ?></td>
+        <input type="hidden" value="<?php echo $articulos[$j]->getId();?>" name="<?php echo 'i'.$j; ?>" />
         <td><?php echo $articulos[$j]->getNombre(); ?></td>
         <td><?php echo $articulos[$j]->getDescripcion(); ?></td>
         <td class="scantidad" ><?php echo $articulos[$j]->getCantidad(); ?>+

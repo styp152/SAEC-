@@ -20,7 +20,7 @@ function buscarUltimosArticulos($limite){
 }
 
 function buscarArticulo($nombre){
-  $sql="SELECT * FROM Articulo WHERE Nombre = $nombre";
+  $sql="SELECT * FROM Articulo WHERE Nombre = '$nombre'";
   $result = mysql_query($sql);
   $row = mysql_fetch_assoc($result);
   $articulo = new Articulo();
@@ -38,7 +38,7 @@ function buscarCantidadArticuloPorId($id){
 }
 
 function buscarArticulosPorNombre($nombre){
-  $sql="SELECT Nombre FROM Articulo WHERE Nombre LIKE $nombre";
+  $sql="SELECT Nombre FROM Articulo WHERE Nombre LIKE '%".$nombre."%' ORDER BY Nombre LIMIT 10";
   $result = mysql_query($sql);
   while($row = mysql_fetch_assoc($result)){
     $articulo = new Articulo();

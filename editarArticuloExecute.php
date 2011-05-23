@@ -1,10 +1,9 @@
 <?php
-    // TODO Conectar a la Base de datos
-
-    $nombre=$_REQUEST['nombre'];
-
-    // TODO hacer el procesamiento, buscar el articulo
-
-    include('editarArticuloShow.php');
-
+include('libreria.php');
+include_once('clases/Articulo.php');
+include_once('db/searchs.php');
+conectarDB();
+$nombre=$_REQUEST['nombre'];
+$articulo=buscarArticulo($nombre);
+include('editarArticuloShow.php');
 ?>

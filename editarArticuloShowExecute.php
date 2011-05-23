@@ -1,12 +1,13 @@
 <?php
-    // TODO Conectar a la Base de datos
-
-    $codigo=$_REQUEST['codigo'];
-    $nombre=$_REQUEST['nombre'];
-    $cantidad=$_REQUEST['cantidad'];
-    $precio=$_REQUEST['precio'];
-    $descripcion=$_REQUEST['descripcion'];
-
-    // TODO hacer el procesamiento, actualizar el articulo
-
+include('libreria.php');
+include('db/updates.php');
+require_once('clases/Articulo.php');
+conectarDB();
+$articulo= new Articulo();
+$articulo->updateDatos($_REQUEST);
+actualizarArticulo($articulo);
 ?>
+<script type="text/javascript">
+alert('Ya se Actualizo con Exito el Articulo');
+location.href='inventario.php';
+</script>
