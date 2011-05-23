@@ -5,7 +5,7 @@ include("menu.html");
 <h2>Administracion</h2>
 <!-- TODO Buscar los articulos agotados -->
 <!-- TODO Buscar las ventas en la ultima semana -->
-<h3>Productos Agotados</h3>
+Productos Agotados
 <table>
   <tr class="first">
     <td>Nombre </td>
@@ -29,7 +29,7 @@ include("menu.html");
   </tr>
 </table>
 <br />
-<h3>Produccion de la Ultima Semana</h3>
+Produccion de la Ultima Semana
 <table>
   <tr class="first">
     <td>Fecha </td>
