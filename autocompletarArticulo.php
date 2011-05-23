@@ -1,5 +1,5 @@
 <?php
-header('Content-type:text/html;charset=iso-8859-1');
+header('Content-type:text/html;charset=utf8');
 include('libreria.php');
 include_once('clases/Articulo.php');
 include_once('db/searchs.php');

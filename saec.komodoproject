@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Komodo Project File - DO NOT EDIT -->
 <project id="8e9421be-d367-4a06-b1a7-fc59073f8761" kpf_version="5" name="saec.komodoproject">
+<file id="00415bb9-b805-4ff2-9376-753856c50bba" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearPresupuesto.php" url="crearPresupuesto.php">
+</file>
 <livefolder id="05535e73-e7b9-4da5-97ef-db23535cbc76" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="css" url="css">
 </livefolder>
 <file id="05aca7a2-380f-4784-893d-0f28fa3ff136" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="loginExecute.php" url="loginExecute.php">
@@ -13,23 +15,35 @@
 </file>
 <livefolder id="0dd503b2-ce1b-45bf-b793-758ad8d40a59" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="calendario" url="calendario">
 </livefolder>
+<file id="102e33cf-a0f1-4f02-a3c2-43418666d958" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="libreria.php" url="libreria.php">
+</file>
 <file id="1236054c-bad3-44ce-a9ca-59ea6ffb163e" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="añadirEmpleadoExecute.php" url="añadirEmpleadoExecute.php">
 </file>
+<file id="1b114cb7-3aad-4a46-acbd-482557955f02" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearPresupuestoShow.php" url="crearPresupuestoShow.php">
+</file>
+<livefolder id="1e3a07e2-7153-4480-9c99-99ab34487b2e" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="clases" url="clases">
+</livefolder>
 <file id="208dca07-899c-404c-918b-695e824007cb" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="buscarArticuloShow.php" url="buscarArticuloShow.php">
 </file>
 <file id="28750856-43e2-4fad-adfa-ec6eec401408" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarArticuloShowExecute.php" url="editarArticuloShowExecute.php">
 </file>
 <file id="2bde35d4-76ee-41cd-b50f-6c9777025ce8" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarEmpleadoShow.php" url="editarEmpleadoShow.php">
 </file>
+<file id="39e156db-45cd-47d9-955b-cbfdd266f10d" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearPresupuestoExecute.php" url="crearPresupuestoExecute.php">
+</file>
 <file id="3c3478c9-e237-45e3-9828-f60cb4c617a1" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="facturacion.php" url="facturacion.php">
 </file>
 <file id="4a5022cd-161e-41fe-8f92-2b442dc103c1" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menu.html" url="menu.html">
+</file>
+<file id="4c1c2689-0463-4bed-a137-53e154858773" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearPresupuestoForm.php" url="crearPresupuestoForm.php">
 </file>
 <file id="4d1e848f-f795-4af4-be6c-7d270e544b8d" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearFacturaShow.php" url="crearFacturaShow.php">
 </file>
 <file id="4edee834-048d-4ba5-8ea6-3c601a601164" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="listarArticulos.php" url="listarArticulos.php">
 </file>
 <file id="5dc17aa0-2bc3-4f3a-a81d-20e31473f604" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearFacturaExecute.php" url="crearFacturaExecute.php">
+</file>
+<file id="61a4f87c-babd-4191-b555-007abc88b864" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="saec.komodoproject" url="saec.komodoproject">
 </file>
 <livefolder id="67e3984e-b092-44da-8576-16b2af2d917c" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="images" url="images">
 </livefolder>
@@ -61,6 +75,8 @@
 </file>
 <file id="a2da8bd5-860e-457c-a1b7-afcac9ccbab2" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="buscarArticulo.php" url="buscarArticulo.php">
 </file>
+<file id="a40470b5-b7ad-4360-b537-fbf6607dc455" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearPresupuestoFormExecute.php" url="crearPresupuestoFormExecute.php">
+</file>
 <file id="aa5e28cd-92af-4a85-bb35-fc02967f4d58" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuAdministracion.html" url="menuAdministracion.html">
 </file>
 <file id="ac0193fa-ef8b-481b-832b-06ed8ed0ba7f" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="añadirArticuloExecute.php" url="añadirArticuloExecute.php">
@@ -91,11 +107,19 @@
 </file>
 <file id="de12d561-a9d7-4c7d-b6fd-7f960e83c634" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="eliminarEmpleadoShowExecute.php" url="eliminarEmpleadoShowExecute.php">
 </file>
+<file id="e012fc79-d0bb-4cae-8508-22838697877e" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="actualizarListaArticulosExecute.php" url="actualizarListaArticulosExecute.php">
+</file>
+<livefolder id="e0b89544-0a24-49bd-b756-c053c8a45064" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="db" url="db">
+</livefolder>
 <file id="eac8e050-151f-4615-9dd3-bf04b13385dd" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarArticuloShow.php" url="editarArticuloShow.php">
 </file>
 <file id="ec778f05-5d16-444c-b80e-6875f357b665" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="inventario.php" url="inventario.php">
 </file>
+<file id="ed302850-4d2f-4a82-b2bb-cf0cf51f1b7f" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="buscarPresupuesto.php" url="buscarPresupuesto.php">
+</file>
 <file id="f0a36951-9eaa-4cad-80fe-b890ea970d99" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="eliminarArticulo.php" url="eliminarArticulo.php">
+</file>
+<file id="f1762fbb-1b46-4c06-933b-e824bb6fff12" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="colaproduccion.php" url="colaproduccion.php">
 </file>
 <file id="f1d459e3-6382-4387-9bd2-23194927c042" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="login.html" url="login.html">
 </file>

@@ -62,3 +62,15 @@ function limpiarT(campo){
 function ir(direccion){
   window.location=direccion;
 }
+
+function validarEspaciosBlancos(campo){
+  band1=true;
+  for ( i = 0; i < campo.value.length; i++ ) {
+    if ( campo.value.charAt(i) != " " ) {
+      band1=false;
+    }
+  }
+  if(band1){
+    campo.value="";
+  }
+}
