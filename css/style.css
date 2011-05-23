@@ -194,7 +194,7 @@ fieldset{
 }
 
 #buscar_cedula, #buscar_codigo, #buscar_fecha, #btn {display:none;}
-#botones {
+#registro, #botones {
     text-align:center;
 }
 .btn{
