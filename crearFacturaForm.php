@@ -1,6 +1,7 @@
 <?php
-include("head.html");
-include("menu.php");
+include('session.php');
+include('head.html');
+include('menu.php');
 ?>
 <link href="css/calendario.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/calendar.js"></script>
@@ -74,8 +75,8 @@ include("menu.php");
 </div>
 </div>
 <?php
-include("menuFacturacion.html");
-include("foot.html");
+include('menuFacturacion.html');
+include('foot.html');
 // debo poder incluir productos, con sus cantidades, y mostrar el precio unitario de ese producto, fecha de entrega, y un textarea, para Detalles de Diseño y Produccion
 ?>
 

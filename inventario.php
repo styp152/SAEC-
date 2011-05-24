@@ -1,4 +1,5 @@
 <?php
+include('session.php');
 include('head.html');
 include('menu.php');
 require_once('clases/Articulo.php');

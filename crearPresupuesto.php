@@ -1,6 +1,7 @@
 <?php
-include("head.html");
-include("menu.php");
+include('session.php');
+include('head.html');
+include('menu.php');
 ?>
 <script type="text/javascript" defer="defer" src="js/validacion.js" ></script>
 <h2>Crear Factura</h2>
@@ -19,6 +20,6 @@ include("menu.php");
 </div>
 </div>
 <?php
-include("menuFacturacion.html");
-include("foot.html");
+include('menuFacturacion.html');
+include('foot.html');
 ?>
