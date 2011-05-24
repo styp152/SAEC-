@@ -41,7 +41,7 @@ function validarVacio(formulario){
   band= true;
   for(i=0;i<formulario.length;i++){
     if(formulario.elements[i].value=="" || formulario.elements[i].value==0  ){
-      if(formulario.elements[i].id=="_contrasena_nueva" || formulario.elements[i].id=="_confirmar_contrasena"){
+      if(formulario.elements[i].id=="_ClaveNueva" || formulario.elements[i].id=="_ClaveConfirmar"){
         continue;
       }
       document.getElementById(formulario.elements[i].name).style.background='#FF4800';

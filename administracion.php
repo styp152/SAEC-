@@ -70,6 +70,6 @@ Produccion de la Ultima Semana
 </table>
 </div>
 <?php
-include("menuAdministracion.html");
+include("menuAdministracion.php");
 include("foot.html");
 ?>
