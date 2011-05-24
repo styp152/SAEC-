@@ -13,10 +13,15 @@ if($vendedor->getCedula()==$vendedorDB->getCedula() and $vendedor->getClave()==$
   $_SESSION["vendedor"]= $vendedorDB;
   //$_SESSION["cedula"] = $person->cedula;
   //$_SESSION["Clave"] = $person->clave;
-  $_SESSION["Nivel"] = 2;// TODO completar la busqueda y la asignacion correcta
+<<<<<<< HEAD
+  $_SESSION["Nivel"] = $vendedorDB->getNivel();
+  //header("location:index.php");
+=======
+  $_SESSION["Nivel"] = 1;// TODO completar la busqueda y la asignacion correcta
   header("location:index.php");
+>>>>>>> origin/master
 }
 else{
-  header('location:index.php');
+  //header('location:index.php');
 }
 ?>
