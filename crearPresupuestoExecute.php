@@ -5,6 +5,7 @@ require_once('clases/Cliente.php');
 conectarDB();
 $cliente = new Cliente();
 $cliente->updateDatos($_REQUEST);
-// TODO hacer el procesamiento, buscar el cliente
+$cedula=$cliente->getCedula();
+$cliente=buscarClientePorCedula($cliente);
 include('crearPresupuestoForm.php');
 ?>

@@ -14,4 +14,11 @@ function insertarVendedor($vendedor){
   return @mysql_query($sql) or die('Error Al Insertar el Empleado');
 }
 
+function insertarCliente($cliente){
+  $sql='INSERT INTO Cliente (Cedula, Nacionalidad, Nombre, Telefono, Direccion, Correo) VALUES
+  ('.$cliente->getCedula().',\''.$cliente->getNacionalidad().'\',\''.$cliente->getNombre().'\',\''.
+  $cliente->getTelefono().'\',\''.$cliente->getDireccion().'\', \''.$cliente->getCorreo().'\')';
+  return @mysql_query($sql) or die('Error Al Insertar el Cliente');
+}
+
 ?>

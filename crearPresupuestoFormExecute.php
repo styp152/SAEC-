@@ -1,12 +1,21 @@
 <?php
-    
-    // TODO Conectar a la Base de datos
-
-    $cedula = $_REQUEST['cedula'];
-    $nombre = $_REQUEST['nombre'];
-    $direccion = $_REQUEST['direccion'];
-    $correo = $_REQUEST['correo'];
-    $telefono = $_REQUEST['tlf_codigo'] + $_REQUEST['tlf_numero'];;
+include('libreria.php');
+include('db/inserts.php');
+include('db/searchs.php');
+include('db/updates.php');
+require_once('clases/Cliente.php');
+//require_once('clases/Factura.php');
+conectarDB();
+$cliente = new Cliente();
+$cliente->updateDatos($_REQUEST);
+$clienteB = $cliente;
+$clienteB = buscarClientePorCedula($clienteB);
+if($clienteB->getCedula()==$cliente->getCedula()){
+    //actualizarCliente($cliente);
+}
+else{
+    insertarCliente($cliente);
+}
 
     $fecha = $_REQUEST['fecha'];
     $detalles = $_REQUEST['detalles'];

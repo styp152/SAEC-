@@ -10,21 +10,24 @@ include('menu.php');
 <script type="text/javascript" src="js/validacion.js"></script>
 <h2>Crear Factura</h2>
 <div id="crear">
-  <form name="form" action="crearFacturaFormExecute.php" method="post" title="Permite Crear una Factura" onsubmit="return validarVacio(this);">
+  <form name="form" action="crearFacturaFormExecute.php" method="post"
+      title="Permite Crear una Factura" onsubmit="return validarVacio(this);">
     <fieldset id="factura" >
       <legend align="center">Datos del Cliente</legend>
       <br />
-      <!--<label for="fecha">Fecha: </label><input type="text" id="fecha" name="fecha" onfocus="limpiar(this);" size="7" value="<?php echo @date("d-m-Y"); ?>" readonly="true" /> Amor me parece innecesario este campo xq este lo toma del sistema -->
-      <label for="nombre">Nombre: </label><input type="text" id="nombre" name="nombre" onfocus="limpiar(this);" size="40" value="Pedro Perez Alfonso" />
+      <label for="Nombre">Nombre: </label><input type="text" id="Nombre"
+        name="Nombre" onfocus="limpiar(this);" size="40" value="<?php echo $cliente->getNombre();?>" />
       <br /><br />
-      <label for="cedula">Cedula: </label><input type="text" id="cedula" name="cedula" onfocus="limpiar(this);" size="9" value="123456789" readonly="true" />
-      <label for="telefono">Telefono: </label>
-      <input type="text" id="tlf_codigo" class="tlf_codigo" name="tlf_codigo" onfocus="limpiar(this);" size="3" value="0274" /> -
-      <input type="text" id="tlf_numero" name="tlf_numero" onfocus="limpiar(this);" size="7" value="2442424" />
+      <label for="Cedula">Cedula: </label><input type="text" id="Cedula" name="Cedula"
+        onfocus="limpiar(this);" size="9" value="<?php echo $cedula;?>" readonly="true" />
+      <label for="Telefono">Telefono: </label><input type="text" id="Telefono"
+        name="Telefono" onfocus="limpiar(this);" size="7" value="<?php echo $cliente->getTelefono();?>" />
       <br /><br />
-      <label for="direccion">Direccion: </label><input type="text" id="direccion" name="direccion" onfocus="limpiar(this);" size="40" value="Av 4 con calle 18. Casa # 100. Centro" />
+      <label for="Direccion">Direccion: </label><input type="text" id="Direccion"
+        name="Direccion" onfocus="limpiar(this);" size="40" value="<?php echo $cliente->getDireccion();?>" />
       <br /><br />
-      <label for="correo">Email: </label><input type="text" id="correo" name="correo" onfocus="limpiar(this);" size="40" value="pedroperezalfonso@hotmail.com" />
+      <label for="Correo">Email: </label><input type="text" id="Correo" name="Correo"
+        onfocus="limpiar(this);" size="40" value="<?php echo $cliente->getCorreo();?>" />
       <br />
       <br />
     </fieldset>
