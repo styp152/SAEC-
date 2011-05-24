@@ -1,15 +1,16 @@
+<head>  
+  <meta http-equiv="Content-Language" content="Español" /> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <title>Estudio Creativo Mérida</title> 
+</head>
 <?php
-
 include('libreria.php');
 include('db/inserts.php');
 include('db/searchs.php');
 require_once('clases/Vendedor.php');
-
 conectarDB();
-
 $vendedor= new Vendedor();
 $vendedor->updateDatos($_REQUEST);
-
 if ($vendedor->getNombre()=='') {
   throw new Exception('Datos del Empleado Vacios');
 }
@@ -17,7 +18,7 @@ if ($_REQUEST['Clave'] != $_REQUEST['ClaveConfirmacion']){
     ?>
     <script type="text/javascript">
     alert('Las Contraseñas no son iguales');
-    location.href='añadirEmpleado.php';
+    location.href="añadirEmpleado.php";
     </script>    
     <?php
 }
