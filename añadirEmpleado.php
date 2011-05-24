@@ -19,7 +19,7 @@ include("menu.php");
       <label for="contrasena">Confirmar Contraseña: </label><input type="password" id="ClaveConfirmacion" name="ClaveConfirmacion" onfocus="limpiar(this);" onchange="validarClaves();" size="9" />
       <br /><br />
       <label for="cargo">Cargo que desempeña: </label><input type="text" id="Cargo" name="Cargo" onfocus="limpiar(this);" size="20" />
-      <label for="nivel">Nivel: </label><select name="Nivel" id="Nivel"><option value="1">Administrador</option><option value="2" selected="selected">Empleado</option></select>
+      <label for="nivel">Nivel: </label><select name="Nivel" id="Nivel"><option value="2">Administrador</option><option value="1" selected="selected">Empleado</option></select>
       <br /><br />
       <input type="submit" value="Ingresar" />
       <input type="button" value="Cancelar" onclick="ir('administracion.php');" />
