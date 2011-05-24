@@ -10,7 +10,7 @@ function insertarArticulo($articulo){
 function insertarVendedor($vendedor){
   $sql='INSERT INTO Vendedor (Cedula, Nombre, Apellido, Cargo, Nivel, Clave) VALUES
   ('.$vendedor->getCedula().',\''.$vendedor->getNombre().'\',\''.$vendedor->getApellido().'\',\''.
-  $vendedor->getCargo().'\',\''.$vendedor->getNivel().'\', AES_ENCRYPT(\'text\',\''.$vendedor->getClave().'\'))';
+  $vendedor->getCargo().'\',\''.$vendedor->getNivel().'\', AES_ENCRYPT(\''.$vendedor->getClave().'\',\'Password\'))';
   return @mysql_query($sql) or die('Error Al Insertar el Empleado');
 }
 

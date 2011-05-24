@@ -12,7 +12,7 @@ if($vendedor->getCedula()=='17129464' and $vendedor->getClave()=='9464'){
   $_SESSION["vendedor"]= $vendedor;
   //$_SESSION["cedula"] = $person->cedula;
   //$_SESSION["Clave"] = $person->clave;
-  $_SESSION["Nivel"] = 2;// TODO completar la busqueda y la asignacion correcta
+  $_SESSION["Nivel"] = 1;// TODO completar la busqueda y la asignacion correcta
   header("location:index.php");
 }
 else{

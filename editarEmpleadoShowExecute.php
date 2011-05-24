@@ -1,6 +1,7 @@
 <?php
 include('libreria.php');
 include('db/updates.php');
+include('db/searchs.php');
 require_once('clases/Vendedor.php');
 
 conectarDB();
@@ -9,7 +10,16 @@ $vendedor= new Vendedor();
 $vendedor->updateDatos($_REQUEST);
 
 if($_SESSION["Nivel"] != 2){
-    if($_REQUEST['Clave'] != $_REQUEST['ClaveActual']){
+    $cedula = $_REQUEST['Cedula'];
+    $vendedorExistente = new Vendedor();
+    $vendedorExistente = buscarVendedorPorCedulaClaveSinCifrar($cedula);
+    $claveActual = $_REQUEST['ClaveActual'];
+    settype($claveActual, "string");
+    
+    echo $vendedorExistente->getClave()." y la actual es ".$claveActual;
+    
+    
+    if($vendedorExistente->getClave() == $claveActual){
         ?>
         <script type="text/javascript">
             alert('Contraseña inválida'); 
@@ -28,12 +38,12 @@ if($_SESSION["Nivel"] != 2){
     if($_REQUEST['_ClaveNueva'] != ''){
         $vendedor->setClave($_REQUEST['_ClaveNueva']);
     }
-    actualizarVendedorSinCifrar($vendedor);    
+    actualizarVendedorSinCifrar($vendedor);
 }else{
     actualizarVendedorCifrado($vendedor);    
 }
 ?>
 <script type="text/javascript">
-alert('Ya se Actualizo con Exito el Empleado');
-location.href='administracion.php';
+//alert('Ya se Actualizo con Exito el Empleado');
+//location.href='administracion.php';
 </script>
