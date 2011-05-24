@@ -8,6 +8,14 @@ include('db/searchs.php');
 conectarDB();
 $articulos=buscarArticulos();
 $size= count($articulos);
+if($size<1){
+?>
+<script type="text/javascript">
+alert('No existen Articulos Registrados');
+location.href='inventario.php';
+</script>
+<?php
+}
 $n_div = countPage($size);
 ?>
 <script type="text/javascript" defer="defer" src="js/validacion.js" ></script>
