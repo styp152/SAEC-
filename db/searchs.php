@@ -81,6 +81,7 @@ function buscarClientePorCedula($cliente){
   $sql='SELECT * FROM Cliente WHERE Cedula = '.$cliente->getCedula().' LIMIT 1';
   $result = mysql_query($sql);
   $row = mysql_fetch_assoc($result);
+  $cliente= new Cliente();
   $cliente->updateDatos($row);
   return $cliente;
 }

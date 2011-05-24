@@ -4,7 +4,7 @@ include('head.html');
 include('menu.php');
 ?>
 <script type="text/javascript" defer="defer" src="js/validacion.js" ></script>
-<h2>Crear Factura</h2>
+<h2>Crear Presupuesto</h2>
 <div id="crear">
   <form name="form" action="crearPresupuestoExecute.php" method="post" title="Permite Crear una Factura" onsubmit="return validarVacio(this);">
     <fieldset id="factura" >

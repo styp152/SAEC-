@@ -6,12 +6,12 @@ include('db/updates.php');
 require_once('clases/Cliente.php');
 //require_once('clases/Factura.php');
 conectarDB();
-$$cliente = new Cliente();
+$cliente = new Cliente();
 $cliente->updateDatos($_REQUEST);
 $clienteB = $cliente;
 $clienteB = buscarClientePorCedula($clienteB);
 if($clienteB->getCedula()==$cliente->getCedula()){
-    //actualizarCliente($cliente);
+    actualizarCliente($cliente);
 }
 else{
     insertarCliente($cliente);
