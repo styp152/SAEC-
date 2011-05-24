@@ -1,4 +1,5 @@
 <?php
+include('session.php');
 include("head.html");
 include("menu.php");
 // TODO Conexion a la BD para consultas de empleados

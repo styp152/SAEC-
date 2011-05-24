@@ -1,6 +1,7 @@
 <?php
-include("head.html");
-include("menu.php");
+include('session.php');
+include('head.html');
+include('menu.php');
 ?>
 <script type="text/javascript" defer="defer" src="js/validacion.js" ></script>
 <h2>Registro de Asistencia</h2>
@@ -20,6 +21,6 @@ include("menu.php");
 </div>
 </div>
 <?php
-include("menuAdministracion.html");
-include("foot.html");
+include('menuAdministracion.html');
+include('foot.html');
 ?>

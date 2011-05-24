@@ -1,6 +1,7 @@
 <?php
-include("head.html");
-include("menu.php");
+include('session.php');
+include('head.html');
+include('menu.php');
 ?>
 <script type="text/javascript" defer="defer" src="js/validacion.js" ></script>
 <script type="text/javascript" src="js/autocompletar_articulo.js"></script>
@@ -21,6 +22,6 @@ include("menu.php");
 </div>
 </div>
 <?php
-include("menuInventario.html");
-include("foot.html");
+include('menuInventario.html');
+include('foot.html');
 ?>

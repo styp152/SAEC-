@@ -5,9 +5,11 @@ include('head.html');
 include('menu.php');
 ?>
 
-<?php $log=$_SESSION['log']; if($log == "1"): ?>
+<?php $log=$_SESSION['log']; if($log != "1"): ?>
   <script type="text/javascript" defer="defer" src="js/validacion.js" ></script>
-  <?php include("login.html"); ?>
+  <div id="registro">
+    <?php include("login.html"); ?>
+  </div>
 <?php else: ?>
   <h2>Bienvenido a la Intranet del Estudio Creativo Mérida</h2>
 <?php endif; ?>

@@ -1,6 +1,7 @@
 <?php
-include("head.html");
-include("menu.php");
+include('session.php');
+include('head.html');
+include('menu.php');
 ?>
 <h2>Facturacion</h2>
 <!-- TODO consulta a la base de datos para buscar las facturas del dia -->
@@ -32,6 +33,6 @@ include("menu.php");
 Total Vendido del Dia: 1290 Bsf
 </div>
 <?php
-include("menuFacturacion.html");
-include("foot.html");
+include('menuFacturacion.html');
+include('foot.html');
 ?>
