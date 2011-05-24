@@ -68,6 +68,15 @@ function buscarVendedorPorCedula($cedula){
   return $vendedor;
 }
 
+function buscarVendedorPorCedulaClaveSinCifrar($cedula){
+  $sql="SELECT Cedula,Nombre,Apellido,Cargo,Nivel,AES_DECRYPT(Clave,'Password') as Clave FROM Vendedor WHERE Cedula = $cedula LIMIT 1";
+  $result = mysql_query($sql);
+  $row = mysql_fetch_assoc($result);
+  $vendedor = new Vendedor();
+  $vendedor->updateDatos($row);
+  return $vendedor;
+}
+
 function buscarClientePorCedula($cliente){
   $sql='SELECT * FROM Cliente WHERE Cedula = '.$cliente->getCedula().' LIMIT 1';
   $result = mysql_query($sql);
