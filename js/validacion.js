@@ -74,3 +74,12 @@ function validarEspaciosBlancos(campo){
     campo.value="";
   }
 }
+
+function validarClaves(){
+  if(document.getElementById('Clave').value==document.getElementById('ClaveConfirmacion').value){
+    document.getElementById('ClaveConfirmacion').style.background='#99FF99';
+  }
+  else{
+    document.getElementById('ClaveConfirmacion').style.background='#FF0000';
+  }
+}

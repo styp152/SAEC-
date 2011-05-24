@@ -58,4 +58,13 @@ function buscarArticulos(){
   }
   return $articulos;
 }
+
+function buscarVendedorPorCedula($cedula){
+  $sql="SELECT * FROM Vendedor WHERE Cedula = $cedula LIMIT 1";
+  $result = mysql_query($sql);
+  $row = mysql_fetch_assoc($result);
+  $vendedor = new Vendedor();
+  $vendedor->updateDatos($row);
+  return $vendedor;
+}
 ?>
