@@ -1,6 +1,6 @@
 <?php
 include("head.html");
-include("menu.html");
+include("menu.php");
 ?>
 <h2>Factura</h2>
 <div id="factura">

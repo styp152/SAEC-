@@ -1,6 +1,6 @@
 <?php
 include("head.html");
-include("menu.html");
+include("menu.php");
 // TODO Conexion a la BD para consultas de empleados
 // TODO Habilitar Sesiones
 ?>

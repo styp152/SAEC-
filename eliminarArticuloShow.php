@@ -1,6 +1,6 @@
 <?php
 include("head.html");
-include("menu.html");
+include("menu.php");
 ?>
 <script type="text/javascript" defer="defer" src="js/validacion.js" ></script>
 <h2>Eliminar Articulo del Inventario</h2>

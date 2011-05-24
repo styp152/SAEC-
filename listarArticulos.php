@@ -1,6 +1,6 @@
 <?php
 include('head.html');
-include('menu.html');
+include('menu.php');
 include('libreria.php');
 require_once('clases/Articulo.php');
 include('db/searchs.php');

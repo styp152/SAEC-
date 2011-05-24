@@ -29,6 +29,8 @@
 </file>
 <file id="2bde35d4-76ee-41cd-b50f-6c9777025ce8" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarEmpleadoShow.php" url="editarEmpleadoShow.php">
 </file>
+<file id="3050e4fd-8bbd-4865-a556-2169c3000170" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="registroAsistenciaEmpleadoExecute.php" url="registroAsistenciaEmpleadoExecute.php">
+</file>
 <file id="39e156db-45cd-47d9-955b-cbfdd266f10d" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearPresupuestoExecute.php" url="crearPresupuestoExecute.php">
 </file>
 <file id="3c3478c9-e237-45e3-9828-f60cb4c617a1" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="facturacion.php" url="facturacion.php">
@@ -69,6 +71,8 @@
 </file>
 <file id="8c5335a0-fc5a-42e3-bba7-8aec8425d61a" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="actualizarListaArticulos.php" url="actualizarListaArticulos.php">
 </file>
+<file id="8e188a0a-d09d-4dcd-a7f7-eab90325358a" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="index.htm" url="index.htm">
+</file>
 <livefolder id="9c114aca-cc77-48d8-b99f-b324a6ae51e2" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="js" url="js">
 </livefolder>
 <file id="a01487a1-a1b4-4270-a2f6-c25019d9bace" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarEmpleadoExecute.php" url="editarEmpleadoExecute.php">
@@ -81,7 +85,11 @@
 </file>
 <file id="ac0193fa-ef8b-481b-832b-06ed8ed0ba7f" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="añadirArticuloExecute.php" url="añadirArticuloExecute.php">
 </file>
+<file id="af34de76-58cb-4b47-9d0f-e62e84afb50b" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="session.php" url="session.php">
+</file>
 <file id="b4753e97-25d4-48c4-b4e3-a2edc23c9bb8" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="README" url="README">
+</file>
+<file id="bdb84a3d-614b-4c1f-b82b-e28359af95e1" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="registroAsistenciaEmpleado.php" url="registroAsistenciaEmpleado.php">
 </file>
 <file id="be13920b-565d-44a9-beb8-3e54bc16e793" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="eliminarEmpleadoExecute.php" url="eliminarEmpleadoExecute.php">
 </file>
@@ -97,11 +105,15 @@
 </file>
 <file id="c8d989ff-d630-42c0-9151-dc6388375198" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearFactura.php" url="crearFactura.php">
 </file>
+<file id="cb80e552-ecc9-4c64-b4f1-39cc40a1e489" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="cerrarSession.php" url="cerrarSession.php">
+</file>
 <file id="cca7ea01-2d5e-4f7b-ac2a-af4cefebdfad" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="administracion.php" url="administracion.php">
 </file>
 <file id="ceea79f2-3d45-48dd-88c0-be53989f274c" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="buscarFactura.php" url="buscarFactura.php">
 </file>
 <file id="cfbeae77-aeb1-44a3-b9c3-5ed05b1b0d26" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="crearFacturaFormExecute.php" url="crearFacturaFormExecute.php">
+</file>
+<file id="d757caec-bbf0-4799-bad5-e35cc3210f9d" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="asistenciaEmpleado.php" url="asistenciaEmpleado.php">
 </file>
 <file id="dcb603f6-573b-4368-a4ec-cfbad3d90726" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="index2.php" url="index2.php">
 </file>

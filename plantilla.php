@@ -1,6 +1,6 @@
 <?php
-include("head.html");
-include("menu.html");
+include('head.html');
+include('menu.php');
 ?>
 <h1>Bienvenido al Sistema Administrativo</h1>
 <h2>Estudio Creativo Mérida</h2>
@@ -8,5 +8,5 @@ include("menu.html");
 <!-- Incluir  un <div class="left"></div>-->
 <?php
 // Si no incluir: include("menu*******.html");
-include("foot.html");
+include('foot.html');
 ?>

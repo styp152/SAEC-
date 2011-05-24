@@ -1,6 +1,6 @@
 <?php
 include("head.html");
-include("menu.html");
+include("menu.php");
 ?>
 <link href="css/calendario.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/calendar.js"></script>

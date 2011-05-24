@@ -1,6 +1,6 @@
 <?php
 include("head.html");
-include("menu.html");
+include("menu.php");
 ?>
 <h2>Administracion</h2>
 <!-- TODO Buscar los articulos agotados -->

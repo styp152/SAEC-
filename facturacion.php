@@ -1,6 +1,6 @@
 <?php
 include("head.html");
-include("menu.html");
+include("menu.php");
 ?>
 <h2>Facturacion</h2>
 <!-- TODO consulta a la base de datos para buscar las facturas del dia -->
