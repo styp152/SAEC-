@@ -10,16 +10,37 @@ include('menu.php');
     <fieldset id="empleado" >
       <legend>Datos del Empleado</legend>
       <br />
-      <label for="cedula">Cedula: </label><input type="text" id="cedula" name="cedula" value="12345678" size="9" onfocus="limpiar(this);" onkeypress="return permite(event , 'num')" />
-      <label for="nombre">Nombre: </label><input type="text" id="nombre" name="nombre" value="Pedro Perez" size="27" onfocus="limpiar(this);"/>
+      <label for="cedula">Cedula: </label><input type="text" id="Cedula" name="Cedula" value="<?php echo $vendedor->getCedula();?>" size="9" onfocus="limpiar(this);" readonly="readonly" />
       <br />
-      <label for="contrasena_actual">Contraseña Actual:</label><input type="password" id="contrasena_actual" name="contrasena_actual" onfocus="limpiar(this);" size="9" />
+      <label for="nombre">Nombre: </label><input type="text" id="Nombre" name="Nombre" value="<?php echo $vendedor->getNombre();?>" size="15" onfocus="limpiar(this);"/>
+      <label for="nombre">Apellido: </label><input type="text" id="Apellido" name="Apellido" value="<?php echo $vendedor->getApellido();?>" size="15" onfocus="limpiar(this);"/>
       <br />
-      <?php //El id tiene un _ al empezar para indicar que no es campo oblicagorio ?>
-      <label for="contrasena_nueva">Contraseña Nueva:</label><input type="password" id="_contrasena_nueva" name="contrasena_nueva" onfocus="limpiar(this);" size="9" />
-      <label for="confirmar_contrasena"> Confirmar Contraseña:</label><input type="password" id="_confirmar_contrasena" name="confirmar_contrasena" onfocus="limpiar(this);" size="9" />
+      <!-- TODO: Esto no debe mostrarse a los administradores      -->
+      <?php if($_SESSION["Nivel"] != 2): ?>
+      <label for="clave_actual">Contraseña Actual:</label><input type="password" id="ClaveActual" name="ClaveActual" onfocus="limpiar(this);" size="9" />
       <br />
-      <label for="cargo">Cargo que desempeña: </label><input type="text" id="cargo" name="cargo" value="Vendedor" size="20" onfocus="limpiar(this);"/>
+      <!--El id tiene un _ al empezar para indicar que no es campo oblicagorio -->
+      <label for="clave_nueva">Contraseña Nueva:</label><input type="password" id="_ClaveNueva" name="_ClaveNueva" onfocus="limpiar(this);" size="9" />
+      <label for="clave_confirmar">Confirmar Contraseña:</label><input type="password" id="_ClaveConfirmar" name="_ClaveConfirmar" onfocus="limpiar(this);" size="9" />
+      <br />
+      <?php endif ?>
+      <label for="cargo">Cargo que desempeña: </label><input type="text" id="Cargo" name="Cargo" value="<?php echo $vendedor->getCargo();?>" size="20" onfocus="limpiar(this);"/>
+      <!-- TODO: Esto solo debe mostrarse a los empleados que son administradores      -->
+      <?php if($_SESSION["Nivel"] == 2): ?>
+      <label for="nivel">Nivel: </label>
+      <select name="Nivel" id="Nivel">
+        <?php if($vendedor->getNivel() == 2): ?>
+          <option value="2" selected="selected">Administrador</option>
+          <option value="1">Empleado</option>
+        <?php else: ?>
+          <option value="2">Administrador</option>
+          <option value="1" selected="selected">Empleado</option>
+        <?php endif ?>
+      </select>
+      <?php else: ?>
+        <input type="hidden" id="Nivel" name="Nivel" value="<?php echo $vendedor->getNivel(); ?>" />
+      <?php endif ?>
+      <input type="hidden" id="Clave" name="Clave" value="<?php echo $vendedor->getClave(); ?>" />
       <br /><br />
       <input type="submit" value="Actualizar" />
       <input type="button" value="Cancelar" onclick="ir('administracion.php');" />
@@ -29,6 +50,6 @@ include('menu.php');
 </div>
 </div>
 <?php
-include('menuAdministracion.html');
+include('menuAdministracion.php');
 include('foot.html');
 ?>

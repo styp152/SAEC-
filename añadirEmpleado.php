@@ -29,6 +29,6 @@ include("menu.php");
 </div>
 </div>
 <?php
-include('menuAdministracion.html');
+include('menuAdministracion.php');
 include('foot.html');
 ?>

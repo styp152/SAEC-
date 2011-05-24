@@ -12,6 +12,6 @@ alert('No se Encontro Articulo con ese Nombre');
 location.href='editarArticulo.php';
 </script>
 <?php
-}
+$_SESSION["Nivel"]=1;
 include('editarArticuloShow.php');
 ?>
