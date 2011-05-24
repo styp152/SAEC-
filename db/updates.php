@@ -26,4 +26,11 @@ function actualizarVendedorSinCifrar($vendedor){
   mysql_query($sql);
 }
 
+function actualizarCliente($cliente){
+  $sql='UPDATE Cliente SET Nacionalidad=\''.$cliente->getNacionalidad().'\', Nombre=\''.$cliente->getNombre().
+    '\', Telefono=\''.$cliente->getTelefono().'\', Direccion=\''.$cliente->getDireccion().
+    '\', Correo=\''.$cliente->getCorreo().'\' WHERE Cedula='.$cliente->getCedula();
+  return mysql_query($sql)or die("Error al Actualizar un Cliente");
+}
+
 ?>

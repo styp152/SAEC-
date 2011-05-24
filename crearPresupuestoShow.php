@@ -3,19 +3,25 @@ include('session.php');
 include('head.html');
 include('menu.php');
 ?>
-<h2>Factura</h2>
+<h2>Presupuesto</h2>
 <div id="factura">
     <fieldset id="factura" >
         <legend align="center">Datos del Cliente</legend>
         <br />
-        <label for="fecha" class="bold">Fecha: </label><label for="fecha_texto"><?php echo @date("d-m-Y"); ?></label>
-        <label for="cedula" class="bold">Cedula: </label><label for="cedula_texto">123456789</label>
-        <label for="nombre" class="bold">Nombre: </label><label for="nombre_texto">Pedro Perez Alfonso</label>
+        <label for="fecha" class="bold">Fecha: </label><label for="fecha_texto">
+            <?php echo @date("d-m-Y"); ?></label>
+        <label for="cedula" class="bold">Cedula: </label><label for="cedula_texto">
+            <?php echo $cliente->getCedula();?></label>
+        <label for="nombre" class="bold">Nombre: </label><label for="nombre_texto">
+            <?php echo $cliente->getNombre();?></label>
         <br />
-        <label for="direccion" class="bold">Direccion: </label><label for="direccion_texto">Av 4 con calle 18. Casa # 100. Centro</label>
+        <label for="direccion" class="bold">Direccion: </label><label
+            for="direccion_texto"><?php echo $cliente->getDireccion();?></label>
         <br />
-        <label for="correo" class="bold">Correo Electronico: </label><label for="correo_text">pedroperezalfonso@hotmail.com</label>
-        <label for="telefono" class="bold">Telefono: </label><label for="telefono_texto">0274-2442424</label>
+        <label for="correo" class="bold">Correo Electronico: </label><label
+            for="correo_text"><?php echo $cliente->getCorreo();?></label>
+        <label for="telefono" class="bold">Telefono: </label><label
+            for="telefono_texto"><?php echo $cliente->getTelefono();?></label>
     </fieldset>
     <fieldset>
         <legend>Datos del Pedido</legend>

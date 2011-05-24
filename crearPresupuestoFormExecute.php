@@ -11,7 +11,7 @@ $cliente->updateDatos($_REQUEST);
 $clienteB = $cliente;
 $clienteB = buscarClientePorCedula($clienteB);
 if($clienteB->getCedula()==$cliente->getCedula()){
-    //actualizarCliente($cliente);
+    actualizarCliente($cliente);
 }
 else{
     insertarCliente($cliente);
