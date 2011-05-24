@@ -21,7 +21,7 @@ include('menu.php');
       <br />
       <!--El id tiene un _ al empezar para indicar que no es campo oblicagorio -->
       <label for="clave_nueva">Contraseña Nueva:</label><input type="password" id="_ClaveNueva" name="_ClaveNueva" onfocus="limpiar(this);" size="9" />
-      <label for="clave_confirmar">Confirmar Contraseña:</label><input type="password" id="_ClaveConfirmar" name="_ClaveConfirmar" onfocus="limpiar(this);" size="9" />
+      <label for="clave_confirmar">Confirmar Contraseña:</label><input type="password" id="_ClaveConfirmar" name="_ClaveConfirmar" onfocus="limpiar(this);" size="9" onchange="validarClaves(document.getElementById('_ClaveNueva'),this);" />
       <br />
       <?php endif ?>
       <label for="cargo">Cargo que desempeña: </label><input type="text" id="Cargo" name="Cargo" value="<?php echo $vendedor->getCargo();?>" size="20" onfocus="limpiar(this);"/>

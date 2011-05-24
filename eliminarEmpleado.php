@@ -10,7 +10,7 @@ include('menu.php');
     <fieldset id="empleado" >
       <legend>Buscar Empleado a Eliminar</legend>
       <br />
-      <label for="cedula">Cedula: </label><input type="text" id="cedula" name="cedula" onfocus="limpiar(this);" onkeypress="return permite(event , 'num')" />
+      <label for="cedula">Cedula: </label><input type="text" id="Cedula" name="Cedula" onfocus="limpiar(this);" onkeypress="return permite(event , 'num')" />
       <br />
       <br />
       <input type="submit" value="Buscar" />
@@ -21,6 +21,6 @@ include('menu.php');
 </div>
 </div>
 <?php
-include('menuAdministracion.html');
+include('menuAdministracion.php');
 include('foot.html');
 ?>

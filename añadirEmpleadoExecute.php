@@ -7,8 +7,11 @@
 include('libreria.php');
 include('db/inserts.php');
 include('db/searchs.php');
+
 require_once('clases/Vendedor.php');
+
 conectarDB();
+
 $vendedor= new Vendedor();
 $vendedor->updateDatos($_REQUEST);
 if ($vendedor->getNombre()=='') {

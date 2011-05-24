@@ -1,7 +1,16 @@
 <?php
-// TODO Conectar a la Base de datos
+include('libreria.php');
+include_once('clases/Vendedor.php');
+include_once('db/deletes.php');
 
-$cedula=$_REQUEST['cedula'];
+conectarDB();
 
-// TODO hacer el procesamiento, eliminar al empleado
+$cedula=$_REQUEST['Cedula'];
+
+borrarVendedor($cedula);
+
 ?>
+<script type="text/javascript">
+    alert('Ya se Elimino con Exito el Empleado');
+    location.href='administracion.php';
+</script>

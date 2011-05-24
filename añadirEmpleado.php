@@ -16,7 +16,7 @@ include("menu.php");
       <label for="nombre">Apellido: </label><input type="text" id="Apellido" name="Apellido" onfocus="limpiar(this);" size="15" />
       <br /><br />
       <label for="contrasena">Contraseña: </label><input type="password" id="Clave" name="Clave" onfocus="limpiar(this);" size="9" />
-      <label for="contrasena">Confirmar Contraseña: </label><input type="password" id="ClaveConfirmacion" name="ClaveConfirmacion" onfocus="limpiar(this);" onchange="validarClaves();" size="9" />
+      <label for="contrasena">Confirmar Contraseña: </label><input type="password" id="ClaveConfirmacion" name="ClaveConfirmacion" onfocus="limpiar(this);" onchange="validarClaves(document.getElementById('Clave'),this);" size="9" />
       <br /><br />
       <label for="cargo">Cargo que desempeña: </label><input type="text" id="Cargo" name="Cargo" onfocus="limpiar(this);" size="20" />
       <label for="nivel">Nivel: </label><select name="Nivel" id="Nivel"><option value="2">Administrador</option><option value="1" selected="selected">Empleado</option></select>

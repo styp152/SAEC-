@@ -1,9 +1,19 @@
 <?php
-// TODO Conectar a la Base de datos
+include('libreria.php');
+include_once('clases/Vendedor.php');
+include_once('db/searchs.php');
 
-$cedula=$_REQUEST['cedula'];
+conectarDB();
 
-// TODO hacer el procesamiento, buscar el empleado
-
-    include('eliminarEmpleadoShow.php');
+$cedula=$_REQUEST['Cedula'];
+$vendedor=buscarVendedorPorCedula($cedula);
+if($vendedor->getCedula()==''){
+    ?>
+    <script type="text/javascript">
+    alert('No se Encontro Empleado con esa Cedula');
+    location.href='eliminarEmpleado.php';
+    </script>
+    <?php
+}
+include('eliminarEmpleadoShow.php');
 ?>

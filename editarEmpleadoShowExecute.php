@@ -1,4 +1,5 @@
 <?php
+include('session.php');
 include('libreria.php');
 include('db/updates.php');
 include('db/searchs.php');
@@ -10,40 +11,36 @@ $vendedor= new Vendedor();
 $vendedor->updateDatos($_REQUEST);
 
 if($_SESSION["Nivel"] != 2){
-    $cedula = $_REQUEST['Cedula'];
     $vendedorExistente = new Vendedor();
-    $vendedorExistente = buscarVendedorPorCedulaClaveSinCifrar($cedula);
+    $vendedorExistente = buscarVendedorPorCedulaClaveSinCifrar($vendedor->getCedula());
     $claveActual = $_REQUEST['ClaveActual'];
-    settype($claveActual, "string");
-    
-    echo $vendedorExistente->getClave()." y la actual es ".$claveActual;
-    
-    
-    if($vendedorExistente->getClave() == $claveActual){
+    if($vendedorExistente->getClave() != $claveActual){
         ?>
         <script type="text/javascript">
-            alert('Contraseña inválida'); 
-            location.href='editarEmpleado.php?Cedula='.$vendedor->getCedula().'';
+            alert("Contraseña inválida"); 
+            location.href="editarEmpleadoExecute.php?Cedula='<?php echo $vendedor->getCedula();?>'";
         </script>    
         <?php
     }
     if($_REQUEST['_ClaveNueva'] != $_REQUEST['_ClaveConfirmar']){
         ?>
         <script type="text/javascript">
-            alert('Contraseña Nueva no coincide'); 
-            location.href='editarEmpleadoExecute.php?Cedula='.$vendedor->getCedula().'';
+            alert("Contraseña Nueva no coincide"); 
+            location.href="editarEmpleadoExecute.php?Cedula='<?php echo $vendedor->getCedula();?>'";
         </script>    
         <?php
     }
     if($_REQUEST['_ClaveNueva'] != ''){
         $vendedor->setClave($_REQUEST['_ClaveNueva']);
+    }else{
+        $vendedor->setClave($vendedorExistente->getClave);
     }
-    actualizarVendedorSinCifrar($vendedor);
+    actualizarVendedorDesdeEmpleado($vendedor);
 }else{
-    actualizarVendedorCifrado($vendedor);    
+    actualizarVendedorDesdeAdministrador($vendedor);    
 }
 ?>
 <script type="text/javascript">
-//alert('Ya se Actualizo con Exito el Empleado');
-//location.href='administracion.php';
+    alert('Ya se Actualizo con Exito el Empleado');
+    location.href='administracion.php';
 </script>

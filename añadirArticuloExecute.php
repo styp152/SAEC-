@@ -1,6 +1,7 @@
 <?php
 include('libreria.php');
 include('db/inserts.php');
+include('db/searchs.php');
 require_once('clases/Articulo.php');
 conectarDB();
 $articulo= new Articulo();
@@ -9,7 +10,19 @@ if ($articulo->getNombre()=='') {
   throw new Exception('Datos de Articulo Vacios');
 }
 try{
-  insertarArticulo($articulo); /* TODO Falta Comprobar que el Articulo a Insertar no se Encuentre en la BD */
+  $articuloExistente = new Articulo();
+  $articuloExistente = buscarArticulo($articulo->getNombre());
+  if($articuloExistente->getNombre() == ''){
+    insertarArticulo($articulo);  
+  }else{
+    ?>
+    <script type="text/javascript">
+    alert('Este articulo ya existe');
+    location.href='añadirArticulo.php';
+    </script>    
+    <?php
+  }
+  
 }
 catch(Exception $e){
   echo 'Excepción capturada: ',  $e->getMessage(), "\n";

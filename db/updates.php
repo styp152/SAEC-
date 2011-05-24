@@ -12,17 +12,17 @@ function actualizarArticulo($articulo){
   mysql_query($sql);
 }
 
-function actualizarVendedorCifrado($vendedor){
+function actualizarVendedorDesdeAdministrador($vendedor){
   $sql="UPDATE Vendedor SET Nombre='".$vendedor->getNombre()."', Apellido='".$vendedor->getApellido().
-    "', Cargo='".$vendedor->getCargo()."', Clave='".$vendedor->getClave()."', Nivel=".$vendedor->getNivel().
+    "', Cargo='".$vendedor->getCargo()."', Nivel=".$vendedor->getNivel().
     " WHERE Cedula=".$vendedor->getCedula();
   mysql_query($sql);
 }
 
-function actualizarVendedorSinCifrar($vendedor){
+function actualizarVendedorDesdeEmpleado($vendedor){
   $sql="UPDATE Vendedor SET Nombre='".$vendedor->getNombre()."', Apellido='".$vendedor->getApellido().
-    "', Cargo='".$vendedor->getCargo().", Clave=AES_ENCRYPT('text','".$vendedor->getClave()."'), Nivel=".$vendedor->getNivel().
-    " WHERE Cedula=".$vendedor->getCedula();
+    "', Cargo='".$vendedor->getCargo()."', Clave = AES_ENCRYPT('".$vendedor->getClave()."','Password')
+     WHERE Cedula=".$vendedor->getCedula();
   mysql_query($sql);
 }
 

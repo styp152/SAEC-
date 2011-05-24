@@ -49,6 +49,6 @@ include("menu.php");
 </table>
 </div>
 <?php
-include("menuAdministracion.html");
+include("menuAdministracion.php");
 include("foot.html");
 ?>

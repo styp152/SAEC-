@@ -75,11 +75,11 @@ function validarEspaciosBlancos(campo){
   }
 }
 
-function validarClaves(){
-  if(document.getElementById('Clave').value==document.getElementById('ClaveConfirmacion').value){
-    document.getElementById('ClaveConfirmacion').style.background='#99FF99';
+function validarClaves(campo, campoConfirmacion){
+  if(campo.value==campoConfirmacion.value){
+    campoConfirmacion.style.background='#99FF99';
   }
   else{
-    document.getElementById('ClaveConfirmacion').style.background='#FF0000';
+    campoConfirmacion.style.background='#FF0000';
   }
 }
