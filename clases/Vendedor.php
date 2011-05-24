@@ -2,8 +2,8 @@
 class Vendedor{
 	private $cedula;
 	private $nombre;
-  private $apellido;
-  private $cargo;
+	private $apellido;
+	private $cargo;
 	private $nivel;
 	private $clave;
 
@@ -63,7 +63,7 @@ class Vendedor{
   	$this->apellido=$parametro['Apellido'];
   	$this->cargo=$parametro['Cargo'];
   	$this->nivel=$parametro['Nivel'];
-    $this->clave=$parametro['Clave'];
+	$this->clave=$parametro['Clave'];
   }
 }
 ?>
