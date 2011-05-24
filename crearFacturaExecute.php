@@ -1,10 +1,9 @@
 <?php
-    // TODO Conectar a la Base de datos
-
-    $cedula=$_REQUEST['cedula'];
-
-    // TODO hacer el procesamiento, buscar el cliente
-
-    include('crearFacturaForm.php');
-
+include('libreria.php');
+include('db/searchs.php');
+require_once('clases/Cliente.php');
+conectarDB();
+$cliente = new Cliente();
+$cliente->updateDatos($_REQUEST);
+include('crearFacturaForm.php');
 ?>

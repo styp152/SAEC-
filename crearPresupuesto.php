@@ -10,7 +10,7 @@ include('menu.php');
     <fieldset id="factura" >
       <legend align="center">Buscar Cliente para Crear un Presupuesto</legend>
       <br />
-      <label for="cedula">Cedula: </label><input type="text" id="cedula" name="cedula" onfocus="limpiar(this);" size="9" onkeypress="return permite(event , 'num')" />
+      <label for="cedula">Cedula: </label><input type="text" id="Cedula" name="Cedula" onfocus="limpiar(this);" size="9" onkeypress="return permite(event , 'num')" />
       <br /><br />
       <input type="submit" value="Buscar" />
       <input type="button" value="Cancelar" onclick="ir('facturacion.php');" />
