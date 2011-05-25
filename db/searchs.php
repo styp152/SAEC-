@@ -49,7 +49,7 @@ function buscarArticulosPorCantidad($cantidad){
 }
 
 function buscarArticulosPorNombre($nombre){
-  $sql="SELECT Nombre FROM Articulo WHERE Nombre LIKE '%".$nombre."%' ORDER BY Nombre LIMIT 10";
+  $sql="SELECT Nombre,Precio FROM Articulo WHERE Nombre LIKE '%".$nombre."%' ORDER BY Nombre LIMIT 10";
   $result = mysql_query($sql);
   while($row = mysql_fetch_assoc($result)){
     $articulo = new Articulo();

@@ -8,6 +8,8 @@ include('menu.php');
 <script type="text/javascript" src="js/calendar-es.js"></script>
 <script type="text/javascript" src="js/calendar-setup.js"></script>
 <script type="text/javascript" src="js/validacion.js"></script>
+<script type="text/javascript" src="js/autocompletar_articulo.js"></script>
+<script type="text/javascript" src="js/autocompletar_articulos.js"></script>
 <h2>Crear Factura</h2>
 <div id="crear">
   <form name="form" action="crearFacturaFormExecute.php" method="post"
@@ -35,34 +37,46 @@ include('menu.php');
         <legend align="center">Datos del Pedido</legend>
         <label for="productos">Productos</label>
         <br />
-        <table>
+        <table id="table" >
             <tr class="first">
                 <td>Cantidad </td>
                 <td>Nombre </td>
                 <td>Precio Unitario </td>
                 <td>Total </td>
             </tr>
-            <tr>
-                <td>2 </td>
-                <td>Tazas </td>
-                <td>25 </td>
-                <td>50 </td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Chapas </td>
-                <td>10 </td>
+            <tr id="1" >
+                <td><input type="text" id="cantidad" style="width:24px;"
+                  name="cantidad" value="0" size="1"
+                  onkeypress="return permite(event , 'num');"</td></td>
+                <td>
+                  <label for="Nombre">Nombre: </label><input type="text" id="NombreP"
+                    name="NombreP" autocomplete="off" onfocus="limpiar(this);" size="21" />
+                  <div id="sugerencias" class="autocomplete"></div>
+                </td>
+                <td><label for="Precio">Precio: </label><input type="text" id="Precio" style="width:24px;"
+                    name="Precio" autocomplete="off" onfocus="limpiar(this);" size="1" /></td>
                 <td>100 </td>
             </tr>
         </table>
-        <input type="button" value="Agregar" />
+        <input type="button" value="Agregar" onclick="
+          var x=document.getElementById('table').insertRow(2);
+          var v=x.insertCell(0);
+          var y=x.insertCell(1);
+          var z=x.insertCell(2);
+          var a=x.insertCell(3);
+          v.innerHTML=document.getElementById('cantidad').value;
+          y.innerHTML=document.getElementById('NombreP').value;
+          document.getElementById('NombreP').value='';
+          z.innerHTML=document.getElementById('Precio').value;
+          a.innerHTML=document.getElementById('Precio').value * document.getElementById('cantidad').value;
+          document.getElementById('Precio').value='';
+          document.getElementById('cantidad').value='';" />
         <!-- TODO: Codificar los productos y boton agregar  -->
         <br />
-        <label for="vendedor">Detalles de Diseño y Produccion </label><br /><textarea id="detalles" name="detalles" cols="60" rows="5" onfocus="limpiar(this); limpiarT(this);">
+        <label for="detalles">Detalles de Diseño y Produccion </label><br /><textarea id="detalles" name="detalles" cols="60" rows="5" onfocus="limpiar(this); limpiarT(this);">
         Aqui se agregan los detalles del pedido.
         </textarea>
         <br />
-        <label for="vendedor">Vendedor: </label><input type="text" id="vendedor" name="vendedor" onfocus="limpiar(this);" size="25" value="Gabriel Albornoz" readonly="true" />
         <label for="fecha_entrega">Fecha de Entrega: </label><input type="text" id="fecha_entrega" name="fecha_entrega" class="for_txtInputFecha" onfocus="limpiar(this);" size="9" value="" tabindex="2"  /> <!--Aqui debe ir readonly="readonly", se lo quite para poder probar algunas cosas TODO -->
         <img class="for_imgFecha" id="Imgfecha_entrega" src="calendario/calendario.png" title="Seleccione fecha" alt="Imagen del Calendario" aling="top" />
         <script type="text/javascript">
@@ -74,7 +88,7 @@ include('menu.php');
         <input type="submit" value="Facturar" />
         <input type="button" value="Cancelar" onclick="ir('facturacion.php');" />
     </fieldset>
-  </form>
+  </form>  
 </div>
 </div>
 <?php

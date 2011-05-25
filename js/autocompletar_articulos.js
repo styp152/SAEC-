@@ -12,8 +12,8 @@ function inicializa_xhr() {
 }
 
 function colocarValor(valor) {
-   document.getElementById("nombre").value = valor.substring(0,valor.indexOf('-'));
-   //document.getElementById("precio").value = valor.substring(valor.indexOf('-'));
+   document.getElementById("NombreP").value = valor.substring(0,valor.indexOf('-'));
+   document.getElementById("Precio").value = valor.substring(valor.indexOf('-')+1);
    borraLista();
 }
 
@@ -53,7 +53,7 @@ function autocompleta() {
     seleccionaElemento();
   }
   else {
-    var texto = document.getElementById("nombre").value;
+    var texto = document.getElementById("NombreP").value;
     
     // Si es la tecla de borrado y el texto es vacío, ocultar la lista
     if(tecla == 8 && texto == "") {
@@ -91,7 +91,7 @@ function autocompleta() {
 
 
 function sinResultados() {
-  document.getElementById("sugerencias").innerHTML = "No existen articulos con ese nombre";
+  document.getElementById("sugerencias").innerHTML = "No existen articulos con ese Nombre";
   document.getElementById("sugerencias").style.display = "block";
 }
 
@@ -102,7 +102,7 @@ function actualizaSugerencias() {
 
 function seleccionaElemento() {
   if(sugerencias[elementoSeleccionado]) {
-    document.getElementById("nombre").value = sugerencias[elementoSeleccionado];
+    document.getElementById("NombreP").value = sugerencias[elementoSeleccionado];
     borraLista();
   }
 }
@@ -120,5 +120,5 @@ function borraLista() {
 }
 
 window.onload = function() {
-  document.getElementById("nombre").onkeyup = autocompleta;
+  document.getElementById("NombreP").onkeyup = autocompleta;
 }
