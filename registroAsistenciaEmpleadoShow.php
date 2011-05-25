@@ -4,7 +4,7 @@ include('head.html');
 include('menu.php');
 ?>
 <script type="text/javascript" defer="defer" src="js/validacion.js" ></script>
-<h2>Asistencia</h2>
+<h2>Registro de Asistencia</h2>
 <table align="center" border="0" style=' text-align: center; font-size:medium;'>
     <tr>
         <td class="bold">Hora de Entrada</td>

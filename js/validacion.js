@@ -40,6 +40,9 @@ function permite(elEvento, permitidos) {
 function validarVacio(formulario){
   band= true;
   for(i=0;i<formulario.length;i++){
+    if(formulario.elements[i].getAttribute('disabled') ){
+     continue;
+    }
     if(formulario.elements[i].value=="" || formulario.elements[i].value==0  ){
       if(formulario.elements[i].id=="_ClaveNueva" || formulario.elements[i].id=="_ClaveConfirmar"){
         continue;
@@ -82,4 +85,12 @@ function validarClaves(campo, campoConfirmacion){
   else{
     campoConfirmacion.style.background='#FF0000';
   }
+}
+
+function deshabilitar(campo){
+  campo.setAttribute('disabled','disabled');
+}
+
+function habilitar(campo){
+  campo.setAttribute('disabled','false');
 }
