@@ -2,8 +2,17 @@
 include('session.php');
 include("head.html");
 include("menu.php");
-// TODO Conexion a la BD para consultas de empleados
-// TODO Habilitar Sesiones
+include("libreria.php");
+include_once("db/searchs.php");
+include_once("clases/Vendedor.php");
+
+conectarDB();
+
+if($_SESSION['Nivel']==2){
+  $vendedores = buscarVendedores();
+  $size= count($vendedores);
+}
+
 ?>
 <link href="css/calendario.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/calendar.js"></script>
@@ -14,11 +23,23 @@ include("menu.php");
 <h2>Consulta de Asistencia</h2>
 <br />
 <div id="registro" >
-<form action="controlAsistenciaExecute.php" method="post"
+<form action="asistenciaEmpleadoExecute.php" method="post"
   title="Formulario de Consulta de la Asistencia del Vendedor" onsubmit="return validarVacio(this);" >
+    <?php if($_SESSION['Nivel'] == 2):?>
+      <label for="de" class="bold">De: </label>
+      <select name="Cedula" id="Cedula" title="Seleciona el Vendedor a Consultar">
+        <option value=""></option>
+        <?php for($i=0;$i<$size;$i++):?>
+        <option value="<?php echo $vendedores[$i]->getCedula() ?>"><?php echo $vendedores[$i]->getNombre().' '.$vendedores[$i]->getApellido(); ?></option>
+        <? endfor ?>
+      </select>
+      <br /><br />
+    <?php else: ?>
+      <input type="hidden" name="Cedula" id="Cedula" value="<?php echo $_SESSION['Cedula']; ?>" />
+    <?php endif ?>
     <label>Por Mes</label>
     <br />
-    <select id="mes" name="mes" title="Seleciona el mes a Consultar" >
+    <select id="mes" name="mes" title="Seleciona el mes a Consultar" onblur="if(this.value!=0) {deshabilitar(document.getElementById('fecha1')); deshabilitar(document.getElementById('fecha2'));}" >
         <option value="0"></option>
         <option value="1">Enero</option>
         <option value="2">Febrero</option>
@@ -37,7 +58,7 @@ include("menu.php");
     <label>Por Rango de Días</label>
     <br />
     <label>Fecha Inicial</label>
-    <input id="fecha1" size= "9" name="fecha1" class="for_txtInputFecha" type="text" value="" tabindex="2" readonly="readonly" />
+    <input id="fecha1" size= "9" name="fecha1" class="for_txtInputFecha" type="text" value="" tabindex="2" readonly="readonly" onchange="deshabilitar(document.getElementById('mes'));" />
     <img class="for_imgFecha" id="Imgfecha1" src="calendario/calendario.png" title="Seleccione fecha" alt="Imagen del Calendario" aling="top" />
     <!-- definicion de los calendario en el formulario -->
     <script type="text/javascript">

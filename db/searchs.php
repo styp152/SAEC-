@@ -88,6 +88,17 @@ function buscarVendedorPorCedulaClaveSinCifrar($cedula){
   return $vendedor;
 }
 
+function buscarVendedores(){
+  $sql="SELECT * FROM Vendedor";
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $vendedor = new Vendedor();
+    $vendedor->updateDatos($row);
+    $vendedores[]=$vendedor;
+  }
+  return $vendedores;
+}
+
 function buscarClientePorCedula($cliente){
   $sql='SELECT * FROM Cliente WHERE Cedula = '.$cliente->getCedula().' LIMIT 1';
   $result = mysql_query($sql);
@@ -106,6 +117,19 @@ function buscarAsistencia($cedula,$fecha){
   $asistencia = new Asistencia();
   $asistencia->updateDatos($row);
   return $asistencia;
+}
+
+function buscarAsistenciasEntreFechas($cedula,$fecha1,$fecha2){
+  $sql="SELECT Asistencia.Id, Asistencia.Fecha, Asistencia.Hora_Entrada, Asistencia.mHora_Entrada, Asistencia.Hora_Salida,
+  Asistencia.mHora_Salida, Asistencia.Nota FROM Vendedor,Asistencia WHERE Vendedor.Cedula='$cedula' and Asistencia.Cedula_Vendedor='$cedula'
+   and Asistencia.Fecha>='$fecha1' and Asistencia.Fecha<='$fecha2'";
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $asistencia = new Asistencia();
+    $asistencia->updateDatos($row);
+    $asistencias[]=$asistencia;
+  }
+  return $asistencias;
 }
 
 ?>

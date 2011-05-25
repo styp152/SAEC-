@@ -32,7 +32,7 @@ function getM($correctHora){
   $hora1 = $hora["hours"];
   $minutes = $hora["minutes"];
   $m = DATE('A');
-  if(($hora1==12 or $hora1==23) and $minutes<=30){
+  if(($hora1==12 or $hora1==00) and $minutes<=30){
     if($m=='AM'){
       $m = 'PM';
     }
