@@ -37,6 +37,17 @@ function buscarCantidadArticuloPorId($id){
   return $articulo;
 }
 
+function buscarArticulosPorCantidad($cantidad){
+  $sql="SELECT * FROM Articulo WHERE Cantidad = $cantidad";
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $articulo = new Articulo();
+    $articulo->updateDatos($row);
+    $articulos[] = $articulo;
+  }
+  return $articulos;
+}
+
 function buscarArticulosPorNombre($nombre){
   $sql="SELECT Nombre FROM Articulo WHERE Nombre LIKE '%".$nombre."%' ORDER BY Nombre LIMIT 10";
   $result = mysql_query($sql);
