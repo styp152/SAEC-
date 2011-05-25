@@ -31,6 +31,6 @@ include('menu.php');
 </div>
 </div>
 <?php
-include('menuInventario.html');
+include('menuInventario.php');
 include('foot.html');
 ?>

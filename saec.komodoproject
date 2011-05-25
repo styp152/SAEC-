@@ -57,7 +57,7 @@
 </file>
 <file id="76ee8c4a-ece2-444c-ba3e-247ba1a96e00" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="foot.html" url="foot.html">
 </file>
-<file id="7a518f5b-21d9-4749-a6e2-326d4cfd3a93" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuInventario.html" url="menuInventario.html">
+<file id="7a518f5b-21d9-4749-a6e2-326d4cfd3a93" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuInventario.php" url="menuInventario.php">
 </file>
 <file id="7b701220-32c5-4055-b214-7daee7425a63" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="editarEmpleado.php" url="editarEmpleado.php">
 </file>
@@ -67,7 +67,7 @@
 </file>
 <file id="8b0797fe-6fa7-41e0-b5cb-b93c9a130757" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="eliminarArticuloShowExecute.php" url="eliminarArticuloShowExecute.php">
 </file>
-<file id="8be92148-cfb5-47f4-8c2b-c781b4abdca9" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuFacturacion.html" url="menuFacturacion.html">
+<file id="8be92148-cfb5-47f4-8c2b-c781b4abdca9" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="menuFacturacion.php" url="menuFacturacion.php">
 </file>
 <file id="8c5335a0-fc5a-42e3-bba7-8aec8425d61a" idref="8e9421be-d367-4a06-b1a7-fc59073f8761" name="actualizarListaArticulos.php" url="actualizarListaArticulos.php">
 </file>

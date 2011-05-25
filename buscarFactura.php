@@ -65,6 +65,6 @@ include("menu.php");
 </div>
 </div>
 <?php
-include("menuFacturacion.html");
+include("menuFacturacion.php");
 include("foot.html");
 ?>

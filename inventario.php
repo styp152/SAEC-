@@ -32,6 +32,6 @@ $size= count($articulos);
 </table>
 </div>
 <?php
-include('menuInventario.html');
+include('menuInventario.php');
 include('foot.html');
 ?>

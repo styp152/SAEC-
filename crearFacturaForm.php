@@ -78,7 +78,7 @@ include('menu.php');
 </div>
 </div>
 <?php
-include('menuFacturacion.html');
+include('menuFacturacion.php');
 include('foot.html');
 // debo poder incluir productos, con sus cantidades, y mostrar el precio unitario de ese producto, fecha de entrega, y un textarea, para Detalles de Diseño y Produccion
 ?>

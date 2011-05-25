@@ -9,9 +9,11 @@ $vendedor->updateDatos($_REQUEST);
 $vendedorDB=buscarVendedorPorCedulaClaveSinCifrar($vendedor->getCedula());
 if($vendedor->getCedula()==$vendedorDB->getCedula() and $vendedor->getClave()==$vendedorDB->getClave()){
   $_SESSION["log"]="1";
+  $_SESSION["Nombre"] = $vendedorDB->getNombre().' '.$vendedorDB->getApellido();
   $_SESSION["Cedula"] = $vendedorDB->getCedula();
   $_SESSION["Clave"] = $vendedorDB->getClave();
   $_SESSION["Nivel"] = $vendedorDB->getNivel();
+  $_SESSION["Cargo"] = $vendedorDB->getCargo();
   header("location:index.php");
 }
 else{

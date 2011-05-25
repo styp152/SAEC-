@@ -33,6 +33,6 @@ include('menu.php');
 Total Vendido del Dia: 1290 Bsf
 </div>
 <?php
-include('menuFacturacion.html');
+include('menuFacturacion.php');
 include('foot.html');
 ?>

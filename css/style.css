@@ -206,3 +206,24 @@ fieldset{
 .tlf_codigo{
     width:30px;
 }
+
+#figura{
+	height: 100px;
+  width:100px;
+	float:left;
+	text-align:center;
+}
+
+#vendedor{
+	height: 100px;
+  width:100px;
+	float:left;
+  background: #57626a url(../images/vendedor.jpg) no-repeat;
+}
+
+#admin{
+	height: 100px;
+  width:100px;
+	float:left;
+  background: #57626a url(../images/administrador.jpg) no-repeat;
+}

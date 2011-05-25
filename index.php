@@ -14,7 +14,7 @@ include('menu.php');
   <h2>Bienvenido a la Intranet del Estudio Creativo Mérida</h2>
 <?php endif; ?>
 </div>
-<div class="left"></div>
+<div class="left"><ul><?php include('vendedor.php'); ?></ul></div>
 <?php
 include('foot.html');
 ?>
