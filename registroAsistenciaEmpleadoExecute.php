@@ -28,13 +28,6 @@ else{
 
     $asistencia = new Asistencia();
     $asistencia = buscarAsistencia($vendedor->getCedula(),$fecha);
-    //echo 'Id = '.$asistencia->getId().'<br />';
-    //echo 'Fecha = '.$asistencia->getFecha().'<br />';
-    //echo 'horaEntrada = '.$asistencia->getHoraEntrada().'<br />';
-    //echo 'mHoraEntrada = '.$asistencia->getMHoraEntrada().'<br />';
-    //echo 'HoraSalida = '.$asistencia->getHoraSalida().'<br />';
-    //echo 'mHoraSalida = '.$asistencia->getMHoraSalida().'<br />';
-    //echo 'Nota = '.$asistencia->getNota().'<br />';
     if($asistencia->getHoraEntrada() == null){
         $asistencia->setFecha($fecha);
         $asistencia->setHoraEntrada($correctHora);
@@ -43,6 +36,8 @@ else{
         insertarAsistencia($asistencia);
     }
     else{
+        echo 'HoraSalida = '.$asistencia->getHoraSalida().'<br />';
+        //$asistencia->setHoraSalida($correctHora);
         $asistencia->setHoraSalida($correctHora);
         $asistencia->setMHoraSalida($m);
         actualizarAsistencia($asistencia);
