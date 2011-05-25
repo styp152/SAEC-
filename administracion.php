@@ -2,33 +2,38 @@
 include('session.php');
 include("head.html");
 include("menu.php");
+require_once('clases/Articulo.php');
+include('libreria.php');
+include('db/searchs.php');
+
+conectarDB();
+
+$articulos=buscarArticulosPorCantidad(0);
+$size= count($articulos);
 ?>
 <h2>Administracion</h2>
 <!-- TODO Buscar los articulos agotados -->
 <!-- TODO Buscar las ventas en la ultima semana -->
-Productos Agotados
-<table>
-  <tr class="first">
-    <td>Nombre </td>
-    <td>Descripcion </td> 
-    <td>Precio Unitario Bsf</td>
-  </tr>
-  <tr>
-    <td>Tazas</td>
-    <td>Tazas Termicas que se revelan con el calor</td>
-    <td>50 </td>
-  </tr>
-  <tr>
-    <td>Chapas</td>
-    <td>Tamaño Mediano </td>
-    <td>5 </td>
-  </tr>
-  <tr>
-    <td>Camisas S</td>
-    <td>Camisas de Poliester Talla S </td>
-    <td>60 </td>
-  </tr>
-</table>
+<?php if($size == 0): ?>
+    <p class="detalles">No hay articulos agotados</p>
+<?php else: ?>
+    <p class="detalles">Articulos Agotados</p>
+    <br />
+    <table>
+      <tr class="first">
+        <td>Nombre </td>
+        <td>Descripcion </td> 
+        <td>Precio Unitario Bsf</td>
+      </tr>
+      <?php for($i=0;$i<$size;$i++):?>
+      <tr>
+        <td><?php echo $articulos[$i]->getNombre(); ?></td>
+        <td><?php echo $articulos[$i]->getDescripcion(); ?></td>
+        <td><?php echo $articulos[$i]->getPrecio(); ?></td>
+      </tr>
+      <?php endfor;?>
+    </table>
+<?php endif ?>
 <br />
 Produccion de la Ultima Semana
 <table>

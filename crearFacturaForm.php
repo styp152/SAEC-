@@ -21,7 +21,7 @@ include('menu.php');
       <label for="Cedula">Cedula: </label><input type="text" id="Cedula" name="Cedula"
         onfocus="limpiar(this);" size="9" value="<?php echo $cedula;?>" readonly="true" />
       <label for="Telefono">Telefono: </label><input type="text" id="Telefono"
-        name="Telefono" onfocus="limpiar(this);" size="7" value="<?php echo $cliente->getTelefono();?>" />
+        name="Telefono" onfocus="limpiar(this);" size="10" value="<?php echo $cliente->getTelefono();?>" />
       <br /><br />
       <label for="Direccion">Direccion: </label><input type="text" id="Direccion"
         name="Direccion" onfocus="limpiar(this);" size="40" value="<?php echo $cliente->getDireccion();?>" />
