@@ -1,7 +1,7 @@
 <?php
-class asistencia{
+class Asistencia{
 	var $idAsistencia;
-  var $fecha;
+	var $fecha;
 	var $horaEntrada;
 	var $mhoraEntrada;
 	var $horaSalida;
@@ -12,26 +12,26 @@ class asistencia{
   function __construct(){}
 
   function getId(){
-    return $this->idArticulo;
+    return $this->idAsistencia;
   }
   
   function getFecha(){
     return $this->fecha;
   }
   
-  function getEntrada(){
+  function getHoraEntrada(){
     return $this->horaEntrada;
   }
   
-  function getMEntrada(){
+  function getMHoraEntrada(){
     return $this->mhoraEntrada;
   }
   
-  function getSalida(){
+  function getHoraSalida(){
     return $this->horaSalida;
   }
   
-  function getMSalida(){
+  function getMHoraSalida(){
     return $this->mhoraSalida;
   }
   
@@ -51,19 +51,19 @@ class asistencia{
     $this->fecha=$parametro;
   }
   
-  function setEntrada($parametro){
+  function setHoraEntrada($parametro){
     $this->horaEntrada=$parametro;
   }
   
-  function setMEntrada($parametro){
+  function setMHoraEntrada($parametro){
     $this->mhoraEntrada=$parametro;
   }
   
-  function setSalida($parametro){
+  function setHoraSalida($parametro){
     $this->horaSalida=$parametro;
   }
   
-  function setMSalida($parametro){
+  function setMHoraSalida($parametro){
     $this->mhoraSalida=$parametro;
   }
   
@@ -77,12 +77,12 @@ class asistencia{
   
   function updateDatos($parametro){
 	$this->idAsistencia=$parametro['Id'];
-  $this->fecha=$parametro['Fecha'];
+	$this->fecha=$parametro['Fecha'];
 	$this->horaEntrada=$parametro['Hora_Entrada'];
 	$this->mhoraEntrada=$parametro['mHora_Entrada'];
 	$this->horaSalida=$parametro['Hora_Salida'];
 	$this->mhoraSalida=$parametro['mHora_Salida'];
-  $this->cedulaVendedor=$parametro['Cedula_Vendedor'];
+	$this->cedulaVendedor=$parametro['Cedula_Vendedor'];
 	$this->nota=$parametro['Nota'];
   }
   

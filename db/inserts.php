@@ -21,4 +21,12 @@ function insertarCliente($cliente){
   return @mysql_query($sql) or die('Error Al Insertar el Cliente');
 }
 
+function insertarAsistencia($asistencia){
+  $sql='INSERT INTO Asistencia (Hora_Entrada, mHora_Entrada, Hora_Salida, mHora_Salida, Fecha, Cedula_Vendedor, Nota)
+  VALUES (\''.$asistencia->getHoraEntrada().'\', \''.$asistencia->getMHoraEntrada().'\', \''.$asistencia->getHoraSalida().'\',
+  \''.$asistencia->getMHoraSalida().'\', \''.$asistencia->getFecha().'\', \''.$asistencia->getCedulaVendedor().'\',
+  \''.$asistencia->getNota().'\')';
+  return @mysql_query($sql) or die('Error Al Insertar la Asistencia');
+  }
+
 ?>

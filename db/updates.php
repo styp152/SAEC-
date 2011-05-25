@@ -33,4 +33,11 @@ function actualizarCliente($cliente){
   return mysql_query($sql)or die("Error al Actualizar un Cliente");
 }
 
+function actualizarAsistencia($asistencia){
+  $sql='UPDATE Asistencia SET Hora_Salida=\''.$asistencia->getHoraSalida().'\', mHora_Salida=\''.$asistencia->getMHoraSalida().'\'
+   WHERE Id='.$asistencia->getId();
+  return mysql_query($sql)or die("Error al Registrar la Asistencia");
+
+}
+
 ?>

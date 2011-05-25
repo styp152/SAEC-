@@ -10,6 +10,7 @@ function fecha_es2in($fecha){
 	$fecha_lista=$mifecha[3]."-".$mifecha[2]."-".$mifecha[1];
 	return $fecha_lista;
 }
+
 function correctHora(){
   
   $hora = getdate(time());

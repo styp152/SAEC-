@@ -97,4 +97,15 @@ function buscarClientePorCedula($cliente){
   return $cliente;
 }
 
+function buscarAsistencia($cedula,$fecha){
+  $sql="SELECT Asistencia.Id, Asistencia.Fecha, Asistencia.Hora_Entrada, Asistencia.mHora_Entrada, Asistencia.Hora_Salida,
+  Asistencia.mHora_Salida, Asistencia.Nota FROM Vendedor,Asistencia WHERE Vendedor.Cedula='$cedula' and Asistencia.Cedula_Vendedor='$cedula'
+   and Asistencia.Fecha='$fecha' and Asistencia.Hora_Salida='00:00:00'";
+  $result = mysql_query($sql);
+  $row = mysql_fetch_assoc($result);
+  $asistencia = new Asistencia();
+  $asistencia->updateDatos($row);
+  return $asistencia;
+}
+
 ?>

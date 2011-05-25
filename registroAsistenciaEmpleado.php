@@ -11,8 +11,8 @@ include('menu.php');
   <form action="registroAsistenciaEmpleadoExecute.php" method="post" title="Formularo de Ingreso"
     onsubmit="return validarVacio(this);">
     <label>Clave </label>
-    <input name= "clave" type="password" title="Ingrese su Clave de 4 Digitos"
-      onkeypress="return permite(event , 'num')" />
+    <input type="password" title="Ingrese su Clave"
+      onkeypress="return permite(event , 'num')" id="Clave" name="Clave" />
     <br />
     <input id="registrar" type="submit" value="Registrar" />
     <input type="reset" value="Limpiar"/>
