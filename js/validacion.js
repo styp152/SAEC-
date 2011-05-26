@@ -1,3 +1,5 @@
+i=0;
+j=0;
 function permite(elEvento, permitidos) {
   // Variables que definen los caracteres permitidos
   var numeros = "0123456789";
@@ -93,4 +95,74 @@ function deshabilitar(campo){
 
 function habilitar(campo){
   campo.setAttribute('disabled','false');
+}
+
+function agregar(){
+  c=document.getElementById('cantidad').value;
+  p=document.getElementById('Precio').value;
+  n=document.getElementById('NombreP').value;
+  if(!(c==0 || p==0 || n=='')){
+    var x=document.getElementById('table').insertRow(i+2);
+    x.id=i+2;
+    i++;
+    var v=x.insertCell(0);
+    var y=x.insertCell(1);
+    var z=x.insertCell(2);
+    var a=x.insertCell(3);
+    var btnBorrar=document.createElement('input');
+    btnBorrar.setAttribute('type','button');
+    btnBorrar.setAttribute('value','x');
+    btnBorrar.setAttribute('onclick','remove(this.parentNode.parentNode)');
+    btnBorrar.setAttribute('style','float:right;');
+    v.innerHTML=document.getElementById('cantidad').value;
+    y.innerHTML=document.getElementById('NombreP').value;
+    z.innerHTML=document.getElementById('Precio').value;
+    a.innerHTML=document.getElementById('Precio').value * document.getElementById('cantidad').value;
+    a.appendChild(btnBorrar);
+    var hidden=document.createElement('input');
+    hidden.setAttribute('type','hidden');
+    hidden.setAttribute('name','c'+j);
+    j++;
+    hidden.setAttribute('value',document.getElementById('cantidad').value);
+    x.appendChild(hidden);
+    document.getElementById('NombreP').value='';
+    document.getElementById('Precio').value='0';
+    document.getElementById('cantidad').value='0';
+  }else{
+    alert('Uno de los Campos del Producto se encuentra Vacio');
+  }
+}
+
+function remove(campo){
+  //campo.
+  document.getElementById('table').deleteRow(campo.id);
+  //k=1;
+  //while(document.getElementById('table').rows[k]!=null){
+  //  if(campo.getElementsByTagName('td')[1].value==document.getElementById('table')
+  //     .rows[k].getElementsByTagName('td')[1].value){
+  //    document.getElementById('table').deleteRow(k);
+  //  }
+  //  k++;
+  //}
+  
+  //document.getElementById('oculto').removeChild(y);
+  i--;
+}
+
+function removeall(){
+  for(j=2;j<=(i+1);j++){
+    document.getElementById('table').deleteRow(j);
+    i--;
+  }
+}
+
+function clickEnviar(){
+  document.getElementById('cantidad').setAttribute('disabled','disabled');
+  document.getElementById('NombreP').setAttribute('disabled','disabled');
+  document.getElementById('Precio').setAttribute('disabled','disabled');
+  var hidden=document.createElement('input');
+  hidden.setAttribute('type','hidden');
+  hidden.setAttribute('name','cantidadi');
+  hidden.setAttribute('value',i);
+  document.getElementById('table').appendChild(hidden);
 }

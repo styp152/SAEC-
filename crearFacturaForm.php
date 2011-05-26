@@ -35,7 +35,10 @@ include('menu.php');
     </fieldset>
     <fieldset>
         <legend align="center">Datos del Pedido</legend>
-        <label for="productos">Productos</label>
+        <label for="productos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              Productos</label>
+        <input type="button" value="Borrar Todos" onclick="removeall();" style="float:right;" />
         <br />
         <table id="table" >
             <tr class="first">
@@ -45,47 +48,38 @@ include('menu.php');
                 <td>Total </td>
             </tr>
             <tr id="1" >
-                <td><input type="text" id="cantidad" style="width:24px;"
-                  name="cantidad" value="0" size="1"
-                  onkeypress="return permite(event , 'num');"</td></td>
-                <td>
-                  <label for="Nombre">Nombre: </label><input type="text" id="NombreP"
-                    name="NombreP" autocomplete="off" onfocus="limpiar(this);" size="21" />
-                  <div id="sugerencias" class="autocomplete"></div>
-                </td>
-                <td><label for="Precio">Precio: </label><input type="text" id="Precio" style="width:24px;"
-                    name="Precio" autocomplete="off" onfocus="limpiar(this);" size="1" /></td>
-                <td>100 </td>
+              <td><input type="text" id="cantidad" style="width:24px;"
+                name="cantidad" value="0" size="1" onfocus="limpiar(this);"
+                onkeypress="return permite(event , 'num');"</td></td>
+              <td>
+                <label for="Nombre">Nombre: </label><input type="text" id="NombreP"
+                name="NombreP" autocomplete="off" onfocus="limpiar(this);" size="21" />
+                <div id="sugerencias" class="autocomplete"></div>
+              </td>
+              <td><label for="Precio">Precio: </label><input type="text" id="Precio" style="width:24px;"
+                  name="Precio" autocomplete="off" onfocus="limpiar(this);" size="1" value="0" /></td>
+              <td><input type="button" value="Agregar" onclick="agregar();" />
+              </td>
             </tr>
         </table>
-        <input type="button" value="Agregar" onclick="
-          var x=document.getElementById('table').insertRow(2);
-          var v=x.insertCell(0);
-          var y=x.insertCell(1);
-          var z=x.insertCell(2);
-          var a=x.insertCell(3);
-          v.innerHTML=document.getElementById('cantidad').value;
-          y.innerHTML=document.getElementById('NombreP').value;
-          document.getElementById('NombreP').value='';
-          z.innerHTML=document.getElementById('Precio').value;
-          a.innerHTML=document.getElementById('Precio').value * document.getElementById('cantidad').value;
-          document.getElementById('Precio').value='';
-          document.getElementById('cantidad').value='';" />
-        <!-- TODO: Codificar los productos y boton agregar  -->
         <br />
-        <label for="detalles">Detalles de Diseño y Produccion </label><br /><textarea id="detalles" name="detalles" cols="60" rows="5" onfocus="limpiar(this); limpiarT(this);">
+        <label for="Detalles">Detalles de Diseño y Produccion </label><br />
+        <textarea id="Detalles" name="Detalles" cols="60" rows="5" onfocus="limpiar(this); limpiarT(this);">
         Aqui se agregan los detalles del pedido.
         </textarea>
         <br />
-        <label for="fecha_entrega">Fecha de Entrega: </label><input type="text" id="fecha_entrega" name="fecha_entrega" class="for_txtInputFecha" onfocus="limpiar(this);" size="9" value="" tabindex="2"  /> <!--Aqui debe ir readonly="readonly", se lo quite para poder probar algunas cosas TODO -->
-        <img class="for_imgFecha" id="Imgfecha_entrega" src="calendario/calendario.png" title="Seleccione fecha" alt="Imagen del Calendario" aling="top" />
+        <label for="Fecha_Entrega">Fecha de Entrega: </label><input type="text" id="Fecha_Entrega"
+          name="Fecha_Entrega" class="for_txtInputFecha" onfocus="limpiar(this);" size="9"
+          value="" tabindex="2" readonly="readonly"  />
+        <img class="for_imgFecha" id="ImgFecha_Entrega" src="calendario/calendario.png"
+             title="Seleccione fecha" alt="Imagen del Calendario" aling="top" />
         <script type="text/javascript">
-            Calendar.setup({inputField:"fecha_entrega", button:"Imgfecha_entrega"});
-            Calendar.setup({inputField:"fecha_entrega", eventName: "click", button:"Imgfecha_entrega"});
+            Calendar.setup({inputField:"Fecha_Entrega", button:"ImgFecha_Entrega"});
+            Calendar.setup({inputField:"Fecha_Entrega", eventName: "click", button:"ImgFecha_Entrega"});
         </script>
         <br />
         <br />
-        <input type="submit" value="Facturar" />
+        <input type="submit" value="Facturar" onclick="clickEnviar();" />
         <input type="button" value="Cancelar" onclick="ir('facturacion.php');" />
     </fieldset>
   </form>  

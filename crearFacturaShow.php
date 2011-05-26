@@ -26,8 +26,10 @@ include('menu.php');
     <fieldset>
         <legend>Datos del Pedido</legend>
         <br />
-        <label for="vendedor" class="bold">Vendedor: </label><label for="vendedor_texto">Gabriel Albornoz</label>
-        <label for="fecha_entrega" class="bold">Fecha de Entrega: </label><label for="fecha_entrega_texto"><?php echo @date("d-m-Y"); ?></label>
+        <label for="vendedor" class="bold">Vendedor: </label><label for="vendedor_texto">
+        <?php echo $vendedor; ?></label>
+        <label for="fecha_entrega" class="bold">Fecha de Entrega: </label>
+        <label for="fecha_entrega_texto"><?php echo fecha_es2in($factura->getFechaEntrega()); ?></label>
         <br />
         <label for="productos">Productos</label>
         <br />
@@ -51,7 +53,8 @@ include('menu.php');
                 <td>100 </td>
             </tr>
         </table>
-        <label for="detalles" class="bold">Detalles de Diseño y Produccion </label><br /><label for="detalles_texto">Aqui van los detalles del pedido.</label>
+        <label for="detalles" class="bold">Detalles de Diseño y Produccion </label><br />
+        <label for="detalles_texto"><?php echo $factura->getDetalles();?></label>
         <br /><br />
         <input type="button" value="Imprimir" /></a>
         <input type="button" value="Editar" /></a>
