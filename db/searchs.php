@@ -132,4 +132,15 @@ function buscarAsistenciasEntreFechas($cedula,$fecha1,$fecha2){
   return $asistencias;
 }
 
+function buscarCodigoFacturaPorTodo($factura){
+  $sql='SELECT Codigo FROM Factura WHERE Cedula_Clientes=\''.$factura->getCedulaCliente()
+    .'\' and Cedula_Vendedor=\''.$factura->getCedulaVendedor().'\' and
+    Fecha_Registro=\''.$factura->getFechaRegistro().'\' and Fecha_Entrega=\''.$factura->getFechaEntrega().
+    '\' and Tipo_Pago=\''.$factura->getTipoPago().'\' and nTipo_Pago=\''.$factura->getNTipoPago().'\' and
+    Detalles=\''.$factura->getDetalles().'\' and Estado=\'Facturado\'';
+  $result = mysql_query($sql);
+  $row=mysql_fetch_assoc($result);
+  return $row['Codigo'];
+}
+
 ?>

@@ -122,9 +122,19 @@ function agregar(){
     var hidden=document.createElement('input');
     hidden.setAttribute('type','hidden');
     hidden.setAttribute('name','c'+j);
-    j++;
     hidden.setAttribute('value',document.getElementById('cantidad').value);
     x.appendChild(hidden);
+    var hidden=document.createElement('input');
+    hidden.setAttribute('type','hidden');
+    hidden.setAttribute('name','n'+j);
+    hidden.setAttribute('value',document.getElementById('NombreP').value);
+    x.appendChild(hidden);
+    var hidden=document.createElement('input');
+    hidden.setAttribute('type','hidden');
+    hidden.setAttribute('name','p'+j);
+    hidden.setAttribute('value',document.getElementById('Precio').value);
+    x.appendChild(hidden);
+    j++;
     document.getElementById('NombreP').value='';
     document.getElementById('Precio').value='0';
     document.getElementById('cantidad').value='0';
@@ -134,18 +144,7 @@ function agregar(){
 }
 
 function remove(campo){
-  //campo.
   document.getElementById('table').deleteRow(campo.id);
-  //k=1;
-  //while(document.getElementById('table').rows[k]!=null){
-  //  if(campo.getElementsByTagName('td')[1].value==document.getElementById('table')
-  //     .rows[k].getElementsByTagName('td')[1].value){
-  //    document.getElementById('table').deleteRow(k);
-  //  }
-  //  k++;
-  //}
-  
-  //document.getElementById('oculto').removeChild(y);
   i--;
 }
 
@@ -162,7 +161,7 @@ function clickEnviar(){
   document.getElementById('Precio').setAttribute('disabled','disabled');
   var hidden=document.createElement('input');
   hidden.setAttribute('type','hidden');
-  hidden.setAttribute('name','cantidadi');
-  hidden.setAttribute('value',i);
+  hidden.setAttribute('name','cantidadj');
+  hidden.setAttribute('value',j);
   document.getElementById('table').appendChild(hidden);
 }

@@ -25,13 +25,18 @@ $factura->setFechaRegistro(date('Y-m-d'));
 $factura->setFechaEntrega(fecha_es2in($factura->getFechaEntrega()));
 $factura->setCedulaVendedor($_SESSION['Cedula']);
 $vendedor = $_SESSION['Nombre'];
-
-    // TODO: Pedir elementos de los productos    
-    //$cantidad = $_REQUEST['cantidad'];
-    //$precio = $_REQUEST['precio'];
-    //$descripcion = $_REQUEST['descripcion'];
-
-    // TODO hacer el procesamiento
-    
+$j = $_REQUEST['cantidadj'];
+$k=0;
+for($i=0;$i<$j;$i++){
+    if(isset($_REQUEST['c'.$i])){
+        $cantidad[]=$_REQUEST['c'.$i];
+        $nombre=$_REQUEST['n'.$i];
+        $articulo=new Articulo();
+        $articulo=buscarArticulo($nombre);
+        $articulos[]=$articulo;
+        $k++;
+    }
+}
+insertarFactura($factura, $articulos, $cantidad);
+$codigo=buscarCodigoFacturaPorTodo($factura);
 include('crearFacturaShow.php');
-?>
