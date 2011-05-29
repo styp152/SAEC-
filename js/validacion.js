@@ -1,5 +1,7 @@
 i=0;
 j=0;
+total=0;
+
 function permite(elEvento, permitidos) {
   // Variables que definen los caracteres permitidos
   var numeros = "0123456789";
@@ -135,6 +137,8 @@ function agregar(){
     hidden.setAttribute('value',document.getElementById('Precio').value);
     x.appendChild(hidden);
     j++;
+    total+=(document.getElementById('Precio').value * document.getElementById('cantidad').value)
+    document.getElementById('total').innerHTML=total;
     document.getElementById('NombreP').value='';
     document.getElementById('Precio').value='0';
     document.getElementById('cantidad').value='0';
@@ -144,7 +148,16 @@ function agregar(){
 }
 
 function remove(campo){
-  document.getElementById('table').deleteRow(campo.id);
+  total-=campo.cells[2].innerHTML*campo.cells[0].innerHTML;
+  k=2;
+  while(document.getElementById('table').rows[k]!=null){
+    if(document.getElementById('table').rows[k].cells[1].innerHTML==campo.cells[1].innerHTML){
+      document.getElementById('table').deleteRow(k);
+    }
+    k++;
+  }
+  
+  document.getElementById('total').innerHTML=total;
   i--;
 }
 
@@ -164,4 +177,13 @@ function clickEnviar(){
   hidden.setAttribute('name','cantidadj');
   hidden.setAttribute('value',j);
   document.getElementById('table').appendChild(hidden);
+}
+
+function validarNTipoEnvio(campo){
+  if (campo.value=="Efectivo" || campo.value==""){
+    document.getElementById('NTipo_Pago').setAttribute('disabled','disabled');
+  }
+  else{
+    document.getElementById('NTipo_Pago').removeAttribute('disabled');
+  }
 }

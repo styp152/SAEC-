@@ -8,6 +8,7 @@ include('menu.php');
 <script type="text/javascript" src="js/calendar-es.js"></script>
 <script type="text/javascript" src="js/calendar-setup.js"></script>
 <script type="text/javascript" src="js/validacion.js"></script>
+<script type="text/javascript" src="js/autocompletar_articulos.js"></script>
 <h2>Crear Presupuesto</h2>
 <div id="crear">
   <form name="form" action="crearPresupuestoFormExecute.php" method="post"
@@ -33,37 +34,48 @@ include('menu.php');
     </fieldset>
     <fieldset>
         <legend align="center">Datos del Pedido</legend>
-        <label for="productos">Productos</label>
+        <label for="productos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              Productos</label>
+        <input type="button" value="Borrar Todos" onclick="removeall();" style="float:right;" />
         <br />
-        <table>
+        <table id="table" >
             <tr class="first">
                 <td>Cantidad </td>
                 <td>Nombre </td>
                 <td>Precio Unitario </td>
                 <td>Total </td>
             </tr>
-            <tr>
-                <td>2 </td>
-                <td>Tazas </td>
-                <td>25 </td>
-                <td>50 </td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Chapas </td>
-                <td>10 </td>
-                <td>100 </td>
+            <tr id="1" >
+              <td><input type="text" id="cantidad" style="width:24px;"
+                name="cantidad" value="0" size="1" onfocus="limpiar(this);"
+                onkeypress="return permite(event , 'num');"</td></td>
+              <td>
+                <label for="Nombre">Nombre: </label><input type="text" id="NombreP"
+                name="NombreP" autocomplete="off" onfocus="limpiar(this);" size="21" />
+                <div id="sugerencias" class="autocomplete"></div>
+              </td>
+              <td><label for="Precio">Precio: </label><input type="text" id="Precio" style="width:24px;"
+                  name="Precio" autocomplete="off" onfocus="limpiar(this);" size="1" value="0" /></td>
+              <td><input type="button" value="Agregar" onclick="agregar();" />
+              </td>
             </tr>
         </table>
-        <input type="button" value="Agregar" />
-        <!-- TODO: Codificar los productos y boton agregar  -->
+        </table>
+        <table align="right" style="width:30%;">
+          <tr>
+            <td class="bold">Total</td>
+            <td id="total" class="bold">0</td>
+          </tr>
+        </table>
         <br />
-        <label for="vendedor">Detalles de Diseño y Produccion </label><br /><textarea id="detalles" name="detalles" cols="60" rows="5" onfocus="limpiar(this); limpiarT(this);">
+        <br />
+        <label for="Detalles">Detalles de Diseño y Produccion </label><br /><textarea id="Detalles" name="Detalles" cols="60" rows="5" onfocus="limpiar(this); limpiarT(this);">
         Aqui se agregan los detalles del pedido.
         </textarea>
         <br />
         <br />
-        <input type="submit" value="Facturar" />
+        <input type="submit" value="Presupuestar" onclick="clickEnviar();" />
         <input type="button" value="Cancelar" onclick="ir('facturacion.php');" />
     </fieldset>
   </form>

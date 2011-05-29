@@ -38,7 +38,7 @@ function insertarFactura($factura, $articulos, $cantidad){
   @mysql_query($sql) or die('Error Al Insertar la Factura');
   $codigo=buscarCodigoFacturaPorTodo($factura);
   $sql='INSERT INTO Articulo_Factura (ArticuloId, FacturaCodigo, Cantidad_Vendida,	Precio_Venta) VALUES (\''.
-    $articulos[0]->getId().'\', \''.'1'.'\', \''.$cantidad[0].'\', \''.$articulos[0]->getPrecio().'\')';
+    $articulos[0]->getId().'\', \''.$codigo.'\', \''.$cantidad[0].'\', \''.$articulos[0]->getPrecio().'\')';
   for($i=1;$i<count($articulos);$i++){
     $sql=$sql.', (\''.$articulos[$i]->getId().'\', \''.$codigo.'\', \''.$cantidad[$i].'\', \''.
       $articulos[$i]->getPrecio().'\')';
@@ -46,4 +46,20 @@ function insertarFactura($factura, $articulos, $cantidad){
   @mysql_query($sql) or die('Error Al Insertar la Relacion Factura-Articulo');
 }
 
+function insertarPresupuesto($presupuesto, $articulos, $cantidad){
+  $sql='INSERT INTO Presupuesto (Codigo, Cedula_Cliente, Cedula_Vendedor, Fecha_Registro,
+    Detalles) VALUES ( \'\', \''.$presupuesto->getCedulaCliente().'\', \''.
+    $presupuesto->getCedulaVendedor().'\', \''.$presupuesto->getFechaRegistro().'\', \''.
+    $presupuesto->getDetalles().'\')';
+  @mysql_query($sql) or die('Error Al Insertar la Factura');
+  $codigo=buscarCodigoPresupuestoPorTodo($presupuesto);
+  $sql='INSERT INTO Articulo_Presupuesto (ArticuloId, PresupuestoCodigo, Cantidad_Pedida,
+  Precio_Presupuesto) VALUES (\''.$articulos[0]->getId().'\', \''.$codigo.'\', \''.$cantidad[0].
+  '\', \''.$articulos[0]->getPrecio().'\')';
+  for($i=1;$i<count($articulos);$i++){
+    $sql=$sql.', (\''.$articulos[$i]->getId().'\', \''.$codigo.'\', \''.$cantidad[$i].'\', \''.
+      $articulos[$i]->getPrecio().'\')';
+  }
+  @mysql_query($sql) or die('Error Al Insertar la Relacion Factura-Articulo');
+}
 ?>

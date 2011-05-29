@@ -143,4 +143,13 @@ function buscarCodigoFacturaPorTodo($factura){
   return $row['Codigo'];
 }
 
+function buscarCodigoPresupuestoPorTodo($presupuesto){
+  $sql='SELECT Codigo FROM Presupuesto WHERE Cedula_Cliente=\''.$presupuesto->getCedulaCliente()
+    .'\' and Cedula_Vendedor=\''.$presupuesto->getCedulaVendedor().'\' and
+    Fecha_Registro=\''.$presupuesto->getFechaRegistro().'\' and Detalles=\''.$presupuesto->getDetalles().'\'';
+  $result = mysql_query($sql);
+  $row=mysql_fetch_assoc($result);
+  return $row['Codigo'];
+}
+
 ?>

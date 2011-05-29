@@ -1,10 +1,12 @@
 <?php
+include('session.php');
 include('libreria.php');
 include('db/inserts.php');
 include('db/searchs.php');
 include('db/updates.php');
 require_once('clases/Cliente.php');
-//require_once('clases/Factura.php');
+require_once('clases/Presupuesto.php');
+require_once('clases/Articulo.php');
 conectarDB();
 $cliente = new Cliente();
 $cliente->updateDatos($_REQUEST);
@@ -16,16 +18,24 @@ if($clienteB->getCedula()==$cliente->getCedula()){
 else{
     insertarCliente($cliente);
 }
-
-    $fecha = $_REQUEST['fecha'];
-    $detalles = $_REQUEST['detalles'];
-    
-    // TODO: Pedir elementos de los productos    
-    //$cantidad = $_REQUEST['cantidad'];
-    //$precio = $_REQUEST['precio'];
-    //$descripcion = $_REQUEST['descripcion'];
-
-    // TODO hacer el procesamiento
-    
-    include('crearPresupuestoShow.php');
+$presupuesto = new Presupuesto();
+$presupuesto->updateDatos($_REQUEST);
+$presupuesto->setFechaRegistro(date('Y-m-d'));
+$presupuesto->setCedulaVendedor($_SESSION['Cedula']);
+$presupuesto->setCedulaCliente($cliente->getCedula());
+$vendedor = $_SESSION['Nombre'];
+$j = $_REQUEST['cantidadj'];
+$k=0;
+for($i=0;$i<$j;$i++){
+    if(isset($_REQUEST['c'.$i])){
+        $cantidad[]=$_REQUEST['c'.$i];
+        $nombre=$_REQUEST['n'.$i];
+        $articulo=new Articulo();
+        $articulo=buscarArticulo($nombre);
+        $articulos[]=$articulo;
+        $k++;
+    }
+}
+insertarPresupuesto($presupuesto, $articulos, $cantidad);
+include('crearPresupuestoShow.php');
 ?>

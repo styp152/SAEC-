@@ -8,7 +8,6 @@ include('menu.php');
 <script type="text/javascript" src="js/calendar-es.js"></script>
 <script type="text/javascript" src="js/calendar-setup.js"></script>
 <script type="text/javascript" src="js/validacion.js"></script>
-<script type="text/javascript" src="js/autocompletar_articulo.js"></script>
 <script type="text/javascript" src="js/autocompletar_articulos.js"></script>
 <h2>Crear Factura</h2>
 <div id="crear">
@@ -62,11 +61,31 @@ include('menu.php');
               </td>
             </tr>
         </table>
+        </table>
+        <table align="right" style="width:30%;">
+          <tr>
+            <td class="bold">Total</td>
+            <td id="total" class="bold">0</td>
+          </tr>
+        </table>
+        <br />
         <br />
         <label for="Detalles">Detalles de Diseño y Produccion </label><br />
         <textarea id="Detalles" name="Detalles" cols="60" rows="5" onfocus="limpiar(this); limpiarT(this);">
         Aqui se agregan los detalles del pedido.
         </textarea>
+        <br />
+        <br />
+        <label for="Tipo_Pago">Tipo de Pago</label>
+        <select id="Tipo_Pago" name="Tipo_Pago" onchange="validarNTipoEnvio(this);" onfocus="limpiarS(this);" >
+					<option value="" > - - </option>
+					<option >Efectivo</option>      							
+					<option >Deposito</option>
+					<option >Transferencia</option>
+					<option >Cheque</option>
+				</select>
+        <label for="NTipo_Pago">Numero: </label><input type="text" id="NTipo_Pago"
+        name="NTipo_Pago" onfocus="limpiar(this);" size="10" disabled="disabled" />
         <br />
         <label for="Fecha_Entrega">Fecha de Entrega: </label><input type="text" id="Fecha_Entrega"
           name="Fecha_Entrega" class="for_txtInputFecha" onfocus="limpiar(this);" size="9"
