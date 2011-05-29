@@ -174,12 +174,19 @@ function removeall(){
     document.getElementById('table').deleteRow(j);
     i--;
   }
+  total=0;
+  document.getElementById('total').innerHTML=total;
 }
 
 function clickEnviar(){
   document.getElementById('cantidad').setAttribute('disabled','disabled');
   document.getElementById('NombreP').setAttribute('disabled','disabled');
   document.getElementById('Precio').setAttribute('disabled','disabled');
+  if(document.getElementById('Detalles').innerHTML=="        Aqui se agregan los detalles del pedido.\
+        "){
+    document.getElementById('Detalles').innerHTML='';
+    return;
+  }
   var hidden=document.createElement('input');
   hidden.setAttribute('type','hidden');
   hidden.setAttribute('name','cantidadj');

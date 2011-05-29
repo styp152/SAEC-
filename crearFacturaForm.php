@@ -71,9 +71,8 @@ include('menu.php');
         <br />
         <br />
         <label for="Detalles">Detalles de Diseño y Produccion </label><br />
-        <textarea id="Detalles" name="Detalles" cols="60" rows="5" onfocus="limpiar(this); limpiarT(this);">
-        Aqui se agregan los detalles del pedido.
-        </textarea>
+        <textarea id="Detalles" name="Detalles" cols="60" rows="5" onfocus="limpiar(this);
+        limpiarT(this);">Aqui se agregan los detalles del pedido.</textarea>
         <br />
         <br />
         <label for="Tipo_Pago">Tipo de Pago</label>
