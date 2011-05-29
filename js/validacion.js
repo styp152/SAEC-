@@ -103,6 +103,14 @@ function agregar(){
   c=document.getElementById('cantidad').value;
   p=document.getElementById('Precio').value;
   n=document.getElementById('NombreP').value;
+  k=2;
+  while(document.getElementById('table').rows[k]!=null){
+    if(document.getElementById('table').rows[k].cells[1].innerHTML==n){
+      alert("El Producto Seleccionado ya se encuentra en la Lista de Pedido");
+      return;
+    }
+    k++;
+  }
   if(!(c==0 || p==0 || n=='')){
     var x=document.getElementById('table').insertRow(i+2);
     x.id=i+2;
