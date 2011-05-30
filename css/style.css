@@ -169,10 +169,6 @@ tbody th, tbody td {
 padding:5px;
 }
 
-#cantidad{
-    size:5px;
-}
-
 fieldset{
     text-align:center;
 }
@@ -183,7 +179,7 @@ fieldset{
     width:180px;
     border:0px solid black;
     display:none;
-    margin-left:215px;
+    margin-left:55px;
     position:absolute;
     font: 16px Tahoma;
     border:1px solid #FF4800;

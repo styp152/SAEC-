@@ -164,7 +164,6 @@ function remove(campo){
     }
     k++;
   }
-  
   document.getElementById('total').innerHTML=total;
   i--;
 }
@@ -172,21 +171,24 @@ function remove(campo){
 function removeall(){
   for(j=2;j<=(i+1);j++){
     document.getElementById('table').deleteRow(j);
-    i--;
   }
+  i=0;
   total=0;
   document.getElementById('total').innerHTML=total;
 }
 
 function clickEnviar(){
-  document.getElementById('cantidad').setAttribute('disabled','disabled');
-  document.getElementById('NombreP').setAttribute('disabled','disabled');
-  document.getElementById('Precio').setAttribute('disabled','disabled');
-  if(document.getElementById('Detalles').innerHTML=="        Aqui se agregan los detalles del pedido.\
-        "){
+  if(document.getElementById('Detalles').innerHTML=="Aqui se agregan los detalles del pedido."){
     document.getElementById('Detalles').innerHTML='';
     return;
   }
+  if(document.getElementById('table').rows[2]==null){
+    alert('Debes Incluir al Menos un Articulo');
+    return;
+  }
+  document.getElementById('cantidad').setAttribute('disabled','disabled');
+  document.getElementById('NombreP').setAttribute('disabled','disabled');
+  document.getElementById('Precio').setAttribute('disabled','disabled');
   var hidden=document.createElement('input');
   hidden.setAttribute('type','hidden');
   hidden.setAttribute('name','cantidadj');

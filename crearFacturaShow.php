@@ -3,6 +3,7 @@ include('session.php');
 include('head.html');
 include('menu.php');
 ?>
+<script type="text/javascript" src="js/validacion.js"></script>
 <h2>Factura</h2>
 <div id="factura">
     <div id="fecha" style="text-align:right;">
@@ -79,7 +80,7 @@ include('menu.php');
         <label for="detalles" class="bold">Detalles de Diseño y Produccion </label><br />
         <label for="detalles_texto"><?php echo $factura->getDetalles();?></label>
         <br /><br />
-        <input type="button" value="Imprimir" onclick="ir('imprimirFactura.php?codigo=<?php echo $codigo;?>');" /></a>
+        <input type="button" value="Imprimir" onclick="ir('imprimirFactura.php?Codigo=<?php echo $codigo;?>');" /></a>
         <input type="button" value="Anular" /></a>
         <input type="button" value="Salir" onclick="ir('facturacion.php');" />
     </fieldset>

@@ -40,3 +40,4 @@ for($i=0;$i<$j;$i++){
 insertarFactura($factura, $articulos, $cantidad);
 $codigo=buscarCodigoFacturaPorTodo($factura);
 include('crearFacturaShow.php');
+?>

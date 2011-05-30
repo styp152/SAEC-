@@ -59,6 +59,28 @@ function buscarArticulosPorNombre($nombre){
   return $articulos;
 }
 
+function buscarArticulosPorCodigoFactura($codigo){
+  $sql='SELECT ArticuloId FROM Articulo_Factura WHERE FacturaCodigo = \''.$codigo.'\'';
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $id[] = $row['ArticuloId'];
+  }
+  $sql="SELECT * FROM Articulo";
+  $result1 = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result1)){
+    $articulo = new Articulo();
+    $articulo->updateDatos($row);
+    $k=0;
+    while($k!=count($id)){
+      if($articulo->getId()==$id[$k]){
+        $articulos[]=$articulo;
+      }
+      $k++;
+    }
+  }
+  return $articulos;
+}
+
 function buscarArticulos(){
   $sql="SELECT * FROM Articulo";
   $result = mysql_query($sql);
@@ -150,6 +172,14 @@ function buscarCodigoPresupuestoPorTodo($presupuesto){
   $result = mysql_query($sql);
   $row=mysql_fetch_assoc($result);
   return $row['Codigo'];
+}
+
+function buscarFacturaPorCodigo($codigo){
+  $sql='SELECT * FROM Factura WHERE Codigo=\''.$codigo.'\'';
+  $result = mysql_query($sql);
+  $factura = new Factura();
+  $factura->updateDatos(mysql_fetch_assoc($result));
+  return $factura;
 }
 
 ?>
