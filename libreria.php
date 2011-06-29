@@ -13,7 +13,8 @@ function fecha_es2in($fecha){
 
 function correctHora(){
   
-  $hora = getdate(time());
+  //$hora = getdate(time());
+  date ( "h:i:s" , $hora ); 
   $hora1 = $hora["hours"];
   $minutes = $hora["minutes"]-30;
   if ($minutes<=0){

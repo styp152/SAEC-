@@ -11,7 +11,7 @@ include("menu.php");
     <fieldset id="articulo" >
       <legend>Datos del Articulo</legend>
       <br />
-      <label for="nombre">Nombre: </label><input type="text" id="Nombre" name="Nombre" onblur="validarEspaciosBlancos(this);" onfocus="limpiar(this);" />
+      <label for="nombre">Nombre: </label><input type="text" id="Nombre" name="Nombre" onkeypress="return permite(event , 'num_car')" onblur="validarEspaciosBlancos(this);" onfocus="limpiar(this);" />
       <label for="cantidad">Cantidad</label><input type="text" id="Cantidad" name="Cantidad" size="4" onkeypress="return permite(event , 'num')" onfocus="limpiar(this);" />
       <label for="precio">Precio Unitario </label><input type="text" id="Precio" name="Precio" size="4" onkeypress="return permite(event , 'num');" onfocus="limpiar(this);" />Bsf
       <br />

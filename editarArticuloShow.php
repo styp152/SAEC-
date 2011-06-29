@@ -14,7 +14,8 @@ include('menu.php');
       <input type="hidden" name="Id" value="<?php echo $articulo->getId();?>" />
       
       <label for="nombre">Nombre: </label><input type="text" id="nombre" name="Nombre"
-        onfocus="limpiar(this);" value="<?php echo $articulo->getNombre();?>" />
+        onfocus="limpiar(this);" onkeypress="return permite(event , 'num_car')"
+        value="<?php echo $articulo->getNombre();?>" />
         
       <label for="cantidad">Cantidad</label><input type="text" id="cantidad"
         name="Cantidad" size="4" onkeypress="return permite(event , 'num')"

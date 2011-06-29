@@ -25,6 +25,7 @@ $factura->setFechaRegistro(date('Y-m-d'));
 $factura->setFechaEntrega(fecha_es2in($factura->getFechaEntrega()));
 $factura->setCedulaVendedor($_SESSION['Cedula']);
 $vendedor = $_SESSION['Nombre'];
+$abono = $_REQUEST['abono'];
 $j = $_REQUEST['cantidadj'];
 $k=0;
 for($i=0;$i<$j;$i++){
@@ -33,6 +34,7 @@ for($i=0;$i<$j;$i++){
         $nombre=$_REQUEST['n'.$i];
         $articulo=new Articulo();
         $articulo=buscarArticulo($nombre);
+        $articulo->setPrecio($_REQUEST['p'.$i]);
         $articulos[]=$articulo;
         $k++;
     }

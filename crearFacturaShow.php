@@ -80,6 +80,9 @@ include('menu.php');
         <label for="detalles" class="bold">Detalles de Diseño y Produccion </label><br />
         <label for="detalles_texto"><?php echo $factura->getDetalles();?></label>
         <br /><br />
+        <label for="detalles" class="bold">Abono: <?php echo $abono;?> </label><br />
+        <label for="detalles" class="bold">Resta <?php echo $total-$abono;?> </label><br />
+        <br /><br />
         <input type="button" value="Imprimir" onclick="ir('imprimirFactura.php?Codigo=<?php echo $codigo;?>');" /></a>
         <input type="button" value="Anular" /></a>
         <input type="button" value="Salir" onclick="ir('facturacion.php');" />

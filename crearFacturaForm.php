@@ -67,7 +67,20 @@ include('menu.php');
             <td class="bold">Total</td>
             <td id="total" class="bold">0</td>
           </tr>
+          <tr>
+            <td>Abono</td>
+            <td class="bold"><input type="text" id="abono" style="width:34px;"
+              name="abono" autocomplete="off" onfocus="limpiar(this);" size="1"
+              onblur="abonar(this);" value="0" title="El minimo del abono es de 20%" /></td>
+          </tr>
+          <tr>
+            <td class="bold">Resta</td>
+            <td id="resta" class="bold">0</td>
+          </tr>
         </table>
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <label for="Detalles">Detalles de Diseño y Produccion </label><br />

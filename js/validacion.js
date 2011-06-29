@@ -147,6 +147,7 @@ function agregar(){
     j++;
     total+=(document.getElementById('Precio').value * document.getElementById('cantidad').value)
     document.getElementById('total').innerHTML=total;
+    document.getElementById('resta').innerHTML=total-document.getElementById('abono').value;
     document.getElementById('NombreP').value='';
     document.getElementById('Precio').value='0';
     document.getElementById('cantidad').value='0';
@@ -154,6 +155,16 @@ function agregar(){
     alert('Uno de los Campos del Producto se encuentra Vacio');
   }
 }
+
+function abonar(campo){
+  if((document.getElementById('total').innerHTML*0.2)-campo.value > 0){
+    campo.value=0;
+    alert("El Minimo de Abono es del 20% para Realizar la Facturacion");
+    return;
+  }
+  document.getElementById('resta').innerHTML=document.getElementById('total').innerHTML-campo.value;
+}
+
 
 function remove(campo){
   total-=campo.cells[2].innerHTML*campo.cells[0].innerHTML;
