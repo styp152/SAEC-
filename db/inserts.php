@@ -29,12 +29,12 @@ function insertarAsistencia($asistencia){
   return @mysql_query($sql) or die('Error Al Insertar la Asistencia');
   }
   
-function insertarFactura($factura, $articulos, $cantidad){
+function insertarFactura($factura, $articulos, $cantidad, $abono){
   $sql='INSERT INTO Factura (Codigo, Cedula_Clientes, Cedula_Vendedor, Fecha_Registro,
-    Fecha_Entrega, Tipo_Pago, nTipo_Pago, Detalles, Estado) VALUES ( \'\', \''.$factura->getCedulaCliente().
+    Fecha_Entrega, Tipo_Pago, nTipo_Pago, Detalles, Estado, Abono) VALUES ( \'\', \''.$factura->getCedulaCliente().
     '\', \''.$factura->getCedulaVendedor().'\', \''.$factura->getFechaRegistro().'\', \''.
     $factura->getFechaEntrega().'\', \''.$factura->getTipoPago().'\', \''.$factura->getNTipoPago().
-    '\', \''.$factura->getDetalles().'\', \'Facturado\')';
+    '\', \''.$factura->getDetalles().'\', \'Facturado\','.$abono.')';
   @mysql_query($sql) or die('Error Al Insertar la Factura');
   $codigo=buscarCodigoFacturaPorTodo($factura);
   $sql='INSERT INTO Articulo_Factura (ArticuloId, FacturaCodigo, Cantidad_Vendida,	Precio_Venta) VALUES (\''.

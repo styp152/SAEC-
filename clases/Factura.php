@@ -86,7 +86,7 @@ class Factura{
 
   function updateDatos($parametro){
   	$this->codigo=$parametro['Codigo'];
-  	$this->cedulaCliente=$parametro['Cedula_Cliente'];
+  	$this->cedulaCliente=$parametro['Cedula_Clientes'];
   	$this->cedulaVendedor=$parametro['Cedula_Vendedor'];
   	$this->fechaRegistro=$parametro['Fecha_Registro'];
     $this->fechaEntrega=$parametro['Fecha_Entrega'];

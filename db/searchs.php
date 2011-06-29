@@ -60,19 +60,24 @@ function buscarArticulosPorNombre($nombre){
 }
 
 function buscarArticulosPorCodigoFactura($codigo){
-  $sql='SELECT ArticuloId FROM Articulo_Factura WHERE FacturaCodigo = \''.$codigo.'\'';
+  $sql='SELECT ArticuloId, Precio_Venta, Cantidad_Vendida FROM Articulo_Factura WHERE FacturaCodigo = \''.$codigo.'\'';
   $result = mysql_query($sql);
   while($row = mysql_fetch_assoc($result)){
     $id[] = $row['ArticuloId'];
+    $precio[] = $row['Precio_Venta'];
+    $cantidad[] = $row['Cantidad_Vendida'];
   }
   $sql="SELECT * FROM Articulo";
   $result1 = mysql_query($sql);
+  $i=0;
   while($row = mysql_fetch_assoc($result1)){
     $articulo = new Articulo();
     $articulo->updateDatos($row);
     $k=0;
     while($k!=count($id)){
       if($articulo->getId()==$id[$k]){
+        $articulo->setPrecio($precio[$k]);
+        $articulo->setCantidad($cantidad[$k]);
         $articulos[]=$articulo;
       }
       $k++;

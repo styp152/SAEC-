@@ -39,7 +39,7 @@ for($i=0;$i<$j;$i++){
         $k++;
     }
 }
-insertarFactura($factura, $articulos, $cantidad);
+insertarFactura($factura, $articulos, $cantidad, $abono);
 $codigo=buscarCodigoFacturaPorTodo($factura);
 include('crearFacturaShow.php');
 ?>
