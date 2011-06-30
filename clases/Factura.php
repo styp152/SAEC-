@@ -9,6 +9,7 @@ class Factura{
   var $nTipoPago;
 	var $detalles;
   var $estado;
+  var $abono;
 
   function __construct(){}
   
@@ -48,6 +49,10 @@ class Factura{
     return $this->estado;
   }
   
+  function getAbono(){
+    return $this->abono;
+  }
+  
   function setCodigo($parametro){
     $this->codigo=$parametro;
   }
@@ -83,6 +88,10 @@ class Factura{
   function setEstado($parametro){
     $this->estado=$parametro;
   }
+  
+  function setAbono($parametro){
+    $this->abono=$parametro;
+  }
 
   function updateDatos($parametro){
   	$this->codigo=$parametro['Codigo'];
@@ -94,6 +103,7 @@ class Factura{
     $this->nTipoPago=$parametro['nTipo_Pago'];
   	$this->detalles=$parametro['Detalles'];
     $this->estado=$parametro['Estado'];
+    $this->abono=$parametro['Abono'];
   }
 }
 ?>

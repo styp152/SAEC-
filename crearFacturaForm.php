@@ -71,7 +71,8 @@ include('menu.php');
             <td>Abono</td>
             <td class="bold"><input type="text" id="abono" style="width:34px;"
               name="abono" autocomplete="off" onfocus="limpiar(this);" size="1"
-              onblur="abonar(this);" value="0" title="El minimo del abono es de 20%" /></td>
+              onblur="abonar(this);" value="0" title="El minimo del abono es de 20%"
+              onkeypress="return permite(event , 'num');" /></td>
           </tr>
           <tr>
             <td class="bold">Resta</td>

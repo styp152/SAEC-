@@ -53,7 +53,7 @@ include('menu.php');
             <tr>
                 <td><?php echo $cantidad[$j]; ?></td>
                 <td><?php echo $articulos[$j]->getNombre();?> </td>
-                <td align="center"><?php echo number_format(($articulos[$j]->getPrecio()/1.12),3);?></td>
+                <td align="center"><?php echo number_format(($articulos[$j]->getPrecio()/1.12),2);?></td>
                 <td align="right"><?php echo number_format(($articulos[$j]->getPrecio()*$cantidad[$j])/1.12,2);?></td>
                 <?php $total+=($articulos[$j]->getPrecio()*$cantidad[$j]);?>
             </tr>
