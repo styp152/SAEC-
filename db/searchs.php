@@ -187,4 +187,15 @@ function buscarFacturaPorCodigo($codigo){
   return $factura;
 }
 
+function buscarFacturasPorDia($fecha){
+  $sql='SELECT * FROM Factura WHERE Fecha_Registro=\''.$fecha.'\'';
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $factura = new Factura();
+    $factura->updateDatos($row);
+    $facturas[]=$factura;
+  }
+  return $facturas;
+}
+
 ?>

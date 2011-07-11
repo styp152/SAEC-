@@ -21,7 +21,7 @@ for($i=0;$i<count($articulos);$i++){
       'Precio'=>number_format(($articulos[$i]->getPrecio()/1.12),2));
   $sutTotal+=(($articulos[$i]->getPrecio()*$articulos[$i]->getCantidad())/1.12);
   $total+=$articulos[$i]->getPrecio()*$articulos[$i]->getCantidad();
-  $dataaux2=array('total'=>($articulos[$i]->getPrecio()*($articulos[$i]->getCantidad()/1.12)));
+  $dataaux2=array('total'=>number_format((($articulos[$i]->getPrecio()*($articulos[$i]->getCantidad()/1.12))),2));
   $data[]=array_merge($dataaux,$dataaux2);
 }
 
@@ -40,7 +40,10 @@ $datocreator= array ('Title'=>'Factura',
                      );
 $pdf->addInfo($datocreator);
 $pdf->ezImage("images/logo.jpg", 0, 540, 'none', 'left');
-$pdf->ezText("<b>"."Fecha: ".@date("d-m-Y")."</b>",12,array('justification'=>'right'));
+$pdf->ezSetY(790);
+$pdf->ezText("<b>".$factura->getCodigo()."</b>          \n\n\n",12,array('justification'=>'right'));
+$pdf->ezText("<b>"."Fecha: ".fecha_es2in($factura->getFechaRegistro())."</b>                                                                               ".
+             "<b>Fecha de Entrega: ".fecha_es2in($factura->getFechaEntrega()),12,array('justification'=>'left'));
 //$pdf->ezText("<b>"."Factura"."</b>\n",20,array('justification'=>'center'));
 $pdf->ezText("<b>"."Datos del Cliente"."</b>\n",16,array('justification'=>'center'));
 $datacliente[]=array('texto'=>
@@ -55,11 +58,18 @@ $titles = array('Cantidad'=>'<b>Cantidad</b>', 'Nombre'=>'<b>Nombre</b>','Precio
 $options=array('width'=> 520,'titleFontSize' => 18,'fontSize' => 12, 'shaded'=> 2, 'shadeCol' => array(1.0,1.0,1.0), 'xOrientation' => 'center');
 $pdf->ezTable($data, $titles, '', $options);
 
-$titles = array('descripcion'=>'<b>Descripcion</b>');
-$data1[]=array('descripcion'=>'<b>Sub-Total</b>                   '.number_format($sutTotal,2));
-$data1[]=array('descripcion'=>'<b>IVA 12%</b>                     '.number_format($total-$sutTotal,2));
-$data1[]=array('descripcion'=>'<b>Total</b>                           '.number_format($total,2));
-$options=array('width'=> 218,'titleFontSize' => 7,'fontSize' => 12, 'xPos' => 449, 'xOrientation' => 'center', 'showHeadings' => 0, 'showLines'=> 1);
+$titles = array('detalles'=>'<b>Detalles</b>','descripcion'=>'<b>Descripcion</b>');
+
+
+
+$data1[]=array('detalles'=>utf8_decode("<b> DETALLES DE DISEÑO Y PRODUCCION</b> \n".$factura->getDetalles()),
+        'descripcion'=>
+        '<b>Sub-Total</b>                   '.number_format($sutTotal,2).
+        "\n<b>IVA 12%</b>                     ".number_format($total-$sutTotal,2).
+        "\n<b>Total</b>                           ".number_format($total,2));
+//$data1[]=array('descripcion'=>);
+//$data1[]=array('descripcion'=>);
+$options=array('width'=> 520,'titleFontSize' => 7,'fontSize' => 12, 'xOrientation' => 'center', 'showHeadings' => 0, 'showLines'=> 1, 'options' => array('detalles'=>array('justification'=>'left','link'=>linkDataName),'descripcion'=>array('justificacion'=>'left','width'=>302)));
 $pdf->ezTable($data1, $titles, '', $options);
 
 $pdf->ezText("",16,array('justification'=>'center'));
