@@ -11,7 +11,7 @@ include("menu.php");
 
 <h2>Buscar Factura</h2>
 <div id="buscar">
-  <form name="form" action="buscarFacturaExecute.php" method="post" title="Permite Buscar una Factura" onsubmit="return validarVacio(this);">
+  <form name="form" action="buscarFacturaExecute.php" method="post" title="Permite Buscar una Factura" >
     <fieldset id="buscar_codigo" >
         <legend align="center">Buscar por Codigo de Factura</legend>
         <br />
