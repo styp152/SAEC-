@@ -44,7 +44,6 @@ $n_div = countPage($size);
 </div>
 <?php endfor;?>
 </div>
-<!--Paginar la Lista de Articulos TODO-->
 <?php
 include("menuInventario.php");
 include("foot.html");

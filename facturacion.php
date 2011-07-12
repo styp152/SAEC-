@@ -13,8 +13,8 @@ include('db/searchs.php');
 <?php
 $facturas=buscarFacturasPorDia(date('Y-m-d'));
 $size= count($facturas);
-$total=$facturas[0]->getAbono();
 if($size!=0){
+  $total=$facturas[0]->getAbono();
   $pivot = $facturas[0]->getCedulaVendedor();
   $z=0;
   $ventas[$z]=array('Cedula'=>$pivot, 'Abonos'=>$facturas[0]->getAbono(), 'Ventas'=>1);

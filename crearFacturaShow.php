@@ -8,7 +8,7 @@ include('menu.php');
 <div id="factura">
     <div id="fecha" style="text-align:right;">
         <label for="fecha" class="bold">Fecha: </label><label for="fecha_texto">
-            <?php echo @date("d-m-Y"); ?></label><br />
+            <?php echo fecha_es2in($factura->getFechaRegistro()); ?></label><br />
     </div>
     <fieldset id="factura" >
         <legend align="center">Datos del Cliente</legend>
@@ -85,6 +85,7 @@ include('menu.php');
         <br /><br />
         <input type="button" value="Imprimir" onclick="ir('imprimirFactura.php?Codigo=<?php echo $codigo;?>');" /></a>
         <input type="button" value="Anular" /></a>
+        <input type="button" value="Abonar" /></a>
         <input type="button" value="Salir" onclick="ir('facturacion.php');" />
     </fieldset>
   </form>
