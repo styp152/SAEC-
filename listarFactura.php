@@ -2,10 +2,18 @@
 include('session.php');
 include('head.html');
 include('menu.php');
-include('libreria.php');
 $size= count($facturas);
+if($size==0){
+?>
+<script type="text/javascript">
+alert('La Busqueda es Vacia, Elija uno de los Campos para Realizar la Busqueda de la Factura');
+location.href='buscarFactura.php';
+</script>
+<?php
+}
 $n_div = countPage($size);
 ?>
+<script type="text/javascript" src="js/validacion.js"></script>
 <h2>Lista de Facturas</h2>
 <br />
 <?php for($i=0;$i<$n_div;$i++):?>
@@ -18,16 +26,18 @@ $n_div = countPage($size);
       <td>Fecha Registro </td> 
       <td>Fecha Entrega </td>
       <td>Estatus </td>
-    </tr>
+      <td>Accion </td>
     </tr>
     <?php for($j=($i*10);$j<($i+1)*10;$j++):?>
       <tr>
         <td><?php echo $facturas[$j]->getCodigo(); ?></td>
         <td><?php echo $facturas[$j]->getCedulaCliente(); ?></td>
         <td><?php echo $facturas[$j]->getCedulaVendedor(); ?></td>
-        <td><?php echo $facturas[$j]->getFechaRegistro(); ?></td>
-        <td><?php echo $facturas[$j]->getFechaEntrega(); ?></td>
+        <td><?php echo fecha_es2in($facturas[$j]->getFechaRegistro()); ?></td>
+        <td><?php echo fecha_es2in($facturas[$j]->getFechaEntrega()); ?></td>
         <td><?php echo $facturas[$j]->getEstado(); ?></td>
+        <td><input type="button" value="Ver"
+            onclick="ir('verFactura.php?codigo=<?php echo $facturas[$j]->getCodigo();?>');" /></a></td>
       </tr>
       <?php if($j+1>=$size){break;}?>
     <?php endfor;?>
@@ -44,7 +54,7 @@ $n_div = countPage($size);
 <?php endfor;?>
 </div>
 <?php
-include("menuInventario.php");
+include("menuFacturacion.php");
 include("foot.html");
 ?>
 ?>

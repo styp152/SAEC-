@@ -215,3 +215,12 @@ function validarNTipoEnvio(campo){
     document.getElementById('NTipo_Pago').removeAttribute('disabled');
   }
 }
+
+function abonarCuenta(resta){
+  abono = prompt('Introduce la Cantidad a Abonar','[ Cantidad Abonar ]');
+  if(abono < 0 || abono > resta){
+    alert('Introduzca una Cantidad Valida a Abonar');
+    return 0;
+  }
+  return abono;
+}

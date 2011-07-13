@@ -3,6 +3,7 @@ include('session.php');
 include('head.html');
 include('menu.php');
 ?>
+<script type="text/javascript" src="js/validacion.js"></script>
 <h2>Presupuesto</h2>
 <div id="factura">
     <div id="fecha" style="text-align:right;">
@@ -64,9 +65,9 @@ include('menu.php');
         <label for="detalles_texto"><?php echo $presupuesto->getDetalles();?></label>
         <br />
         <br />
-        <input type="button" value="Imprimir" /></a>
-        <input type="button" value="Editar" /></a>
-        <input type="button" value="Cancelar" onclick="ir('facturacion.php');" />
+        <input type="button" value="Imprimir" onclick="ir('imprimirPresupuesto.php?Codigo=<? echo $presupuesto->getCodigo();?>');" /></a>
+        <input type="button" value="Convertir en Factura" /></a>
+        <input type="button" value="Salir" onclick="ir('facturacion.php');" />
     </fieldset>
   </form>
 </div>
@@ -74,6 +75,5 @@ include('menu.php');
 <?php
 include('menuFacturacion.php');
 include('foot.html');
-// debo poder incluir productos, con sus cantidades, y mostrar el precio unitario de ese producto, fecha de entrega, y un textarea, para Detalles de Diseño y Produccion
 ?>
 

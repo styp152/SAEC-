@@ -11,7 +11,7 @@ include('db/searchs.php');
 <h2>Facturacion</h2>
 <br />
 <?php
-$facturas=buscarFacturasPorDia(date('Y-m-d'));
+$facturas=buscarFacturasPorDiaSinAnular(date('Y-m-d'));
 $size= count($facturas);
 if($size!=0){
   $total=$facturas[0]->getAbono();

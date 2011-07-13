@@ -179,6 +179,14 @@ function buscarCodigoPresupuestoPorTodo($presupuesto){
   return $row['Codigo'];
 }
 
+function buscarPresupuestoPorCodigo($codigo){
+  $sql='SELECT * FROM Presupuesto WHERE Codigo=\''.$codigo.'\'';
+  $result = mysql_query($sql);
+  $presupuesto = new Presupuesto();
+  $presupuesto->updateDatos(mysql_fetch_assoc($result));
+  return $presupuesto;
+}
+
 function buscarFacturaPorCodigo($codigo){
   $sql='SELECT * FROM Factura WHERE Codigo=\''.$codigo.'\'';
   $result = mysql_query($sql);
@@ -187,8 +195,41 @@ function buscarFacturaPorCodigo($codigo){
   return $factura;
 }
 
-function buscarFacturasPorDia($fecha){
+function buscarFacturasPorDiaSinAnular($fecha){
+  $sql='SELECT * FROM Factura WHERE Fecha_Registro=\''.$fecha.'\' and Estado!=\'Anulada\'';
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $factura = new Factura();
+    $factura->updateDatos($row);
+    $facturas[]=$factura;
+  }
+  return $facturas;
+}
+
+function buscarFacturasPorDiaConAnular($fecha){
   $sql='SELECT * FROM Factura WHERE Fecha_Registro=\''.$fecha.'\'';
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $factura = new Factura();
+    $factura->updateDatos($row);
+    $facturas[]=$factura;
+  }
+  return $facturas;
+}
+
+function buscarFacturasPorRangoDias($fecha_inicio, $fecha_fin){
+  $sql='SELECT * FROM Factura WHERE Fecha_Registro>=\''.$fecha_inicio.'\' and Fecha_Registro<=\''.$fecha_fin.'\'';
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $factura = new Factura();
+    $factura->updateDatos($row);
+    $facturas[]=$factura;
+  }
+  return $facturas;
+}
+
+function buscarFacturasPorCedulaCliente($cedula){
+  $sql='SELECT * FROM Factura WHERE Cedula_Clientes=\''.$cedula.'\'';
   $result = mysql_query($sql);
   while($row = mysql_fetch_assoc($result)){
     $factura = new Factura();

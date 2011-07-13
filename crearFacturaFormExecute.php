@@ -24,6 +24,7 @@ $factura->setCedulaCliente($cliente->getCedula());
 $factura->setFechaRegistro(date('Y-m-d'));
 $factura->setFechaEntrega(fecha_es2in($factura->getFechaEntrega()));
 $factura->setCedulaVendedor($_SESSION['Cedula']);
+$factura->setEstado('Facturado');
 $vendedor = $_SESSION['Nombre'];
 $abono = $_REQUEST['abono'];
 $j = $_REQUEST['cantidadj'];

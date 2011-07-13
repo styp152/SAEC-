@@ -37,7 +37,16 @@ function actualizarAsistencia($asistencia){
   $sql='UPDATE Asistencia SET Hora_Salida=\''.$asistencia->getHoraSalida().'\', mHora_Salida=\''.$asistencia->getMHoraSalida().'\'
    WHERE Id='.$asistencia->getId();
   return mysql_query($sql)or die("Error al Registrar la Asistencia");
+}
 
+function actualizarEstadoDeFactura($codigo, $estado){
+  $sql='UPDATE Factura SET Estado=\''.$estado.'\' WHERE Codigo='.$codigo;
+  return mysql_query($sql)or die("Error al Actualizar la Factura");
+}
+
+function actualizarAbonoFactura($codigo, $abono){
+  $sql='UPDATE Factura SET Abono=\''.$abono.'\' WHERE Codigo='.$codigo;
+  return mysql_query($sql)or die("Error al Actualizar la Factura");
 }
 
 ?>

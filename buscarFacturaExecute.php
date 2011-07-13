@@ -19,27 +19,18 @@ location.href='buscarFactura.php';
 <?php
 }
 if($codigo!=''){
-  $factura=buscarFacturaPorCodigo($codigo);
-  $cliente= new Cliente();
-  $cliente->setCedula($factura->getCedulaCliente());
-  $vendedorDB = new Vendedor();
-  $vendedorDB = buscarVendedorPorCedula($factura->getCedulaVendedor());
-  $vendedor = $vendedorDB->getNombre()." ".$vendedorDB->getApellido();
-  $cliente=buscarClientePorCedula($cliente);
-  $abono= $factura->getAbono();
-  $articulos = buscarArticulosPorCodigoFactura($factura->getCodigo());
-  $k = count($articulos);
-  for($i=0;$i<$k;$i++){
-    $cantidad[$i] = $articulos[$i]->getCantidad();
-  }
-  include('crearFacturaShow.php');
+?>
+  <script type="text/javascript">
+    location.href="verFactura.php?codigo=<?php echo $codigo;?>";
+  </script>
+<?php
 }
 else{
   if($fecha_inicio==$fecha_fin and $fecha_inicio!=''){
-    $facturas=buscarFacturasPorDia($fecha_inicio);
+    $facturas=buscarFacturasPorDiaConAnular(fecha_es2in($fecha_inicio));
   }
-  elseif($fecha_fin=='' and $fecha_inicio!=''){
-    $facturas=buscarFacturasPorRangoDias($fecha_inicio, $fecha_fin);
+  elseif($fecha_fin!='' and $fecha_inicio!=''){
+    $facturas=buscarFacturasPorRangoDias(fecha_es2in($fecha_inicio), fecha_es2in($fecha_fin));
   }
   else{
     $facturas=buscarFacturasPorCedulaCliente($cedula);
