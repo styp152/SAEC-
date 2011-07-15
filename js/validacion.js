@@ -147,7 +147,9 @@ function agregar(){
     j++;
     total+=(document.getElementById('Precio').value * document.getElementById('cantidad').value)
     document.getElementById('total').innerHTML=total;
-    document.getElementById('resta').innerHTML=total-document.getElementById('abono').value;
+    if(document.getElementById('resta')!=null){
+      document.getElementById('resta').innerHTML=total-document.getElementById('abono').value;  
+    }
     document.getElementById('NombreP').value='';
     document.getElementById('Precio').value='0';
     document.getElementById('cantidad').value='0';
@@ -205,6 +207,7 @@ function clickEnviar(){
   hidden.setAttribute('name','cantidadj');
   hidden.setAttribute('value',j);
   document.getElementById('table').appendChild(hidden);
+  return;
 }
 
 function validarNTipoEnvio(campo){

@@ -3,17 +3,13 @@ include('session.php');
 include('head.html');
 include('menu.php');
 ?>
-<link href="css/calendario.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/calendar.js"></script>
-<script type="text/javascript" src="js/calendar-es.js"></script>
-<script type="text/javascript" src="js/calendar-setup.js"></script>
 <script type="text/javascript" src="js/validacion.js"></script>
 <script type="text/javascript" src="js/autocompletar_articulos.js"></script>
 <h2>Crear Presupuesto</h2>
 <div id="crear">
   <form name="form" action="crearPresupuestoFormExecute.php" method="post"
-      title="Permite Crear un Presupuesto" onsubmit="return validarVacio(this);">
-    <fieldset id="factura" >
+      title="Permite Crear un Presupuesto" onsubmit="/*return false;*/return validarVacio(this);">
+    <fieldset id="Presupuesto" >
       <legend align="center">Datos del Cliente</legend>
       <br />
       <label for="Nombre">Nombre: </label><input type="text" id="Nombre" name="Nombre"

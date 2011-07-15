@@ -37,5 +37,6 @@ for($i=0;$i<$j;$i++){
     }
 }
 insertarPresupuesto($presupuesto, $articulos, $cantidad);
+$codigo=buscarCodigoPresupuestoPorTodo($presupuesto);
 include('crearPresupuestoShow.php');
 ?>
