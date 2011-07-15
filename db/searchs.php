@@ -246,6 +246,17 @@ function buscarFacturasPorDiaConAnular($fecha){
   return $facturas;
 }
 
+function buscarPresupuestosPorDia($fecha){
+  $sql='SELECT * FROM Presupuesto WHERE Fecha_Registro=\''.$fecha.'\'';
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $presupuesto = new Presupuesto();
+    $presupuesto->updateDatos($row);
+    $presupuestos[]=$presupuesto;
+  }
+  return $presupuestos;
+}
+
 function buscarFacturasPorRangoDias($fecha_inicio, $fecha_fin){
   $sql='SELECT * FROM Factura WHERE Fecha_Registro>=\''.$fecha_inicio.'\' and Fecha_Registro<=\''.$fecha_fin.'\'';
   $result = mysql_query($sql);
@@ -257,6 +268,17 @@ function buscarFacturasPorRangoDias($fecha_inicio, $fecha_fin){
   return $facturas;
 }
 
+function buscarPresupuestosPorRangoDias($fecha_inicio, $fecha_fin){
+  $sql='SELECT * FROM Presupuesto WHERE Fecha_Registro>=\''.$fecha_inicio.'\' and Fecha_Registro<=\''.$fecha_fin.'\'';
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $presupuesto = new Presupuesto();
+    $presupuesto->updateDatos($row);
+    $presupuestos[]=$presupuesto;
+  }
+  return $presupuestos;
+}
+
 function buscarFacturasPorCedulaCliente($cedula){
   $sql='SELECT * FROM Factura WHERE Cedula_Clientes=\''.$cedula.'\'';
   $result = mysql_query($sql);
@@ -266,6 +288,18 @@ function buscarFacturasPorCedulaCliente($cedula){
     $facturas[]=$factura;
   }
   return $facturas;
+}
+
+function buscarPresupuestosPorCedulaCliente($cedula){
+  $sql='SELECT * FROM Presupuesto WHERE Cedula_Cliente=\''.$cedula.'\'';
+  echo $sql;
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $presupuesto = new Presupuesto();
+    $presupuesto->updateDatos($row);
+    $presupuestos[]=$presupuesto;
+  }
+  return $presupuestos;
 }
 
 ?>

@@ -11,7 +11,7 @@ include("menu.php");
 
 <h2>Buscar Presupuesto</h2>
 <div id="buscar">
-  <form name="form" action="buscarPresupuestoExecute.php" method="post" title="Permite Buscar un Presupuesto" onsubmit="return validarVacio(this);">
+  <form name="form" action="buscarPresupuestoExecute.php" method="post" title="Permite Buscar un Presupuesto" >
     <fieldset id="buscar_codigo" >
         <legend align="center">Buscar por Codigo de Presupuesto</legend>
         <br />
