@@ -34,7 +34,11 @@ for($i=0;$i<$j;$i++){
         $cantidad[]=$_REQUEST['c'.$i];
         $nombre=$_REQUEST['n'.$i];
         $articulo=new Articulo();
+        $articuloDB=new Articulo();
         $articulo=buscarArticulo($nombre);
+        $articuloDB=buscarArticulo($nombre);
+        $articuloDB->setCantidad($articuloDB->getCantidad()-$articulo->getCantidad());
+        actualizarArticulo($articuloDB);
         $articulo->setPrecio($_REQUEST['p'.$i]);
         $articulos[]=$articulo;
         $k++;

@@ -49,7 +49,7 @@ function buscarArticulosPorCantidad($cantidad){
 }
 
 function buscarArticulosPorNombre($nombre){
-  $sql="SELECT Nombre,Precio FROM Articulo WHERE Nombre LIKE '%".$nombre."%' ORDER BY Nombre LIMIT 10";
+  $sql="SELECT Nombre,Precio,Cantidad FROM Articulo WHERE Nombre LIKE '%".$nombre."%' ORDER BY Nombre LIMIT 10";
   $result = mysql_query($sql);
   while($row = mysql_fetch_assoc($result)){
     $articulo = new Articulo();
@@ -292,7 +292,6 @@ function buscarFacturasPorCedulaCliente($cedula){
 
 function buscarPresupuestosPorCedulaCliente($cedula){
   $sql='SELECT * FROM Presupuesto WHERE Cedula_Cliente=\''.$cedula.'\'';
-  echo $sql;
   $result = mysql_query($sql);
   while($row = mysql_fetch_assoc($result)){
     $presupuesto = new Presupuesto();
@@ -300,6 +299,17 @@ function buscarPresupuestosPorCedulaCliente($cedula){
     $presupuestos[]=$presupuesto;
   }
   return $presupuestos;
+}
+
+function buscarFacturasProduccion(){
+  $sql = "SELECT * FROM Factura WHERE Estado='Facturado' LIMIT 0, 10";
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $factura = new Factura();
+    $factura->updateDatos($row);
+    $facturas[]=$factura;
+  }
+  return $facturas;
 }
 
 ?>

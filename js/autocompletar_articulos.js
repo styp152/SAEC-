@@ -12,9 +12,14 @@ function inicializa_xhr() {
 }
 
 function colocarValor(valor) {
-   document.getElementById("NombreP").value = valor.substring(0,valor.indexOf('-'));
-   document.getElementById("Precio").value = valor.substring(valor.indexOf('-')+1);
-   borraLista();
+  if((document.getElementById('cantidad').value)*1 <= (valor.substring(valor.indexOf('+')+1))*1){
+    document.getElementById("NombreP").value = valor.substring(0,valor.indexOf('-'));
+    document.getElementById("Precio").value = valor.substring(valor.indexOf('-')+1,valor.indexOf('+'));
+  }
+  else{
+    alert('Cantidad de Productos Superior a lo Disponible en Inventario');
+  }
+    borraLista();
 }
 
 Array.prototype.formateaLista = function() {

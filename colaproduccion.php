@@ -1,7 +1,14 @@
 <?php
 include('session.php');
+include('libreria.php');
+include('clases/Factura.php');
+include('clases/Cliente.php');
+include('db/searchs.php');
 include("head.html");
 include("menu.php");
+conectarDB();
+$facturas = buscarFacturasProduccion();
+$size = count($facturas);
 ?>
 <script type="text/javascript" src="js/validacion.js"></script>
 <h2>Cola de Produccion</h2>
@@ -9,43 +16,26 @@ include("menu.php");
   <tr class="first">
     <td>N° de Factura</td>
     <td>Cliente</td>
-    <td>Cantidad de Productos</td> 
+    <td>Fecha de Registro</td>
     <td>Fecha de Entrega</td>
     <td>Detalles</td>
     <td>Seleccionar</td>
   </tr>
-  <tr id="1" >
-    <td>345212</td>
-    <td>Pedro Perez</td>
-    <td>5</td>
-    <td>25/05</td>
-    <td><input type="button" name="ver" value="Ver" onclick="location.href='detallesProduccion.php';" /></td>
-    <td><input type="button" name="ver" value="Listo" onclick="document.getElementById('tabla').deleteRow(this.parentNode.parentNode.id);" /></td>
-  </tr> 
-  <tr id="2">
-    <td>231232</td>
-    <td>Margarita Martinez</td>
-    <td>50</td>
-    <td>01/06</td>
-    <td><input type="button" name="ver" value="Ver" onclick="location.href='detallesProduccion.php';" /></td>
-    <td><input type="button" name="ver" value="Listo" onclick="document.getElementById('tabla').deleteRow(this.parentNode.parentNode.id);" /></td>
-  </tr> 
-  <tr id="3">
-    <td>23423443</td>
-    <td>Petronila Rodriguez</td>
-    <td>24</td>
-    <td>05/06</td>
-    <td><input type="button" name="ver" value="Ver" onclick="location.href='detallesProduccion.php';" /></td>
-    <td><input type="button" name="ver" value="Listo" onclick="document.getElementById('tabla').deleteRow(this.parentNode.parentNode.id);" /></td>
+  <?php for($i=0;$i<$size;$i++): ?>
+  <tr>
+    <td><?php echo $facturas[$i]->getCodigo();?></td>
+    <?php
+      $cliente = new Cliente();
+      $cliente->setCedula($facturas[$i]->getCedulaCliente());
+      $clienteDB = buscarClientePorCedula($cliente);
+    ?>
+    <td><?php echo $clienteDB->getNombre();?></td>
+    <td><?php echo fecha_es2in($facturas[$i]->getFechaRegistro());?></td>
+    <td><?php echo fecha_es2in($facturas[$i]->getFechaEntrega());?></td>
+    <td><input type="button" value="Ver" onclick="ir('verFactura.php?Codigo=<?php echo $facturas[$i]->getCodigo();?>');" /></td>
+    <td><input type="button" value="Listo" onclick="ir('productosListos.php?Codigo=<?php echo $facturas[$i]->getCodigo();?>');" /></td>
   </tr>
-  <tr id="4" >
-    <td>123123123</td>
-    <td>Josefina Vergara</td>
-    <td>20</td>
-    <td>12/06</td>
-    <td><input type="button" name="ver" value="Ver" onclick="location.href='detallesProduccion.php';" /></td>
-    <td><input type="button" name="ver" value="Listo" onclick="document.getElementById('tabla').deleteRow(this.parentNode.parentNode.id);" /></td>
-  </tr>
+  <?php endfor; ?>
 </table>
 </div>
 <?php
