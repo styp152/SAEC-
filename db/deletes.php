@@ -10,4 +10,9 @@ function borrarVendedor($cedula){
   mysql_query($sql);
 }
 
+function borrarAbonos($codigo){
+  $sql = "DELETE FROM Abono WHERE Codigo=$codigo";
+  mysql_query($sql);
+}
+
 ?>

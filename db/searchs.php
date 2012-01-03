@@ -312,4 +312,55 @@ function buscarFacturasProduccion(){
   return $facturas;
 }
 
+function buscarAbonosPorDia($fecha){
+  $sql = "SELECT * FROM Abono WHERE Fecha_Registro='".$fecha."' ORDER BY Cedula_Vendedor ASC";
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $abono = new Abono();
+    $abono->updateDatos($row);
+    $abonos[]=$abono;
+  }
+  return $abonos;
+}
+
+function buscarAbonosPorRangoDias($fecha_inicio, $fecha_fin){
+  $sql = "SELECT * FROM Abono WHERE Fecha_Registro>'".$fecha_inicio."' and Fecha_Registro<'".$fecha_fin."' ORDER BY Fecha_Registro ASC";
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $abono = new Abono();
+    $abono->updateDatos($row);
+    $abonos[]=$abono;
+  }
+  return $abonos;
+}
+
+function buscarMontoCC($fecha){
+  $sql = "SELECT Monto FROM CajaChica WHERE Fecha_Registro='".$fecha."'";
+  $result = mysql_query($sql);
+  $row = mysql_fetch_assoc($result);
+  return $row['Monto'];
+}
+
+function buscarGastosPorDia($fecha){
+  $sql = "SELECT * FROM Gasto WHERE Fecha_Registro='".$fecha."' ORDER BY Cedula_Vendedor ASC";
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $gasto = new Gasto();
+    $gasto->updateDatos($row);
+    $gastos[]=$gasto;
+  }
+  return $gastos;
+}
+
+function buscarGastosPorRangoDias($fecha_inicio, $fecha_fin){
+  $sql = "SELECT * FROM Gasto WHERE Fecha_Registro>'".$fecha_inicio."' and Fecha_Registro<'".$fecha_fin."'  ORDER BY Fecha_Registro ASC";
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $gasto = new Gasto();
+    $gasto->updateDatos($row);
+    $gastos[]=$gasto;
+  }
+  return $gastos;
+}
+
 ?>

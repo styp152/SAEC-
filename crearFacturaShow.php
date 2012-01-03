@@ -82,12 +82,13 @@ include('menu.php');
         <label >Estado de la Factura: </label><label id="estado" ><?php echo $factura->getEstado(); ?></label><br />
         <br /><br />
         <input type="button" value="Imprimir" onclick="ir('imprimirFactura.php?Codigo=<?php echo $codigo;?>');" /></a>
-        <input type="button" value="Entregar" onclick="if(document.getElementById('estado').innerHTML!= 'Anulada'){
+        <input type="button" value="Entregar" onclick="if(document.getElementById('estado').innerHTML!= 'Anulada' 
+            and document.getElementById('estado').innerHTML == 'Para Entregar'){
             if(<?php echo $total-$abono;?> == 0){
                 if(confirm('¿Esta Seguro que Desea Entregar esta Factura? (Esta Accion es Irreversible)')){
                     ir('entregarFactura.php?Codigo=<?php echo $codigo;?>');}
                 else{alert('Debe Cancelar el Total de la Factura para Poder Entregar el Producto');}}}
-            else{alert('No puedes Entregar los Productos de una Factura Anulada');}"  /></a>
+            else{alert('No puedes Entregar los Productos de una Factura Anulada o que Aun no esta Lista');}"  /></a>
         <input type="button" value="Anular" onclick="if(document.getElementById('estado').innerHTML != 'Entregada'){
                 if(confirm('¿Esta Seguro que Desea Anular esta Factura? (Esta Accion es Irreversible)')){
                     ir('anularFactura.php?Codigo=<?php echo $codigo;?>');}}

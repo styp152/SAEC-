@@ -13,7 +13,10 @@
     <li><a href="asistenciaEmpleado.php"><span>Asistencia Empleado</span></a></li>
     <?php if($_SESSION["Nivel"] == 2): ?>
       <li><a href="colaproduccion.php"><span>Cola de Produccion</span></a></li>
+      <li><a href="asignarCC.php"><span>Asignar Caja Chica del Día</span></a></li>
     <?php endif ?>
+    
+    <li><a href="registrarGasto.php"><span>Registro de Gasto</span></a></li>
     <?php include('vendedor.php'); ?>
   </ul>
 </div>

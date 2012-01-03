@@ -8,9 +8,10 @@ function insertarArticulo($articulo){
 }
 
 function insertarVendedor($vendedor){
-  $sql='INSERT INTO Vendedor (Cedula, Nombre, Apellido, Cargo, Nivel, Clave) VALUES
-  ('.$vendedor->getCedula().',\''.$vendedor->getNombre().'\',\''.$vendedor->getApellido().'\',\''.
+  $sql='INSERT INTO Vendedor (Cedula, AvisoRegistro, Nombre, Apellido, Cargo, Nivel, Clave) VALUES
+  ('.$vendedor->getCedula().',\''.$vendedor->getAvisoRegistro().'\',\''.$vendedor->getNombre().'\',\''.$vendedor->getApellido().'\',\''.
   $vendedor->getCargo().'\',\''.$vendedor->getNivel().'\', AES_ENCRYPT(\''.$vendedor->getClave().'\',\'Password\'))';
+  echo $sql;
   return @mysql_query($sql) or die('Error Al Insertar el Empleado');
 }
 
@@ -62,4 +63,25 @@ function insertarPresupuesto($presupuesto, $articulos, $cantidad){
   }
   @mysql_query($sql) or die('Error Al Insertar la Relacion Factura-Articulo');
 }
+
+function insertarAbono($abono){
+  $sql = "INSERT INTO Abono (Id, Codigo, Cedula_Vendedor, Fecha_Registro, Monto)
+    VALUES ('', ".$abono->getCodigo().", '".$abono->getCedulaVendedor()."', '".
+    DATE('Y/m/d')."', ".$abono->getMonto().");";
+  @mysql_query($sql) or die('Error Al Insertar el Abono');
+}
+
+function insertarGasto($gasto){
+  $sql = "INSERT INTO Gasto (Id, Cedula_Vendedor, Fecha_Registro, Monto, Descripcion)
+    VALUES ('', '".$gasto->getCedulaVendedor()."', '".DATE('Y/m/d')."', ".$gasto->getMonto().",
+    '".$gasto->getDescripcion()."');";
+  @mysql_query($sql) or die('Error Al Insertar el Gasto');
+}
+
+function insertarCC($cc){
+  $sql = "INSERT INTO CajaChica (Id, Fecha_Registro, Monto)
+    VALUES ('', '".DATE('Y/m/d')."', ".$cc->getMonto().");";
+  @mysql_query($sql) or die('Error Al Insertar la CajaChica del Dia');
+}
+
 ?>

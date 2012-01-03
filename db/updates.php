@@ -13,14 +13,14 @@ function actualizarArticulo($articulo){
 }
 
 function actualizarVendedorDesdeAdministrador($vendedor){
-  $sql="UPDATE Vendedor SET Nombre='".$vendedor->getNombre()."', Apellido='".$vendedor->getApellido().
+  $sql="UPDATE Vendedor SET AvisoRegistro=".$vendedor->getAvisoRegistro().", Nombre='".$vendedor->getNombre()."', Apellido='".$vendedor->getApellido().
     "', Cargo='".$vendedor->getCargo()."', Nivel=".$vendedor->getNivel().
     " WHERE Cedula=".$vendedor->getCedula();
   mysql_query($sql);
 }
 
 function actualizarVendedorDesdeEmpleado($vendedor){
-  $sql="UPDATE Vendedor SET Nombre='".$vendedor->getNombre()."', Apellido='".$vendedor->getApellido().
+  $sql="UPDATE Vendedor SET AvisoRegistro=".$vendedor->getAvisoRegistro().", Nombre='".$vendedor->getNombre()."', Apellido='".$vendedor->getApellido().
     "', Cargo='".$vendedor->getCargo()."', Clave = AES_ENCRYPT('".$vendedor->getClave()."','Password')
      WHERE Cedula=".$vendedor->getCedula();
   mysql_query($sql);
@@ -47,6 +47,11 @@ function actualizarEstadoDeFactura($codigo, $estado){
 function actualizarAbonoFactura($codigo, $abono){
   $sql='UPDATE Factura SET Abono=\''.$abono.'\' WHERE Codigo='.$codigo;
   return mysql_query($sql)or die("Error al Actualizar la Factura");
+}
+
+function actualizarCC($monto){
+  $sql = "UPDATE CajaChica SET Monto=".$monto." WHERE Fecha_Registro =".DATE('Y-m-d');
+  @mysql_query($sql) or die('Error Al Actualizar la CajaChica del Dia');
 }
 
 ?>

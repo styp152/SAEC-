@@ -1,6 +1,7 @@
 <?php
 class Vendedor{
 	private $cedula;
+	private $avisoRegistro;
 	private $nombre;
 	private $apellido;
 	private $cargo;
@@ -13,6 +14,10 @@ class Vendedor{
     return $this->cedula;
   }
   
+	function getAvisoRegistro(){
+    return $this->aviso;
+  }
+	
   function getNombre(){
     return $this->nombre;
   }
@@ -35,6 +40,10 @@ class Vendedor{
   
   function setCedula($parametro){
     $this->cedula=$parametro;
+  }
+	
+	function setAvisoRegistro($parametro){
+    $this->aviso=$parametro;
   }
   
   function setNombre($parametro){
@@ -59,11 +68,12 @@ class Vendedor{
   
   function updateDatos($parametro){
   	$this->cedula=$parametro['Cedula'];
+		$this->aviso=$parametro['AvisoRegistro'];
   	$this->nombre=$parametro['Nombre'];
   	$this->apellido=$parametro['Apellido'];
   	$this->cargo=$parametro['Cargo'];
   	$this->nivel=$parametro['Nivel'];
-	$this->clave=$parametro['Clave'];
+		$this->clave=$parametro['Clave'];
   }
 }
 ?>

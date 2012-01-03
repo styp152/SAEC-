@@ -21,7 +21,7 @@ include('menu.php');
       <br /><br />
       <label for="Cedula">Cedula: </label><input type="text" id="Cedula" name="Cedula"
         onfocus="limpiar(this);" size="9" value="<?php echo $cedula;?>" readonly="true" />
-      <label for="Telefono">Telefono: </label><input type="text" id="Telefono"
+      <label for="Telefono">Telefono: </label><input type="text" id="Telefono" onkeypress="return permite(event , 'num')"
         name="Telefono" onfocus="limpiar(this);" size="10" value="<?php echo $cliente->getTelefono();?>" />
       <br /><br />
       <label for="Direccion">Direccion: </label><input type="text" id="Direccion"

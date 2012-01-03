@@ -1,0 +1,11 @@
+<?php
+include('session.php');
+include('head.html');
+include('menu.php');
+?>
+<h2>Reportes</h2>
+</div>
+<?php
+include("menuReporte.php");
+include('foot.html');
+?>

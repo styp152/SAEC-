@@ -37,6 +37,9 @@ include('menu.php');
           <option value="1" selected="selected">Empleado</option>
         <?php endif ?>
       </select>
+      <br /><br />
+      <label for="nivel">Aviso por Mensaje al Registrar en el Sistema: </label>Si<input type="radio" name="AvisoRegistro" <?php if($vendedor->getAvisoRegistro()==1){?>checked="checked"<?php }?> value="1" id="AvisoRegistroS" />
+      No<input type="radio" name="AvisoRegistro" value="0" <?php if($vendedor->getAvisoRegistro()==0){?>checked="checked"<?php }?>  id="AvisoRegistroN" />
       <?php else: ?>
         <input type="hidden" id="Nivel" name="Nivel" value="<?php echo $vendedor->getNivel(); ?>" />
       <?php endif ?>

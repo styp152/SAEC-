@@ -32,7 +32,7 @@ $size = count($facturas);
     <td><?php echo $clienteDB->getNombre();?></td>
     <td><?php echo fecha_es2in($facturas[$i]->getFechaRegistro());?></td>
     <td><?php echo fecha_es2in($facturas[$i]->getFechaEntrega());?></td>
-    <td><input type="button" value="Ver" onclick="ir('verFactura.php?Codigo=<?php echo $facturas[$i]->getCodigo();?>');" /></td>
+    <td><input type="button" value="Ver" onclick="ir('verFactura.php?codigo=<?php echo $facturas[$i]->getCodigo();?>');" /></td>
     <td><input type="button" value="Listo" onclick="ir('productosListos.php?Codigo=<?php echo $facturas[$i]->getCodigo();?>');" /></td>
   </tr>
   <?php endfor; ?>

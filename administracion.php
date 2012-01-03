@@ -3,17 +3,26 @@ include('session.php');
 include("head.html");
 include("menu.php");
 require_once('clases/Articulo.php');
+require_once('clases/Factura.php');
 include('libreria.php');
 include('db/searchs.php');
 
 conectarDB();
-
+$facturas = buscarFacturasPorDiaSinAnular(DATE('Y-m-d'));
+$sizef = count($facturas);
+$cantidadA = 0;
+$total = 0;
+for($i=0; $i< $sizef; $i++){
+  $artis = buscarArticulosPorCodigoFactura($facturas[$i]->getCodigo());
+  $cantidadA+= count($artis);
+  for($j=0; $j < count($artis); $j++){
+    $total += $artis[$j]->getCantidad() * $artis[$j]->getPrecio();
+  }
+}
 $articulos=buscarArticulosPorCantidad(0);
 $size= count($articulos);
 ?>
 <h2>Administracion</h2>
-<!-- TODO Buscar los articulos agotados -->
-<!-- TODO Buscar las ventas en la ultima semana -->
 <?php if($size == 0): ?>
     <p class="detalles">No hay articulos agotados</p>
 <?php else: ?>
@@ -35,42 +44,19 @@ $size= count($articulos);
     </table>
 <?php endif ?>
 <br />
-Produccion de la Ultima Semana
+Produccion del Día
+<br />
+<br />
 <table>
   <tr class="first">
-    <td>Fecha </td>
+    <td>Cantidad de Articulos Vendidos</td>
     <td>Cantidad de Ventas </td>
-    <td>Monto de la Venta </td>
+    <td>Monto Total de Venta</td>
   </tr>
   <tr>
-    <td>Lunes 16/05</td>
-    <td>5</td>
-    <td>550 </td>
-  </tr>
-  <tr>
-    <td>Martes 17/05</td>
-    <td>6</td>
-    <td>550 </td>
-  </tr>
-  <tr>
-    <td>Miercoles 18/05</td>
-    <td>8</td>
-    <td>550 </td>
-  </tr>
-  <tr>
-    <td>Jueves 19/05</td>
-    <td>10</td>
-    <td>550 </td>
-  </tr>
-  <tr>
-    <td>Viernes 20/05</td>
-    <td>7</td>
-    <td>550 </td>
-  </tr>
-  <tr>
-    <td>Sabado 21/05</td>
-    <td>4</td>
-    <td>550 </td>
+    <td><?php echo $cantidadA;?></td>
+    <td><?php echo $sizef;?></td>
+    <td><?php echo $total;?></td>
   </tr>
 </table>
 </div>
