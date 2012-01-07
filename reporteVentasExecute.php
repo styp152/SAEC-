@@ -40,6 +40,7 @@ $k=0;
 $pivot[$k] = $facturas[0]->getFechaRegistro();
 $ventas[$k] = 1;
 $total[$k] = 0;
+$totales= 0;
 $artis = buscarArticulosPorCodigoFactura($facturas[0]->getCodigo());
 $cantidadA+= count($artis);
 for($j=0; $j < count($artis); $j++){
@@ -65,6 +66,10 @@ for($i=1; $i<$size; $i++){
       $total[$k] += $artis[$j]->getCantidad() * $artis[$j]->getPrecio();
     }
   }
+}
+
+for($i=0;$i<=$k;$i++){
+	$totales += $total[$i];
 }
 
 include("reporteVentasShow.php");

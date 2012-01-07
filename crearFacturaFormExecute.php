@@ -7,6 +7,7 @@ include('db/updates.php');
 require_once('clases/Cliente.php');
 require_once('clases/Factura.php');
 require_once('clases/Articulo.php');
+require_once('clases/Abono.php');
 conectarDB();
 $cliente = new Cliente();
 $cliente->updateDatos($_REQUEST);
@@ -24,7 +25,7 @@ $factura->setCedulaCliente($cliente->getCedula());
 $factura->setFechaRegistro(date('Y-m-d'));
 $factura->setFechaEntrega(fecha_es2in($factura->getFechaEntrega()));
 $factura->setCedulaVendedor($_SESSION['Cedula']);
-$factura->setEstado('Facturado');
+$factura->setEstado('Disenio');
 $vendedor = $_SESSION['Nombre'];
 $abono = $_REQUEST['abono'];
 $j = $_REQUEST['cantidadj'];
@@ -37,7 +38,7 @@ for($i=0;$i<$j;$i++){
         $articuloDB=new Articulo();
         $articulo=buscarArticulo($nombre);
         $articuloDB=buscarArticulo($nombre);
-        $articuloDB->setCantidad($articuloDB->getCantidad()-$articulo->getCantidad());
+        $articuloDB->setCantidad($articuloDB->getCantidad() - $cantidad[$i]);
         actualizarArticulo($articuloDB);
         $articulo->setPrecio($_REQUEST['p'.$i]);
         $articulos[]=$articulo;
@@ -46,5 +47,15 @@ for($i=0;$i<$j;$i++){
 }
 insertarFactura($factura, $articulos, $cantidad, $abono);
 $codigo=buscarCodigoFacturaPorTodo($factura);
+$abonos = new Abono();
+$abonos->setCedulaVendedor($_SESSION["Cedula"]);
+$abonos->setCodigo($codigo);
+$abonos->setMonto($abono);
+insertarAbono($abonos);
+?>
+<script>
+alert('Listo el CLIENTE a sido Facturado, Crear una Carpeta con el Nombre 0P-00<?php echo $codigo;?>');
+</script>
+<?php
 include('crearFacturaShow.php');
 ?>

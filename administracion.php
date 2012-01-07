@@ -19,7 +19,7 @@ for($i=0; $i< $sizef; $i++){
     $total += $artis[$j]->getCantidad() * $artis[$j]->getPrecio();
   }
 }
-$articulos=buscarArticulosPorCantidad(0);
+$articulos=buscarArticulosPorCantidad(5);
 $size= count($articulos);
 ?>
 <h2>Administracion</h2>
@@ -30,12 +30,14 @@ $size= count($articulos);
     <br />
     <table>
       <tr class="first">
+        <td>Restan </td>
         <td>Nombre </td>
         <td>Descripcion </td> 
         <td>Precio Unitario Bsf</td>
       </tr>
       <?php for($i=0;$i<$size;$i++):?>
       <tr>
+        <td><?php echo $articulos[$i]->getCantidad(); ?></td>      
         <td><?php echo $articulos[$i]->getNombre(); ?></td>
         <td><?php echo $articulos[$i]->getDescripcion(); ?></td>
         <td><?php echo $articulos[$i]->getPrecio(); ?></td>

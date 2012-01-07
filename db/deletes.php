@@ -14,5 +14,4 @@ function borrarAbonos($codigo){
   $sql = "DELETE FROM Abono WHERE Codigo=$codigo";
   mysql_query($sql);
 }
-
 ?>

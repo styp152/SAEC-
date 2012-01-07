@@ -19,6 +19,7 @@ include("menu.php");
     </tr>
   <?php endfor;?>
 </table>
+Total de Ventas del Rango es: <?php echo $totales; ?> BsF
 </div>
 <?php
 include("menuReporte.php");

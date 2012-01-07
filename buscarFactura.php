@@ -47,6 +47,13 @@ include("menu.php");
         <br /><br />
         <br />
     </fieldset>
+    <fieldset id="buscar_nombre">
+        <legend align="center">Buscar por Nombre del Cliente</legend>
+        <br />
+        <label for="cedula">Nombre: </label><input type="text" id="nombre" name="nombre" onfocus="limpiar(this);" size="9" onkeypress="return permite(event , 'car')" />
+        <br /><br />
+        <br />
+    </fieldset>
     <div id="botones">
       <br />
       <input type="button" id="btnCodigo" class="btn" value="Por Codigo" title="Boton para Mostrar los datos para la busqueda por Codigo" onClick="document.getElementById('botones').style.display='none';document.getElementById('buscar_codigo').style.display='block';document.getElementById('btn').style.display='block';" />
@@ -54,6 +61,8 @@ include("menu.php");
       <input type="button" id="btnCedula" class="btn" value="Por Cedula" title="Boton para Mostrar los datos para la busqueda por Cedula" onClick="document.getElementById('botones').style.display='none';document.getElementById('buscar_cedula').style.display='block';document.getElementById('btn').style.display='block';" />
       <br /><br />
       <input type="button" id="btnFecha" class="btn" value="Por Fecha" title="Boton para Mostrar los datos para la busqueda por Fecha" onClick="document.getElementById('botones').style.display='none';document.getElementById('buscar_fecha').style.display='block';document.getElementById('btn').style.display='block';" />
+      <br /><br />
+      <input type="button" id="btnNombre" class="btn" value="Por Nombre" title="Boton para Mostrar los datos para la busqueda por Nombre" onClick="document.getElementById('botones').style.display='none';document.getElementById('buscar_nombre').style.display='block';document.getElementById('btn').style.display='block';" />
       <br />  
     </div>
     <br />

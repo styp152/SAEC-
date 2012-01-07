@@ -7,8 +7,8 @@ function permite(elEvento, permitidos) {
   var numeros = "0123456789";
   var caracteres = " abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
   var numeros_caracteres = numeros + caracteres;
-  var teclas_especiales = [8, 37, 39, 46];
-  // 8 = BackSpace, 46 = Supr, 37 = flecha izquierda, 39 = flecha derecha
+  var teclas_especiales = [8, 9, 37, 39, 46];
+  // 8 = BackSpace, 9 = TAB, 46 = Supr, 37 = flecha izquierda, 39 = flecha derecha
   // Seleccionar los caracteres a partir del parámetro de la función
   switch(permitidos) {
     case 'num':
@@ -66,6 +66,13 @@ function limpiar(campo){
 function limpiarT(campo){
   campo.value="";  
 }
+
+function limpiarD(campo){
+  if(campo.value=='Aqui se agregan los detalles del pedido.'){
+	campo.value="";
+  }
+}
+
 function ir(direccion){
   window.location=direccion;
 }
@@ -226,4 +233,26 @@ function abonarCuenta(resta){
     return 0;
   }
   return abono;
+}
+
+function sms(){
+	text = prompt('Mensaje a Enviar','[ Texto a Enviar ]');
+	if(text.length>138){
+		alert('La cantidad Maxima de Caracteres en 138');
+    return 0;
+	}
+	return text;
+}
+
+function actualizarCopias(valorC, valorO, valorA){
+	if(document.getElementById('Campo').value=='Carta'){
+		valor=valorC;
+	}
+	if(document.getElementById('Campo').value=='Oficio'){
+		valor=valorO;
+	}
+	if(document.getElementById('Campo').value=='Ampliacion'){
+		valor=valorA;
+	}
+	document.getElementById('Valor').value=(document.getElementById('Valor').value*1)+valor;
 }

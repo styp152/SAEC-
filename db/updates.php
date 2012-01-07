@@ -51,7 +51,10 @@ function actualizarAbonoFactura($codigo, $abono){
 
 function actualizarCC($monto){
   $sql = "UPDATE CajaChica SET Monto=".$monto." WHERE Fecha_Registro =".DATE('Y-m-d');
-  @mysql_query($sql) or die('Error Al Actualizar la CajaChica del Dia');
+  return @mysql_query($sql) or die('Error Al Actualizar la CajaChica del Dia');
 }
-
+function actualizarConfig($campo, $valor){
+  $sql = 'UPDATE  Configuracion SET  Valor =  \''.$valor.'\' WHERE  Campo =\''.$campo.'\'';
+  return @mysql_query($sql) or die('Error Al Actualizar la Configuracion');
+}
 ?>

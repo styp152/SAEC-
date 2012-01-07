@@ -40,17 +40,20 @@ $k=0;
 $pivot[$k] = $gastos[0]->getFechaRegistro();
 $gasto[$k] = 1;
 $total[$k] = $gastos[0]->getMonto();
+$totales= $gastos[0]->getMonto();
 
 for($i=1; $i<$size; $i++){
   if($pivot[$k]==$gastos[$i]->getFechaRegistro()){
     $gasto[$k]++;
     $total[$k]+=$gastos[$i]->getMonto();
+	$totales+= $gastos[$i]->getMonto();
   }
   else{
     $k++;
     $pivot[$k] = $gastos[$i]->getFechaRegistro();
     $gasto[$k] = 1;
     $total[$k] = $gastos[$i]->getMonto();
+	$totales+= $gastos[$i]->getMonto();
   } 
 }
 

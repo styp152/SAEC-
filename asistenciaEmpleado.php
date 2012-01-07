@@ -31,12 +31,12 @@ if($_SESSION['Nivel']==2){
         <option value=""></option>
         <?php for($i=0;$i<$size;$i++):?>
         <option value="<?php echo $vendedores[$i]->getCedula() ?>"><?php echo $vendedores[$i]->getNombre().' '.$vendedores[$i]->getApellido(); ?></option>
-        <? endfor ?>
+        <?php endfor; ?>
       </select>
       <br /><br />
     <?php else: ?>
       <input type="hidden" name="Cedula" id="Cedula" value="<?php echo $_SESSION['Cedula']; ?>" />
-    <?php endif ?>
+    <?php endif; ?>
     <label>Por Mes</label>
     <br />
     <select id="mes" name="mes" title="Seleciona el mes a Consultar" onblur="if(this.value!=0) {deshabilitar(document.getElementById('fecha1')); deshabilitar(document.getElementById('fecha2'));}" >

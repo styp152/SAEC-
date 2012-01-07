@@ -13,7 +13,8 @@ include('menu.php');
     <fieldset id="factura" >
         <legend align="center">Datos del Cliente</legend>
         <br />
-        <label for="cedula" class="bold">Cedula: </label><label
+        <label for="cedula" class="bold">Cedula o RIF: </label><label
+            for="cedula_texto"><?php echo $cliente->getNacionalidad();?></label>-<label
             for="cedula_texto"><?php echo $cliente->getCedula();?></label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <label for="nombre" class="bold">Nombre: </label><label for="nombre_texto">
@@ -82,13 +83,12 @@ include('menu.php');
         <label >Estado de la Factura: </label><label id="estado" ><?php echo $factura->getEstado(); ?></label><br />
         <br /><br />
         <input type="button" value="Imprimir" onclick="ir('imprimirFactura.php?Codigo=<?php echo $codigo;?>');" /></a>
-        <input type="button" value="Entregar" onclick="if(document.getElementById('estado').innerHTML!= 'Anulada' 
-            and document.getElementById('estado').innerHTML == 'Para Entregar'){
+        <input type="button" value="Entregar" onclick="if(document.getElementById('estado').innerHTML!= 'Anulada'){
             if(<?php echo $total-$abono;?> == 0){
                 if(confirm('¿Esta Seguro que Desea Entregar esta Factura? (Esta Accion es Irreversible)')){
-                    ir('entregarFactura.php?Codigo=<?php echo $codigo;?>');}
-                else{alert('Debe Cancelar el Total de la Factura para Poder Entregar el Producto');}}}
-            else{alert('No puedes Entregar los Productos de una Factura Anulada o que Aun no esta Lista');}"  /></a>
+                    ir('entregarFactura.php?Codigo=<?php echo $codigo;?>');}}}
+            else{alert('No puedes Entregar los Productos de una Factura Anulada');}
+            if(<?php echo $total-$abono;?> > 0){alert('Debe Cancelar el Total de la Factura para Poder Entregar el Producto');}"  /></a>
         <input type="button" value="Anular" onclick="if(document.getElementById('estado').innerHTML != 'Entregada'){
                 if(confirm('¿Esta Seguro que Desea Anular esta Factura? (Esta Accion es Irreversible)')){
                     ir('anularFactura.php?Codigo=<?php echo $codigo;?>');}}
@@ -99,6 +99,9 @@ include('menu.php');
                         abono = (abono*1) + (document.getElementById('abono').innerHTML*1);
                         ir('abonarFactura.php?Codigo=<?php echo $codigo;?>&Abono='+abono);}}
                 else{alert('La Factura ya esta Totalmente Cancelada');}" /></a>
+        <input type="button" value="Cola de Diseño" onclick="ir('coladisenio.php');" />
+        <input type="button" value="Cola de Produccion" onclick="ir('colaproduccion.php');" />
+        <input type="button" value="Cola de Entrega" onclick="ir('colaentrega.php');" />
         <input type="button" value="Salir" onclick="ir('facturacion.php');" />
     </fieldset>
   </form>

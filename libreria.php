@@ -1,4 +1,8 @@
 <?php
+date_default_timezone_set('America/Caracas');
+
+$codigo_siguiente;
+
 function conectarDB(){
 	$mycon = mysql_connect("localhost","root","123");
 	if(!mysql_select_db("creativomerida_prueba",$mycon)){
@@ -13,16 +17,16 @@ function fecha_es2in($fecha){
 
 function correctHora(){
   
-  //$hora = getdate(time());
+  $hora = getdate(time());
   date ( "h:i:s" , $hora ); 
-  $hora1 = $hora["hours"];
-  $minutes = $hora["minutes"]-30;
-  if ($minutes<=0){
-    $hora1-=1;
-    $minutes+=60;
+  $hora1 = DATE('h');
+  $minutes = $hora["minutes"]+30;
+  if ($minutes>=60){
+    $hora1+=1;
+    $minutes-=60;
   }
-  if ($hora1 <= 0){
-    $hora1+=12;
+  if ($hora1 >= 12){
+    $hora1-=12;
   }
   $correctHora=$hora1.':'.$minutes.':'.$hora["seconds"].'';
   return($correctHora);
@@ -57,6 +61,36 @@ function countPage($size){
   }
   return $pages+1;
 }
-  
 
+function sendSMS($telefono, $texto){
+
+$usuario = 'estudiocreativo';
+$password = 'estudiocreativo';
+$texto = urlencode($texto.' creativomerida.com');
+$url = 'http://expresalo.com.ve/expresalo/sendsms/enviar/'.$usuario.'/'.$password.'/'.$telefono.'/'.$texto;
+
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+$respuesta = curl_exec($ch);
+
+if($respuesta[0]==1){
+  $cantidad = substr($respuesta, strpos($respuesta, '>')+1, strpos($respuesta, '<', 6)-strpos($respuesta, '>')-1);
+  if($cantidad<=10){?>
+  <script type="text/javascript">
+  alert('Restan <?php echo $cantidad;?> Mensajes, Contacte con el Proveedor expresalo.com.ve');
+  </script>
+  <?php }?>
+	<script type="text/javascript">
+	alert('Mensaje Enviado con Exito al Cliente');
+	</script>
+<?php }else{ ?>
+	<script type="text/javascript">
+	alert('NO se pudo Enviar el Mensaje al Cliente');
+	</script>
+<?php }
+}
 ?>

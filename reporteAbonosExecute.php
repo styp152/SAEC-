@@ -40,17 +40,20 @@ $k=0;
 $pivot[$k] = $abonos[0]->getFechaRegistro();
 $abono[$k] = 1;
 $total[$k] = $abonos[0]->getMonto();
+$totales= $abonos[0]->getMonto();
 
 for($i=1; $i<$size; $i++){
   if($pivot[$k]==$abonos[$i]->getFechaRegistro()){
     $abono[$k]++;
     $total[$k]+=$abonos[$i]->getMonto();
+	$totales+=$abonos[$i]->getMonto();
   }
   else{
     $k++;
     $pivot[$k] = $abonos[$i]->getFechaRegistro();
     $abono[$k] = 1;
     $total[$k] = $abonos[$i]->getMonto();
+	$totales+=$abonos[$i]->getMonto();
   } 
 }
 

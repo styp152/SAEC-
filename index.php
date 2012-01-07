@@ -12,9 +12,8 @@ include('menu.php');
   </div>
 <?php else: ?>
   <script type="text/javascript" defer="defer" src="js/validacion.js" ></script>
-  <h2>Bienvenido a la Intranet del Estudio Creativo Mérida</h2>
-  <h2>Registro de Asistencia</h2>
-  <br />
+  <h1>Registro de Asistencia</h1>
+<br />
   <br />
   <div id="registro">
     <form action="registroAsistenciaEmpleadoExecute.php" method="post" title="Formularo de Ingreso"

@@ -6,6 +6,7 @@ conectarDB();
 $cliente = new Cliente();
 $cliente->updateDatos($_REQUEST);
 $cedula=$cliente->getCedula();
+$n=$cliente->getNacionalidad();
 $cliente=buscarClientePorCedula($cliente);
 include('crearPresupuestoForm.php');
 ?>

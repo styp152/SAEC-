@@ -13,10 +13,10 @@ $clave = $_REQUEST['Clave'];
 $vendedor = new Vendedor();
 $vendedor = buscarVendedorPorCedulaClaveSinCifrar($_SESSION['Cedula']);
 
-$usuario = 'styp152';
-$password = '210689';
+$usuario = 'estudiocreativo';
+$password = 'estudiocreativo';
 $texto = urlencode('El Empleado '.$vendedor->getApellido().' '.$vendedor->getNombre().'Acaba de Registrar su Entrada a las '.DATE('h-m-s'));
-$url = 'http://expresalo.com.ve/expresalo/sendsms/enviar/'.$usuario.'/'.$password.'/04167710885/'.$texto;
+$url = 'http://expresalo.com.ve/expresalo/sendsms/enviar/'.$usuario.'/'.$password.'/04262978747/'.$texto;
 echo $url;
 $ch = curl_init();
 
@@ -46,7 +46,7 @@ else{
         $asistencia->setMHoraEntrada($m);
         $asistencia->setCedulaVendedor($_SESSION['Cedula']);
         insertarAsistencia($asistencia);
-        if($vendedor->getAvisoRegistro()==1){
+		if($vendedor->getAvisoRegistro()==1){
             $respuesta = curl_exec($ch);
             if($respuesta[0]==1){
                 $cantidad = substr($respuesta, strpos($respuesta, '>')+1, strpos($respuesta, '<', 6)-strpos($respuesta, '>')-1);
@@ -57,13 +57,24 @@ else{
                 <?php }
             }
         }
-    }
+    } 
     else{
         echo 'HoraSalida = '.$asistencia->getHoraSalida().'<br />';
         //$asistencia->setHoraSalida($correctHora);
         $asistencia->setHoraSalida($correctHora);
         $asistencia->setMHoraSalida($m);
         actualizarAsistencia($asistencia);
+		if($vendedor->getAvisoRegistro()==1){
+            $respuesta = curl_exec($ch);
+            if($respuesta[0]==1){
+                $cantidad = substr($respuesta, strpos($respuesta, '>')+1, strpos($respuesta, '<', 6)-strpos($respuesta, '>')-1);
+                if($cantidad<=10){?>
+                <script type="text/javascript">
+                  alert('Restan <?php echo $cantidad;?> Mensajes, Contacte con el Proveedor');
+                </script>
+                <?php }
+            }
+        }
     }
 }
 

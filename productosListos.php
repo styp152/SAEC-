@@ -16,11 +16,10 @@ $cliente = new Cliente();
 $cliente->setCedula($factura->getCedulaCliente());
 $cliente = buscarClientePorCedula($cliente);
 
-$usuario = 'styp152';
-$password = '210689';
-$texto = urlencode('Estudio Creativo Merida de Jesus Gabriel Albornoz Informa que su pedido con el Codigo OP-00'.$codigo.' se encuentra listo para Retirar CreativoMerida.com');
+$usuario = 'estudiocreativo';
+$password = 'estudiocreativo';
+$texto = urlencode('Estudio Creativo Merida te Informa que el pedido con el Codigo OP-00'.$codigo.' se encuentra listo para Retirar www.creativo.freeiz.com Comunicate con Nosotros a traves del 02746586568');
 $url = 'http://expresalo.com.ve/expresalo/sendsms/enviar/'.$usuario.'/'.$password.'/'.$cliente->getTelefono().'/'.$texto;
-echo $url;
 
 $ch = curl_init();
 

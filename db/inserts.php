@@ -11,7 +11,6 @@ function insertarVendedor($vendedor){
   $sql='INSERT INTO Vendedor (Cedula, AvisoRegistro, Nombre, Apellido, Cargo, Nivel, Clave) VALUES
   ('.$vendedor->getCedula().',\''.$vendedor->getAvisoRegistro().'\',\''.$vendedor->getNombre().'\',\''.$vendedor->getApellido().'\',\''.
   $vendedor->getCargo().'\',\''.$vendedor->getNivel().'\', AES_ENCRYPT(\''.$vendedor->getClave().'\',\'Password\'))';
-  echo $sql;
   return @mysql_query($sql) or die('Error Al Insertar el Empleado');
 }
 

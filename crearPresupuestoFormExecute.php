@@ -32,6 +32,7 @@ for($i=0;$i<$j;$i++){
         $nombre=$_REQUEST['n'.$i];
         $articulo=new Articulo();
         $articulo=buscarArticulo($nombre);
+		$articulo->setPrecio($_REQUEST['p'.$i]);
         $articulos[]=$articulo;
         $k++;
     }

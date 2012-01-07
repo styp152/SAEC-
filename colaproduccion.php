@@ -23,7 +23,7 @@ $size = count($facturas);
   </tr>
   <?php for($i=0;$i<$size;$i++): ?>
   <tr>
-    <td><?php echo $facturas[$i]->getCodigo();?></td>
+    <td>OP-00<?php echo $facturas[$i]->getCodigo();?></td>
     <?php
       $cliente = new Cliente();
       $cliente->setCedula($facturas[$i]->getCedulaCliente());
@@ -33,7 +33,7 @@ $size = count($facturas);
     <td><?php echo fecha_es2in($facturas[$i]->getFechaRegistro());?></td>
     <td><?php echo fecha_es2in($facturas[$i]->getFechaEntrega());?></td>
     <td><input type="button" value="Ver" onclick="ir('verFactura.php?codigo=<?php echo $facturas[$i]->getCodigo();?>');" /></td>
-    <td><input type="button" value="Listo" onclick="ir('productosListos.php?Codigo=<?php echo $facturas[$i]->getCodigo();?>');" /></td>
+    <td><input type="button" value="Listo" onclick="if(confirm('Esta Seguro que Desea Marcar la Orden como Lista?')){ir('productosListos.php?Codigo=<?php echo $facturas[$i]->getCodigo();?>');}" /></td>
   </tr>
   <?php endfor; ?>
 </table>

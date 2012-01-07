@@ -65,7 +65,7 @@ include('menu.php');
         <label for="detalles_texto"><?php echo $presupuesto->getDetalles();?></label>
         <br />
         <br />
-        <input type="button" value="Imprimir" onclick="ir('imprimirPresupuesto.php?Codigo=<? echo $codigo;?>');" /></a>
+        <input type="button" value="Imprimir" onclick="ir('imprimirPresupuesto.php?Codigo=<?php echo $codigo;?>');" /></a>
         <input type="button" value="Convertir en Factura" /></a>
         <input type="button" value="Salir" onclick="ir('facturacion.php');" />
     </fieldset>

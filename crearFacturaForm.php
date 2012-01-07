@@ -10,6 +10,7 @@ include('menu.php');
 <script type="text/javascript" src="js/validacion.js"></script>
 <script type="text/javascript" src="js/autocompletar_articulos.js"></script>
 <h2>Crear Factura</h2>
+<h2 style="color:#0F0; background-color:#000">N° OP-00<?php echo $codigo;?></h2>
 <div id="crear">
   <form name="form" action="crearFacturaFormExecute.php" method="post"
       title="Permite Crear una Factura" onsubmit="return validarVacio(this);">
@@ -19,10 +20,10 @@ include('menu.php');
       <label for="Nombre">Nombre: </label><input type="text" id="Nombre"
         name="Nombre" onfocus="limpiar(this);" size="40" value="<?php echo $cliente->getNombre();?>" />
       <br /><br />
-      <label for="Cedula">Cedula: </label><input type="text" id="Cedula" name="Cedula"
-        onfocus="limpiar(this);" size="9" value="<?php echo $cedula;?>" readonly="true" />
-      <label for="Telefono">Telefono: </label><input type="text" id="Telefono" onkeypress="return permite(event , 'num')"
-        name="Telefono" onfocus="limpiar(this);" size="10" value="<?php echo $cliente->getTelefono();?>" />
+      <label for="Cedula">Cedula o RIF:</label><input type="text" id="Nacionalidad" name="Nacionalidad" onfocus="limpiar(this);" size="1" onkeypress="return permite(event , 'car')" value="<?php echo $n;?>" readonly="true" /><input type="text" id="Cedula" name="Cedula"
+        onfocus="limpiar(this);" size="10" value="<?php echo $cedula;?>" readonly="true" />
+      <label for="Telefono">Telefono: </label><input type="text" id="Telefono"
+        name="Telefono" onfocus="limpiar(this);" size="12" value="<?php echo $cliente->getTelefono();?>" />
       <br /><br />
       <label for="Direccion">Direccion: </label><input type="text" id="Direccion"
         name="Direccion" onfocus="limpiar(this);" size="40" value="<?php echo $cliente->getDireccion();?>" />
@@ -86,7 +87,7 @@ include('menu.php');
         <br />
         <label for="Detalles">Detalles de Diseño y Produccion </label><br />
         <textarea id="Detalles" name="Detalles" cols="60" rows="5" onfocus="limpiar(this);
-        limpiarT(this);">Aqui se agregan los detalles del pedido.</textarea>
+        limpiarD(this);">Aqui se agregan los detalles del pedido.</textarea>
         <br />
         <br />
         <label for="Tipo_Pago">Tipo de Pago</label>
@@ -98,9 +99,8 @@ include('menu.php');
 					<option >Cheque</option>
 				</select>
         <label for="NTipo_Pago">Numero: </label><input type="text" id="NTipo_Pago"
-        name="NTipo_Pago" onfocus="limpiar(this);" size="10" disabled="disabled" />
-        <br />
-        <label for="Fecha_Entrega">Fecha de Entrega: </label><input type="text" id="Fecha_Entrega"
+        name="NTipo_Pago" onfocus="limpiar(this);" size="10" disabled="disabled" /> 
+<label for="Fecha_Entrega">Fecha de Entrega: </label><input type="text" id="Fecha_Entrega"
           name="Fecha_Entrega" class="for_txtInputFecha" onfocus="limpiar(this);" size="9"
           value="" tabindex="2" readonly="readonly"  />
         <img class="for_imgFecha" id="ImgFecha_Entrega" src="calendario/calendario.png"
@@ -111,8 +111,12 @@ include('menu.php');
         </script>
         <br />
         <br />
-        <input type="submit" value="Facturar" onclick="clickEnviar();" />
-        <input type="button" value="Cancelar" onclick="ir('facturacion.php');" />
+      <table width="200" border="1" align="center">
+          <tr>
+            <td width="0" height="0" align="center" bgcolor="#0099FF"><input type="submit" value="Facturar" onclick="clickEnviar();" /></td>
+            <td align="center" bgcolor="#CC0000"><input type="button" value="Cancelar" onclick="ir('facturacion.php');" /></td>
+        </tr>
+      </table>
     </fieldset>
   </form>  
 </div>
@@ -120,6 +124,5 @@ include('menu.php');
 <?php
 include('menuFacturacion.php');
 include('foot.html');
-// debo poder incluir productos, con sus cantidades, y mostrar el precio unitario de ese producto, fecha de entrega, y un textarea, para Detalles de Diseño y Produccion
 ?>
 

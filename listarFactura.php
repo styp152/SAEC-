@@ -6,7 +6,7 @@ $size= count($facturas);
 if($size==0){
 ?>
 <script type="text/javascript">
-alert('La Busqueda es Vacia, Elija uno de los Campos para Realizar la Busqueda de la Factura');
+alert('La Busqueda es Vacia para Listar, Elija uno de los Campos para Realizar la Busqueda de la Factura');
 location.href='buscarFactura.php';
 </script>
 <?php

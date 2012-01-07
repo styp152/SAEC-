@@ -4,7 +4,7 @@ include('head.html');
 include('menu.php');
 ?>
 <script type="text/javascript" defer="defer" src="js/validacion.js" ></script>
-<h2>Registro de Asistencia</h2>
+<h2>Registre su Asistencia</h2>
 <br />
 <br />
 <div id="registro">

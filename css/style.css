@@ -4,7 +4,7 @@
 } 
 
 body {
-    background: #fff;
+    
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 18px;
@@ -16,12 +16,14 @@ a { color: #57626a; text-decoration: none; }
 a:hover { text-decoration: underline; color : #000; }
 
 #wrap {
+	padding: 20px 0 20px 0;
+	background: url(../images/logoprincipal2.png) ; background-repeat:no-repeat;
     margin: 0 auto;
     width: 800px;
 }
 
 #header { 
-    padding: 10px 0 20px 0;
+    padding: 60px 0 20px 0;
 }
 #header h1 {
     font-size: 26px;
@@ -38,12 +40,13 @@ a:hover { text-decoration: underline; color : #000; }
     text-decoration: none;
 }
 #header h2 {
-    color: #ccc;
-    font-size: 15px;
-    font-weight: 100;
-    padding: 0 0 0 11px;
-    letter-spacing: -1px;
-    line-height: 12px;
+	color: #333;
+	font-size: 15px;
+	font-weight: 100;
+	padding: 0 0 0 11px;
+	letter-spacing: normal;
+	line-height: 12px;
+	text-align: center;
 }
 
 #menu {
@@ -75,6 +78,10 @@ a:hover { text-decoration: underline; color : #000; }
 
 #content {
     padding: 10px 20px;
+	background-position:center; 
+	background-image:url(../images/cont_img.jpg); 
+	background-repeat:repeat-y; 50% 
+	
 }
 
 .right {
@@ -92,16 +99,21 @@ a:hover { text-decoration: underline; color : #000; }
 }
 
 .left {
-    width: 150px;
+    width: 165px;
     float: left;
     padding: 10px;
     border-right: 1px solid #bbb;
     font-size: 12px;
 }
 .left ul {
-    list-style-type: square;
-    padding: 5px 10px 10px 20px;
+    list-style-type: none;
+    padding: 5px 5px 10px 10px;
     color: #57626a;
+}
+.left ul li{
+    padding: 5px 3px 10px 5px;
+	background: url(../images/boton.png) no-repeat;
+	text-align:center;
 }
 .left h2 {
     height: 30px;
@@ -114,7 +126,7 @@ a:hover { text-decoration: underline; color : #000; }
 
 #footer {
     background: #eee;
-    border-top: 3px solid #57626a;
+    border-top: 10px solid   #F60;
     margin-top: 20px;
     text-align: center;
     color: #333;
@@ -189,7 +201,7 @@ fieldset{
     text-decoration:none;
 }
 
-#buscar_cedula, #buscar_codigo, #buscar_fecha, #btn {display:none;}
+#buscar_cedula, #buscar_codigo, #buscar_fecha, #buscar_nombre, #btn {display:none;}
 #registro, #botones {
     text-align:center;
 }
@@ -221,5 +233,8 @@ fieldset{
 	height: 100px;
   width:100px;
 	float:left;
-  background: #57626a url(../images/administrador.jpg) no-repeat;
+  background:  url(../images/administrador1.png) no-repeat;
+}
+#header table tr td {
+	text-align: center;
 }

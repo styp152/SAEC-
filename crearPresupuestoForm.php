@@ -15,10 +15,10 @@ include('menu.php');
       <label for="Nombre">Nombre: </label><input type="text" id="Nombre" name="Nombre"
         onfocus="limpiar(this);" size="40" value="<?php echo $cliente->getNombre();?>" />
       <br /><br />
-      <label for="Cedula">Cedula: </label><input type="text" id="Cedula" name="Cedula"
+      <label for="Cedula">Cedula o RIF:</label><input type="text" id="Nacionalidad" name="Nacionalidad" onfocus="limpiar(this);" size="1" onkeypress="return permite(event , 'car')" value="<?php echo $n;?>" readonly="true" /><input type="text" id="Cedula" name="Cedula"
         onfocus="limpiar(this);" size="9" value="<?php echo $cedula;?>" readonly="true" />
       <label for="Telefono">Telefono: </label><input type="text" id="Telefono" name="Telefono"
-        onfocus="limpiar(this);" size="7" value="<?php echo $cliente->getTelefono();?>" />
+        onfocus="limpiar(this);" size="10" value="<?php echo $cliente->getTelefono();?>" />
       <br /><br />
       <label for="Direccion">Direccion: </label><input type="text" id="Direccion"
         name="Direccion" onfocus="limpiar(this);" size="40" value="<?php echo $cliente->getDireccion();?>" />

@@ -25,7 +25,7 @@ class Gasto{
   }
   
   function getDescripcion(){
-    return $this->descripcion;
+    return $this->Descripcion;
   }
   
   function setId($parametro){
@@ -45,7 +45,7 @@ class Gasto{
   }
   
   function setDescripcion($parametro){
-    $this->descripcion=$parametro;
+    $this->Descripcion=$parametro;
   }
 
   function updateDatos($parametro){
@@ -53,7 +53,7 @@ class Gasto{
   	$this->cedulaVendedor=$parametro['Cedula_Vendedor'];
   	$this->fechaRegistro=$parametro['Fecha_Registro'];
     $this->monto=$parametro['Monto'];
-    $this->descripcion=$parametro['Descripcion'];
+    $this->Descripcion=$parametro['Descripcion'];
   }
 }
 ?>

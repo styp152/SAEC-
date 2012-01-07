@@ -6,6 +6,7 @@ include('db/deletes.php');
 conectarDB();
 $codigo=$_REQUEST['Codigo'];
 actualizarEstadoDeFactura($codigo, 'Anulada');
+actualizarAbonoFactura($codigo, 0);
 borrarAbonos($codigo);
 ?>
 <script type="text/javascript">

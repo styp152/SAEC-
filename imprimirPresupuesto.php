@@ -11,7 +11,6 @@ conectarDB();
 
 $presupuesto = new Presupuesto();
 $presupuesto->updateDatos($_REQUEST);
-
 $presupuesto = buscarPresupuestoPorCodigo($presupuesto->getCodigo());
 
 $articulos = buscarArticulosPorCodigoPresupuesto($presupuesto->getCodigo());
@@ -29,7 +28,7 @@ $cliente = new Cliente();
 $cliente->setCedula($presupuesto->getCedulaCliente());
 $cliente = buscarClientePorCedula($cliente);
 $pdf =& new Cezpdf('a4');
-$pdf->selectFont('fonts/courier.afm');
+$pdf->selectFont('fonts/Courier.afm');
 $datocreator= array ('Title'=>'Presupuesto',
                     'Author'=>'Sistema Administrativo para Control de Facturacion\
                                e Inventario',
@@ -40,15 +39,16 @@ $datocreator= array ('Title'=>'Presupuesto',
 $pdf->addInfo($datocreator);
 $pdf->ezImage("images/logo.jpg", 0, 540, 'none', 'left');
 $pdf->ezSetY(790);
-$pdf->ezText("<b>".$presupuesto->getCodigo()."</b>          \n\n\n",12,array('justification'=>'right'));
+$pdf->ezText("<b> OP-00".$presupuesto->getCodigo()."</b>  \n\n\n",12,array('justification'=>'right'));
+$pdf->ezText(utf8_decode("<b>Estudio Creativo Mérida, (De Jesus Gabriel Albornoz) R.I.F: V-17129464-5 \n DIRECCIÓN: Final Av. 3 Con Calle 13 Casa 13-31 Teléfono: 0274-6586568 0426-2978747</b>\n"),10,array('justification'=>'center'));
 $pdf->ezText("<b>"."Fecha: ".fecha_es2in($presupuesto->getFechaRegistro())."</b>",12,array('justification'=>'right'));
 $pdf->ezText("<b>"."Presupuesto"."</b>\n",20,array('justification'=>'center'));
 
 $pdf->ezText("<b>"."Datos del Cliente"."</b>\n",16,array('justification'=>'center'));
 $datacliente[]=array('texto'=>
-"\n             <b>CEDULA: </b> ".$cliente->getCedula()."                                     NOMBRE: ".$cliente->getNombre()."</b>\n\n".
-"             <b>DIRECCION: </b> ".utf8_decode($cliente->getDireccion())."</b>\n\n".
-"             <b>CORREO: </b> ".$cliente->getCorreo()."                  TELEFONO: ".$cliente->getTelefono()."</b>\n");
+"\n      <b>CEDULA O RIF: </b> ".$cliente->getNacionalidad().'-'.$cliente->getCedula()."   NOMBRE: ".$cliente->getNombre()."</b>\n\n".
+"      <b>DIRECCION: </b> ".utf8_decode($cliente->getDireccion())."</b>\n\n".
+"      <b>CORREO: </b> ".$cliente->getCorreo()."     TELEFONO: ".$cliente->getTelefono()."</b>\n");
 $options=array('width'=> 540,'titleFontSize' => 7,'fontSize' => 12, 'showHeadings' => 0, 'showLines'=> 1);
 $pdf->ezTable($datacliente, $titles, '', $options);
 
@@ -68,6 +68,10 @@ $options=array('width'=> 520,'titleFontSize' => 7,'fontSize' => 12, 'xOrientatio
 $pdf->ezTable($data1, $titles, '', $options);
 
 $pdf->ezText("\n<b>"."Este Presupuesto es valido por 10 dias"."</b>\n",12,array('justification'=>'center'));
+
+$data2[]=array('detalles'=>utf8_decode("<b>El material para el Diseño debe ser enviado al correo electronico artes1.creativo@gmail.com</b>\n"));
+
+$pdf->ezTable($data2, $titles, '', $options);
 
 $pdf->ezStream();
 

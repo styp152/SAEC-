@@ -17,7 +17,7 @@ if($vendedor->getCedula()==$vendedorDB->getCedula() and $vendedor->getClave()==$
   header("location:index.php");
 }
 else{
-  ?>
+	?>
   <script type="text/javascript">
     alert('Login o Password Incorrecto');
     location.href='eliminarEmpleado.php';

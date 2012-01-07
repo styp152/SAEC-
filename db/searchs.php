@@ -38,7 +38,7 @@ function buscarCantidadArticuloPorId($id){
 }
 
 function buscarArticulosPorCantidad($cantidad){
-  $sql="SELECT * FROM Articulo WHERE Cantidad = $cantidad";
+  $sql="SELECT * FROM Articulo WHERE Cantidad <= $cantidad";
   $result = mysql_query($sql);
   while($row = mysql_fetch_assoc($result)){
     $articulo = new Articulo();
@@ -279,6 +279,28 @@ function buscarPresupuestosPorRangoDias($fecha_inicio, $fecha_fin){
   return $presupuestos;
 }
 
+function buscarFacturasPorNombreCliente($nombre){
+  $sql="SELECT Cedula FROM Cliente WHERE Nombre LIKE '%".$nombre."%'";
+  $result = mysql_query($sql);
+  $count=0;
+  while($row = mysql_fetch_assoc($result)){
+    $cliente= new Cliente();
+    $cliente->updateDatos($row);
+    $clientes[]=$cliente;
+    $count++;
+  }
+  for($i=0;$i<$count;$i++){
+    $sql='SELECT * FROM Factura WHERE Cedula_Clientes=\''.$clientes[$i]->getCedula().'\'';
+    $result = mysql_query($sql);
+    while($row = mysql_fetch_assoc($result)){
+      $factura = new Factura();
+      $factura->updateDatos($row);
+      $facturas[]=$factura;
+    }
+  }
+  return $facturas;
+}
+
 function buscarFacturasPorCedulaCliente($cedula){
   $sql='SELECT * FROM Factura WHERE Cedula_Clientes=\''.$cedula.'\'';
   $result = mysql_query($sql);
@@ -302,7 +324,29 @@ function buscarPresupuestosPorCedulaCliente($cedula){
 }
 
 function buscarFacturasProduccion(){
-  $sql = "SELECT * FROM Factura WHERE Estado='Facturado' LIMIT 0, 10";
+  $sql = "SELECT * FROM Factura WHERE Estado='Facturado' ORDER BY Fecha_Entrega ASC";
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $factura = new Factura();
+    $factura->updateDatos($row);
+    $facturas[]=$factura;
+  }
+  return $facturas;
+}
+
+function buscarFacturasDisenio(){
+  $sql = "SELECT * FROM Factura WHERE Estado='Disenio' ORDER BY Fecha_Entrega ASC";
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $factura = new Factura();
+    $factura->updateDatos($row);
+    $facturas[]=$factura;
+  }
+  return $facturas;
+}
+
+function buscarFacturasEntrega(){
+  $sql = "SELECT * FROM Factura WHERE Estado='Para Entregar' ORDER BY Fecha_Entrega ASC";
   $result = mysql_query($sql);
   while($row = mysql_fetch_assoc($result)){
     $factura = new Factura();
@@ -352,6 +396,13 @@ function buscarGastosPorDia($fecha){
   return $gastos;
 }
 
+function buscarCodigoSiguiente(){
+  $sql = "SELECT Codigo FROM Factura ORDER BY Codigo DESC LIMIT 0,1";
+  $result = mysql_query($sql);
+  $row=mysql_fetch_assoc($result);
+  return ($row['Codigo']+1);
+}
+
 function buscarGastosPorRangoDias($fecha_inicio, $fecha_fin){
   $sql = "SELECT * FROM Gasto WHERE Fecha_Registro>'".$fecha_inicio."' and Fecha_Registro<'".$fecha_fin."'  ORDER BY Fecha_Registro ASC";
   $result = mysql_query($sql);
@@ -361,6 +412,17 @@ function buscarGastosPorRangoDias($fecha_inicio, $fecha_fin){
     $gastos[]=$gasto;
   }
   return $gastos;
+}
+
+function buscarConfiguracionPorCampo($campo){
+  $sql='SELECT * FROM Configuracion WHERE Campo=\''.$campo.'\'';
+  $result = mysql_query($sql);
+  while($row = mysql_fetch_assoc($result)){
+    $config = new Configuracion();
+    $config->updateDatos($row);
+    $configs[]=$config;
+  }
+  return $configs;
 }
 
 ?>
