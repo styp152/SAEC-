@@ -21,6 +21,8 @@ include("menu.php");
       <label for="cargo">Cargo que desempeña: </label><input type="text" id="Cargo" name="Cargo" onfocus="limpiar(this);" size="20" />
       <label for="nivel">Nivel: </label><select name="Nivel" id="Nivel"><option value="2">Administrador</option><option value="1" selected="selected">Empleado</option></select>
       <br /><br />
+      <label for="CostoHora">Costo de la Hora: </label><input type="text" id="CostoHora" name="CostoHora" size="10" onfocus="limpiar(this);"/>
+      <br /><br />
       <label for="nivel">Aviso por Mensaje al Registrar en el Sistema: </label>Si<input type="radio" name="AvisoRegistro" value="1" id="AvisoRegistroS" />
       No<input type="radio" name="AvisoRegistro" value="0" id="AvisoRegistroN" />
       <br /><br />

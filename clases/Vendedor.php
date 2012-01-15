@@ -7,6 +7,7 @@ class Vendedor{
 	private $cargo;
 	private $nivel;
 	private $clave;
+	private $costoHora;
 
   function __construct(){}
   
@@ -37,6 +38,10 @@ class Vendedor{
   function getClave(){
     return $this->clave;
   }
+	
+	function getCostoHora(){
+		return $this->costoHora;
+	}
   
   function setCedula($parametro){
     $this->cedula=$parametro;
@@ -65,15 +70,22 @@ class Vendedor{
   function setClave($parametro){
     $this->clave=$parametro;
   }
+	
+	function setCostoHora($parametro){
+    $this->costoHora=$parametro;
+  }
   
   function updateDatos($parametro){
-  	$this->cedula=$parametro['Cedula'];
-		$this->aviso=$parametro['AvisoRegistro'];
-  	$this->nombre=$parametro['Nombre'];
-  	$this->apellido=$parametro['Apellido'];
-  	$this->cargo=$parametro['Cargo'];
-  	$this->nivel=$parametro['Nivel'];
-		$this->clave=$parametro['Clave'];
+		
+  	$this->cedula    = $parametro['Cedula'];
+		$this->aviso     = $parametro['AvisoRegistro'];
+  	$this->nombre    = $parametro['Nombre'];
+  	$this->apellido  = $parametro['Apellido'];
+  	$this->cargo     = $parametro['Cargo'];
+  	$this->nivel     = $parametro['Nivel'];
+		$this->clave     = $parametro['Clave'];
+		$this->costoHora = $parametro['CostoHora'];
+		
   }
 }
 ?>

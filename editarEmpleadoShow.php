@@ -37,6 +37,8 @@ include('menu.php');
           <option value="1" selected="selected">Empleado</option>
         <?php endif ?>
       </select>
+      <br />
+      <label for="CostoHora">Costo de la Hora: </label><input type="text" id="CostoHora" name="CostoHora" value="<?php echo $vendedor->getCostoHora();?>" size="10" onfocus="limpiar(this);"/>
        <br /><br />
       <label for="nivel">Aviso por Mensaje al Registrar en el Sistema: </label>Si<input type="radio" name="AvisoRegistro" <?php if($vendedor->getAvisoRegistro()==1){?>checked="checked"<?php }?> value="1" id="AvisoRegistroS" />
       No<input type="radio" name="AvisoRegistro" value="0" <?php if($vendedor->getAvisoRegistro()==0){?>checked="checked"<?php }?>  id="AvisoRegistroN" />

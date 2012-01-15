@@ -14,8 +14,9 @@ function actualizarArticulo($articulo){
 
 function actualizarVendedorDesdeAdministrador($vendedor){
   $sql="UPDATE Vendedor SET AvisoRegistro=".$vendedor->getAvisoRegistro().", Nombre='".$vendedor->getNombre()."', Apellido='".$vendedor->getApellido().
-    "', Cargo='".$vendedor->getCargo()."', Nivel=".$vendedor->getNivel().
+    "', Cargo='".$vendedor->getCargo()."', Nivel=".$vendedor->getNivel().", CostoHora=".$vendedor->getCostoHora().
     " WHERE Cedula=".$vendedor->getCedula();
+    echo $sql;
   mysql_query($sql);
 }
 

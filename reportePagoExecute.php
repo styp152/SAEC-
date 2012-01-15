@@ -3,6 +3,7 @@ include("session.php");
 include("libreria.php");
 include_once("db/searchs.php");
 include_once("clases/Asistencia.php");
+include_once("clases/Vendedor.php");
 
 conectarDB();
 
@@ -26,7 +27,11 @@ if($mes != 0){
 }
 
 $asistencias = buscarAsistenciasEntreFechas($cedula,$fecha1,$fecha2);
-$size = count($asistencias);
+$vendedor    = buscarVendedorPorCedula($cedula);
+$size        = count($asistencias);
+
+$acumulado   = 0;
+$dias        = $size;
 
 if($size==0){
     ?>
@@ -36,9 +41,22 @@ if($size==0){
     </script>
     <?php
 }
-for($i=0;$i<$size;$i++){
-  mktime();
-  echo $asistencias[$i]->getHoraEntrada();
+else{  
+    for($i=0;$i<$size;$i++){
+      
+        if ($asistencias[$i]->getHoraEntrada() == '00:00:00' or  $asistencias[$i]->getHoraSalida() == '00:00:00' ){
+            $dias--;
+            continue;
+        }
+    
+        $cadena1 = strtotime($asistencias[$i]->getHoraEntrada().$asistencias[$i]->getMHoraEntrada());
+        $asistencias[$i]->setHoraEntrada(date("H:i:s", $cadena1));
+      
+        $cadena2 = strtotime($asistencias[$i]->getHoraSalida().$asistencias[$i]->getMHoraSalida());
+        $asistencias[$i]->setHoraSalida(date("H:i:s", $cadena2));
+    
+        $acumulado += calcular_tiempo_trasnc($asistencias[$i]->getHoraSalida(),$asistencias[$i]->getHoraEntrada());
+    }    
 }
 include("reportePagoShow.php");
 ?>

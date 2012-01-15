@@ -93,4 +93,19 @@ if($respuesta[0]==1){
 	</script>
 <?php }
 }
+
+function calcular_tiempo_trasnc($hora1,$hora2){
+    
+  $separar[1]=explode(':',$hora1);
+  $separar[2]=explode(':',$hora2);
+
+  $total_minutos_trasncurridos[1] = ($separar[1][0]*60)+$separar[1][1];
+  $total_minutos_trasncurridos[2] = ($separar[2][0]*60)+$separar[2][1];
+  $total_minutos_trasncurridos = $total_minutos_trasncurridos[1]-$total_minutos_trasncurridos[2];
+  
+  $HORA_TRANSCURRIDA = round($total_minutos_trasncurridos/60,2);
+  
+  return ($HORA_TRANSCURRIDA); 
+}
+
 ?>
